@@ -3,7 +3,13 @@ import injectContext from './store/context';
 
 function App() {
   return (
+    <>
     <p>Test</p>
+    <p>prueba</p>
+    
+    </>
+    
+    
   );
 }
 
