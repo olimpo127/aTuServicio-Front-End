@@ -10,7 +10,7 @@ function App() {
     <Narv/>
 
     <Register/>
-
+    <p>Test dede rama ojedfa</p>
     
     </>
     
