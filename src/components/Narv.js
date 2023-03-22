@@ -12,7 +12,8 @@ function Narv()
 
 <nav class="navbar navbar-expand-lg bg-secondary">
   <div class="container-fluid">
-    <h1 class="navbar-brand" style ={{width:300}}href="#"> AtuServicio  {tool}</h1>
+    <h1 class="navbar-brand" style ={{width:300}}href="#"> A tu Servicio{tool}</h1>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
