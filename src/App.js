@@ -8,7 +8,9 @@ function App() {
   return (
     <>
     <Narv/>
+
     <Register/>
+
     
     </>
     
