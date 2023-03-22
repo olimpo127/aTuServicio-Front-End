@@ -11,7 +11,7 @@ function App() {
 
     <Register/>
     <p>Test dede rama ojedfa</p>
-    
+    <p>test 2</p>
     </>
     
     
