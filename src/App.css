@@ -8,6 +8,7 @@ body{
 }
 
 
+
 .context {
     width: 100%;
     position: absolute;
@@ -127,6 +128,7 @@ body{
     animation-delay: 0s;
     animation-duration: 11s;
 }
+ 
 
 
 
