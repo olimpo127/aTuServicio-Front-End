@@ -2,11 +2,11 @@ import './App.css';
 import injectContext from './store/context';
 import Narv from './components/Narv';
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
-import Home from "./views/home";
-import Profile from "./views/profile";
-import Signup from "./views/register-login";
-import Service from "./views/search-service";
-import Detail from "./views/service-creation";
+import Home from "./views/Home";
+import Profile from "./views/Profile";
+import Signup from "./views/Register-login";
+import Service from "./views/Search-service";
+import Detail from "./views/Service-creation";
 
 
 
