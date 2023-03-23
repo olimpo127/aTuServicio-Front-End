@@ -1,75 +1,115 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 
-const Detail = () =>{
-    return (
-       
-<div className="container">
-<form class="row g-3">
-  <div class="col-md-4">
-    <label for="validationServer01" class="form-label">First name</label>
-    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required/>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationServer02" class="form-label">Last name</label>
-    <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required/>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationServerUsername" class="form-label">Username</label>
-    <div class="input-group has-validation">
-      <span class="input-group-text" id="inputGroupPrepend3">@</span>
-      <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required/>
-      <div id="validationServerUsernameFeedback" class="invalid-feedback">
-        Please choose a username.
+const Detail = () => {
+    const gear = <FontAwesomeIcon icon={faGear} spin style={{height:80}}/>;
+   
+  return (
+    <div className="container col-10 mt-5">
+      <h1 className="post d-flex justify-content-center ms-5"><b className="m-3">New Post</b> {gear}</h1>
+      <div className=" formulario card m-5">
+        <form class="row g-3 m-3">
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">
+            <b>Title</b>
+            </label>
+            <input type="text" class="form-control" name="title"/>
+          </div>
+          <div class="col-md-6">
+            <label  class="form-label">
+            <b>Price</b>
+            </label>
+            <input type="text" class="form-control" name="price" />
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">
+            <b>Category</b>
+            </label>
+            <select id="inputState" class="form-select" name="category">
+              <option name="Carpentry">Carpentry</option>
+              <option name="Mechanics">Mechanics</option>
+              <option name="Educational">Educational</option>
+              <option name="Technology">Technology</option>
+              <option name="gardening">Gardening</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <label for="inputState" class="form-label">
+            <b>Availability</b>
+            </label>
+            <select id="inputState" class="form-select">
+              <option>Immediate</option>
+              <option>Full time</option>
+              <option>Part time</option>
+              <option>Weekend</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">
+            <b>City</b>
+            </label>
+            <input type="text" class="form-control" id="inputCity" />
+          </div>
+          <div class="col-md-4">
+            <label for="inputState" class="form-label">
+            <b>Region</b>
+            </label>
+            <select id="inputState" class="form-select">
+              <option>Antofagasta.</option>
+              <option>Atacama</option>
+              <option>Metropolitana</option>
+              <option>O'Higgins</option>
+              <option>Ñuble</option>
+              <option>Magallanes </option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="inputZip" class="form-label">
+            <b>Comuna</b>
+            </label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group col-md-10">
+            <label for="exampleFormControlTextarea1">
+              <b>Description</b>
+            </label>
+            <textarea
+              className=" red form-control"
+              rows="3"
+            ></textarea>
+
+            <small id="passwordHelpBlock" class="form-text text-muted">
+              Add any notes here.
+            </small>
+          </div>
+
+          <div className="input-group">
+            <input type="file" className="form-control" id="inputGroupFile01" name="image" />
+            <button
+              type="btn"
+              className="btn btn-warning"
+              for="inputGroupFile01"
+            >
+              Add Image
+            </button>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" />
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">
+              Sign in
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationServer03" class="form-label">City</label>
-    <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required/>
-    <div id="validationServer03Feedback" class="invalid-feedback">
-      Please provide a valid city.
-    </div>
-  </div>
-  <div class="col-md-3">
-    <label for="validationServer04" class="form-label">State</label>
-    <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-      <option selected disabled value="">Choose...</option>
-      <option>...</option>
-    </select>
-    <div id="validationServer04Feedback" class="invalid-feedback">
-      Please select a valid state.
-    </div>
-  </div>
-  <div class="col-md-3">
-    <label for="validationServer05" class="form-label">Zip</label>
-    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required/>
-    <div id="validationServer05Feedback" class="invalid-feedback">
-      Please provide a valid zip.
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required/>
-      <label class="form-check-label" for="invalidCheck3">
-        Agree to terms and conditions
-      </label>
-      <div id="invalidCheck3Feedback" class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </div>
-</form>
-</div>
-
-    )
-}
+  );
+};
 export default Detail;

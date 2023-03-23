@@ -7,7 +7,10 @@ body{
     font-family: 'Exo', sans-serif;
 }
 
+.one{
+background-color: #4e54c8;
 
+}
 
 .context {
     width: 100%;
@@ -129,7 +132,15 @@ body{
     animation-duration: 11s;
 }
  
+.post{
+color: yellow;
+border-color: black;
 
+}
+.formulario{
+    box-shadow: 10px 10px 10px 10px  rgb(166, 173, 189);
+
+}
 
 
 @keyframes animate {
