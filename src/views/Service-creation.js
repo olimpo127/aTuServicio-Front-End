@@ -10,8 +10,8 @@ const Detail = () => {
       <h1 className="post d-flex justify-content-center ms-5"><b className="m-3">New Post</b> {gear}</h1>
       <div className=" formulario card m-5">
         <form class="row g-3 m-3">
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">
+          <div class="col-md-6 ">
+            <label  class="form-label ">
             <b>Title</b>
             </label>
             <input type="text" class="form-control" name="title"/>
@@ -103,8 +103,8 @@ const Detail = () => {
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">
-              Sign in
+            <button type="submit" class="btn btn-success">
+             Post Now
             </button>
           </div>
         </form>

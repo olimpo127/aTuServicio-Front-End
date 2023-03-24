@@ -133,8 +133,8 @@ background-color: #4e54c8;
 }
  
 .post{
-color: yellow;
-border-color: black;
+color: rgb(71, 8, 122);
+border-color: black;        
 
 }
 .formulario{
@@ -142,6 +142,10 @@ border-color: black;
 
 }
 
+.nav{
+
+background-color:rgba(245, 240, 248, 0.699) ;    
+}
 
 @keyframes animate {
 
