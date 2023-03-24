@@ -1,4 +1,32 @@
+
+const icons =({setStore, getActions, getStore})=>{
+   
+    return{
+     store: {
+        post:{
+            title:"",
+            price:"",
+            category:{},
+            availability:{},
+            city:"",
+            region:{},
+            comuna:"",
+            description:"",
+            image:""
+
+
+        },
+
+
+     },
+     actions:{}
+
+
+}
+}
+
 const getState = ({ setStore, getActions, getStore }) => {
+    
     return {
       store: {
         user: {
