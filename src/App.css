@@ -1,10 +1,7 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
 
 body{
     font-family: 'Exo', sans-serif;
+    background-image: url('./assets/img/Background.jpg');
 }
 
 .one{
@@ -162,3 +159,4 @@ background-color:rgba(245, 240, 248, 0.699) ;
     }
 
 }
+
