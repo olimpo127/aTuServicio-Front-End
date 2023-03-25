@@ -1,43 +1,31 @@
 
-const icons =({setStore, getActions, getStore})=>{
-   
-    return{
-     store: {
-        post:{
-            title:"",
-            price:"",
-            category:{},
-            availability:{},
-            city:"",
-            region:{},
-            comuna:"",
-            description:"",
-            image:""
-
-
-        },
-
-
-     },
-     actions:{}
-
-
-}
-}
 
 const getState = ({ setStore, getActions, getStore }) => {
     
     return {
-      store: {
-        user: {
-          name: "",
-          lastname: "",
-          username: "",
-          email: "",
-          password: ""
-      },
-        
-      },
+        store: {
+            user: {
+                name: "",
+                lastname: "",
+                username: "",
+                email: "",
+                password: ""
+            },
+            post:{
+                title:"",
+                price:"",
+                category:{},
+                availability:{},
+                city:"",
+                region:{},
+                comuna:"",
+                description:"",
+                image:""
+            
+            
+            },
+            
+        },
       actions: {
       /*  handleUserRegister: (e) => {
           const { user } = getStore();

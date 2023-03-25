@@ -7,7 +7,7 @@ const Detail = () => {
    
   return (
     <div className="container col-10 mt-5">
-      <h1 className="post d-flex justify-content-center ms-5"><b className="m-3">New Post</b> {gear}</h1>
+      <h1 className="post d-flex justify-content-center ms-5"><b className="m-3">New Post</b>{gear}</h1>
       <div className=" formulario card m-5">
         <form class="row g-3 m-3">
           <div class="col-md-6 ">
