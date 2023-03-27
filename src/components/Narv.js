@@ -1,53 +1,33 @@
-
+import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHammer} from "@fortawesome/free-solid-svg-icons"
+import { faHammer } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-
-function Narv()
-{
-    const tool = <FontAwesomeIcon icon={faHammer}  bounce />
-    return(
-
-<nav class="navbar navbar-expand-lg bg-secondary">
-  <div class="container-fluid">
-    <h1 class="navbar-brand" style ={{width:300}}href="#"> A tu Servicio{tool}</h1>
+function Narv() {
+  const tool = <FontAwesomeIcon icon={faHammer} bounce />;
+  return (
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Registrate
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+    <ul class="nav  nav-tabs">
+      <h3 class="ms-3">{tool} ATúservicio</h3>
+      <form class="d-flex " role="search">
+        <input class="form-control me-2 ms-5" type="search" placeholder="Search" style={{width:600}}/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-    </div>
-  </div>
-</nav>
-)
+     
+    <li class="nav-item ms-auto mt-3">
+      <Link to="/" >Home</Link>
+    </li>
+    <li class="nav-item ms-3 mt-3">
+      <Link to="/signup">Register</Link>
+    </li>
+    <li class="nav-item ms-3 mt-3">
+      <Link to="profile" >Profile</Link>
+    </li>
+ 
+  </ul>
+  );
 }
 
-export default Narv
+export default Narv;

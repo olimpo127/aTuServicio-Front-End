@@ -10,11 +10,11 @@ const Login = () => {
         <div>
             <div className="container text-center col-3 mt-5">
                 <div className="input-group m-3">
-                    <span className="input-group-text bg-dark text-light" id="basic-addon3">Username</span>
+                    <span className="input-group-text" id="basic-addon3">Username</span>
                     <input
                         type="text"
                         name="username"
-                        className="form-control bg-dark text-light"
+                        className="form-control"
                         placeholder="Username"
                         aria-label="Username"
                         aria-describedby="basic-addon3"
@@ -23,11 +23,11 @@ const Login = () => {
                     />
                 </div>
                 <div className=" input-group m-3">
-                    <label htmlFor="Password" className="input-group-text bg-dark text-light">Password</label>
+                    <label htmlFor="Password" className="input-group-text">Password</label>
                     <input
                         type="password"
                         name="password"
-                        className="form-control bg-dark text-light"
+                        className="form-control"
                         id="Password_login"
                         onChange={actions.handleChange}
                         value={store.user.password}
