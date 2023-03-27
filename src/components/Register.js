@@ -66,14 +66,14 @@ const Register = () => {
                     <input
                         type="password"
                         name="password"
-                        className="form-control"
+                        className="form-controlfdasf"
                         id="Password"
                         onChange={actions.handleChange}
                         value={store.user.password}
                     />
                 </div>
                 <div className="input-group m-3">
-                    <label className="input-group-text" for="inputGroupFile01">Subir Foto</label>
+                    <label className="input-group-text" htmlFor="inputGroupFile01">Subir Foto</label>
                     <input type="file" className="form-control" id="inputGroupFile01" />
                 </div>
 

@@ -9,20 +9,20 @@ function Narv() {
   const tool = <FontAwesomeIcon icon={faHammer} bounce />;
   return (
     
-    <ul class="nav  nav-tabs">
-      <h3 class="ms-3">{tool} ATúservicio</h3>
-      <form class="d-flex " role="search">
-        <input class="form-control me-2 ms-5" type="search" placeholder="Search" style={{width:600}}/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+    <ul className="nav  nav-tabs">
+      <h3 className="ms-3">{tool} ATúservicio</h3>
+      <form className="d-flex " role="search">
+        <input className="form-control me-2 ms-5" type="search" placeholder="Search" style={{width:600}}/>
+        <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
      
-    <li class="nav-item ms-auto mt-3">
+    <li className="nav-item ms-auto mt-3">
       <Link to="/" >Home</Link>
     </li>
-    <li class="nav-item ms-3 mt-3">
+    <li className="nav-item ms-3 mt-3">
       <Link to="/signup">Register</Link>
     </li>
-    <li class="nav-item ms-3 mt-3">
+    <li className="nav-item ms-3 mt-3">
       <Link to="profile" >Profile</Link>
     </li>
  
