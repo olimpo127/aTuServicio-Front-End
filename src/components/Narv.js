@@ -9,7 +9,7 @@ function Narv() {
   const tool = <FontAwesomeIcon icon={faHammer} bounce />;
   return (
     
-    <ul class="nav  nav-tabs">
+    <ul class="narv  nav-tabs">
       <h3 class="ms-3">{tool} ATúservicio</h3>
       <form class="d-flex " role="search">
         <input class="form-control me-2 ms-5" type="search" placeholder="Search" style={{width:600}}/>
