@@ -1,85 +1,117 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { Context } from "../store/context"
 
 
 const Detail = () => {
-    const gear = <FontAwesomeIcon icon={faGear} spin style={{height:80}}/>;
-   
+  const { store, actions } = useContext(Context);
+  const gear = <FontAwesomeIcon icon={faGear} spin style={{ height: 80 }} />;
+
   return (
     <div className="container col-10 mt-5">
       <h1 className="post d-flex justify-content-center ms-5"><b className="m-3">New Post</b>{gear}</h1>
       <div className=" formulario card m-5">
-        <form class="row g-3 m-3">
-          <div class="col-md-6 ">
-            <label  class="form-label ">
-            <b>Title</b>
+        <form className="row g-3 m-3">
+          <div className="col-md-6 ">
+            <label className="form-label ">
+              <b>Title</b>
             </label>
-            <input type="text" class="form-control" name="title"/>
+            <input
+              type="text"
+              className="form-control"
+              name="title"
+              value={store.post.title}
+              onChange={actions.handleService}
+            />
           </div>
-          <div class="col-md-6">
-            <label  class="form-label">
-            <b>Price</b>
+          <div className="col-md-6">
+            <label className="form-label">
+              <b>Price</b>
             </label>
-            <input type="text" class="form-control" name="price" />
+            <input
+              type="text"
+              className="form-control"
+              name="price"
+              value={store.post.price}
+              onChange={actions.handleService}
+            />
           </div>
-          <div class="col-md-6">
-            <label for="inputState" class="form-label">
-            <b>Category</b>
+          <div className="col-md-6">
+            <label htmlFor="inputState" className="form-label">
+              <b>Category</b>
             </label>
-            <select id="inputState" class="form-select" name="category">
-              <option name="Carpentry">Carpentry</option>
-              <option name="Mechanics">Mechanics</option>
-              <option name="Educational">Educational</option>
-              <option name="Technology">Technology</option>
-              <option name="gardening">Gardening</option>
+            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.post.category} name="category">
+              <option name="carpentry" value="carpentry" >Carpentry</option>
+              <option name="mechanics" value="mechanics" >Mechanics</option>
+              <option name="educational" value ="educational" >Educational</option>
+              <option name="technology" value="technology" >Technology</option>
+              <option name="gardening" value="gardening" >Gardening</option>
             </select>
           </div>
-          <div class="col-6">
-            <label for="inputState" class="form-label">
-            <b>Availability</b>
+          <div className="col-6">
+            <label htmlFor="inputState" className="form-label">
+              <b>Availability</b>
             </label>
-            <select id="inputState" class="form-select">
-              <option>Immediate</option>
-              <option>Full time</option>
-              <option>Part time</option>
-              <option>Weekend</option>
+            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.post.availability} name="availability">
+              <option name="inmediate" value="inmediate">Immediate</option>
+              <option name="full_time" value="full_time">Full time</option>
+              <option name="part_time" value="part_time">Part time</option>
+              <option name="weekend" value="weekend">Weekend</option>
             </select>
           </div>
-          <div class="col-md-6">
-            <label for="inputCity" class="form-label">
-            <b>City</b>
+          <div className="col-md-6">
+            <label htmlFor="inputCity" className="form-label">
+              <b>City</b>
             </label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input
+              type="text"
+              className="form-control"
+              id="inputCity"
+              name="city"
+              value={store.post.city}
+              onChange={actions.handleService}
+            />
           </div>
-          <div class="col-md-4">
-            <label for="inputState" class="form-label">
-            <b>Region</b>
+          <div className="col-md-4">
+            <label htmlFor="inputState" className="form-label" >
+              <b>Region</b>
             </label>
-            <select id="inputState" class="form-select">
-              <option>Antofagasta.</option>
-              <option>Atacama</option>
-              <option>Metropolitana</option>
-              <option>O'Higgins</option>
-              <option>Ñuble</option>
-              <option>Magallanes </option>
+            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.post.region} name="region">
+              <option name="antofagasta" value="antofagasta" >Antofagasta.</option>
+              <option name="atacama" value="atacama" >Atacama</option>
+              <option name="metropolitana" value="metropolitana" >Metropolitana</option>
+              <option name="o'higgins" value="o'higgins" >O'Higgins</option>
+              <option name="ñuble" value="ñuble" >Ñuble</option>
+              <option name="magallanes" value="magallanes" >Magallanes </option>
             </select>
           </div>
-          <div class="col-md-2">
-            <label for="inputZip" class="form-label">
-            <b>Comuna</b>
+          <div className="col-md-2">
+            <label htmlFor="inputZip" className="form-label">
+              <b>Comuna</b>
             </label>
-            <input type="text" class="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              name="comuna"
+              value={store.post.comuna}
+              onChange={actions.handleService}
+            />
           </div>
-          <div class="form-group col-md-10">
-            <label for="exampleFormControlTextarea1">
+          <div className="form-group col-md-10">
+            <label htmlFor="exampleFormControlTextarea1">
               <b>Description</b>
             </label>
             <textarea
               className=" red form-control"
               rows="3"
+              type="text"
+              name="description"
+              value={store.post.description}
+              onChange={actions.handleService}
             ></textarea>
 
-            <small id="passwordHelpBlock" class="form-text text-muted">
+            <small id="passwordHelpBlock" className="form-text text-muted">
               Add any notes here.
             </small>
           </div>
@@ -89,22 +121,22 @@ const Detail = () => {
             <button
               type="btn"
               className="btn btn-warning"
-              for="inputGroupFile01"
+              htmlFor="inputGroupFile01"
             >
               Add Image
             </button>
           </div>
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" />
-              <label class="form-check-label" for="gridCheck">
+          <div className="col-12">
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" id="gridCheck" />
+              <label className="form-check-label" htmlFor="gridCheck">
                 Check me out
               </label>
             </div>
           </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-success">
-             Post Now
+          <div className="col-12">
+            <button type="submit" className="btn btn-success" onClick={() => actions.handleServiceCreation()}>
+              Post Now
             </button>
           </div>
         </form>
