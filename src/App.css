@@ -1,12 +1,13 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
 
 body{
     font-family: 'Exo', sans-serif;
+    background-image: url('./assets/img/Background.jpg');
 }
 
+.one{
+background-color: #4e54c8;
+
+}
 
 .context {
     width: 100%;
@@ -127,8 +128,21 @@ body{
     animation-delay: 0s;
     animation-duration: 11s;
 }
+ 
+.post{
+color: rgb(71, 8, 122);
+border-color: black;        
 
+}
+.formulario{
+    box-shadow: 10px 10px 10px 10px  rgb(166, 173, 189);
 
+}
+
+.narv{
+
+background-color:rgba(245, 240, 248, 0.699) ;    
+}
 
 @keyframes animate {
 
@@ -145,3 +159,4 @@ body{
     }
 
 }
+

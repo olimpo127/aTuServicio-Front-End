@@ -10,11 +10,11 @@ const Register = () => {
         <div>
             <div className="container text-center col-3 mt-5">
                 <div className="input-group m-3">
-                    <span className="input-group-text bg-dark text-light" id="basic-addon1">Name</span>
+                    <span className="input-group-text" id="basic-addon1">Name</span>
                     <input
                         type="text"
                         name="name"
-                        className="form-control bg-dark text-light"
+                        className="form-control"
                         placeholder="Name"
                         aria-label="Name"
                         aria-describedby="basic-addon1"
@@ -23,11 +23,11 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group m-3">
-                    <span className="input-group-text bg-dark text-light" id="basic-addon2">Lastname</span>
+                    <span className="input-group-text" id="basic-addon2">Lastname</span>
                     <input
                         type="text"
                         name="lastname"
-                        className="form-control bg-dark text-light"
+                        className="form-control"
                         placeholder="Lastname"
                         aria-label="Lastname"
                         aria-describedby="basic-addon2"
@@ -36,11 +36,11 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group m-3">
-                    <span className="input-group-text bg-dark text-light" id="basic-addon3">Username</span>
+                    <span className="input-group-text" id="basic-addon3">Username</span>
                     <input
                         type="text"
                         name="username"
-                        className="form-control bg-dark text-light"
+                        className="form-control"
                         placeholder="Username"
                         aria-label="Username"
                         aria-describedby="basic-addon3"
@@ -49,11 +49,11 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group m-3">
-                    <span className="input-group-text bg-dark text-light" id="basic-addon4">E-mail</span>
+                    <span className="input-group-text" id="basic-addon4">E-mail</span>
                     <input
                         type="text"
                         name="email"
-                        className="form-control bg-dark text-light"
+                        className="form-control"
                         placeholder="Email"
                         aria-label="Email"
                         aria-describedby="basic-addon4"
@@ -62,18 +62,18 @@ const Register = () => {
                     />
                 </div>
                 <div className=" input-group m-3">
-                    <label htmlFor="Password" className="input-group-text bg-dark text-light">Password</label>
+                    <label htmlFor="Password" className="input-group-text">Password</label>
                     <input
                         type="password"
                         name="password"
-                        className="form-control bg-dark text-light"
+                        className="form-controlfdasf"
                         id="Password"
                         onChange={actions.handleChange}
                         value={store.user.password}
                     />
                 </div>
                 <div className="input-group m-3">
-                    <label className="input-group-text" for="inputGroupFile01">Subir Foto</label>
+                    <label className="input-group-text" htmlFor="inputGroupFile01">Subir Foto</label>
                     <input type="file" className="form-control" id="inputGroupFile01" />
                 </div>
 

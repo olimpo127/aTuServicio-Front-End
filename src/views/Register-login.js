@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import "../App.css";
 
+=======
+import Register from "../components/Register"
+import Login from  "../components/Login"
+>>>>>>> 937ffbaf3f8985b22449b0a2eaa99d82fa1b7751
 
 function Signup() {
     const [login, setLogin] = useState(true);
@@ -14,6 +19,7 @@ function Signup() {
     }
 
     return (
+<<<<<<< HEAD
         <div style={{
             textAlign: 'center',
             marginTop: '50px',
@@ -80,6 +86,32 @@ function Signup() {
             <button>Submit</button>
         </div>
     );
+=======
+        <div className="m-3">
+            <ul className="nav nav-pills mt-5 d-flex justify-content-center bg-transparent" id="pills-tab" role="tablist">
+  <li className="nav-item" role="presentation">
+    <button className="nav-link active text-light" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Signup</button>
+  </li>
+  <li className="nav-item" role="presentation">
+    <button className="nav-link text-light" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Login</button>
+  </li>
+ 
+ 
+</ul>
+<div className="tab-content" id="pills-tabContent">
+  <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabIndex="0">
+  <Register/>
+  </div>
+  
+  <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabIndex="0">
+  <Login/>
+  </div>
+  
+
+</div>
+        </div>
+    )
+>>>>>>> 937ffbaf3f8985b22449b0a2eaa99d82fa1b7751
 }
 
 export default Signup;
