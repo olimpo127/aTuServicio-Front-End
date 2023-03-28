@@ -33,6 +33,9 @@ function Narv() {
       <li className="nav-item mt-3 bg-success rounded-pill px-4 me-5">
         <Link to="/detail" >Post your service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
       </li>
+      <li className="nav-item mt-3 bg-success rounded-pill px-4 me-5">
+        <Link to="/feed" >Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
+      </li>
     </ul>
   );
 }
