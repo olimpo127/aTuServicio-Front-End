@@ -25,6 +25,9 @@ function Narv() {
     <li className="nav-item ms-3 mt-3">
       <Link to="profile" >Profile</Link>
     </li>
+    <li className="nav-item ms-3 mt-3">
+      <Link to="/detail" >New Post</Link>
+    </li>
  
   </ul>
   );

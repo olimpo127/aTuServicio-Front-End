@@ -9,15 +9,15 @@ const getState = ({ setStore, getActions, getStore }) => {
                 email: "",
                 password: ""
             },
-            post: {
+            service: {
                 title: "",
                 price: "",
-                category: {},
-                availability: {},
+                category:"",
+                availability:"",
                 city: "",
-                region: {},
+                region: "",
                 comuna: "",
-                description: "",
+                service_description: "",
                 image: ""
             },
 
@@ -77,44 +77,42 @@ const getState = ({ setStore, getActions, getStore }) => {
                     },
                 });
             },
-            handleService: (e) => {
-                let { post } = getStore();
-
+            handleService: (i) => {
+                let { service } = getStore();
                 const {
                     target: { value, name },
-                } = e;
+                } = i;
                 setStore({
-                    post: {
-                        ...post,
+                    service: {
+                        ...service,
                         [name]: value
                     },
                 });
             },
-            handleServiceCreation: (e) => {
-                const { post } = getStore();
+            handleServiceCreation: (i) => {
+                
+                const { service } = getStore();
                 fetch("http://localhost:5000/services", {
                     headers: {
                         "Content-Type": "application/json"
                     },
                     method: "POST",
-                    body: JSON.stringify(post),
+                    body: JSON.stringify(service),
                 })
                     .then(res => res.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error));
                 setStore({
-                    post: {
+                    service: {
                         title: "",
                         price: "",
-                        category: {},
-                        availability: {},
+                        category: "",
+                        availability: "",
                         city: "",
-                        region: {},
+                        region: "",
                         comuna: "",
-                        description: "",
+                        service_description: "",
                         image: ""
-        
-        
                     },
                 });
             },

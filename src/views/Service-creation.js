@@ -21,7 +21,7 @@ const Detail = () => {
               type="text"
               className="form-control"
               name="title"
-              value={store.post.title}
+              value={store.service.title}
               onChange={actions.handleService}
             />
           </div>
@@ -33,7 +33,7 @@ const Detail = () => {
               type="text"
               className="form-control"
               name="price"
-              value={store.post.price}
+              value={store.service.price}
               onChange={actions.handleService}
             />
           </div>
@@ -41,7 +41,8 @@ const Detail = () => {
             <label htmlFor="inputState" className="form-label">
               <b>Category</b>
             </label>
-            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.post.category} name="category">
+            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.service.category} name="category">
+              <option>Select Category...</option>
               <option name="carpentry" value="carpentry" >Carpentry</option>
               <option name="mechanics" value="mechanics" >Mechanics</option>
               <option name="educational" value ="educational" >Educational</option>
@@ -53,7 +54,8 @@ const Detail = () => {
             <label htmlFor="inputState" className="form-label">
               <b>Availability</b>
             </label>
-            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.post.availability} name="availability">
+            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.service.availability} name="availability">
+              <option>Select Availability...</option>
               <option name="inmediate" value="inmediate">Immediate</option>
               <option name="full_time" value="full_time">Full time</option>
               <option name="part_time" value="part_time">Part time</option>
@@ -69,7 +71,7 @@ const Detail = () => {
               className="form-control"
               id="inputCity"
               name="city"
-              value={store.post.city}
+              value={store.service.city}
               onChange={actions.handleService}
             />
           </div>
@@ -77,7 +79,8 @@ const Detail = () => {
             <label htmlFor="inputState" className="form-label" >
               <b>Region</b>
             </label>
-            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.post.region} name="region">
+            <select id="inputState" className="form-select" onChange={actions.handleService} value={store.service.region} name="region">
+              <option>Select Region...</option>
               <option name="antofagasta" value="antofagasta" >Antofagasta.</option>
               <option name="atacama" value="atacama" >Atacama</option>
               <option name="metropolitana" value="metropolitana" >Metropolitana</option>
@@ -91,10 +94,11 @@ const Detail = () => {
               <b>Comuna</b>
             </label>
             <input
+            id="inputZip"
               type="text"
               className="form-control"
               name="comuna"
-              value={store.post.comuna}
+              value={store.service.comuna}
               onChange={actions.handleService}
             />
           </div>
@@ -103,16 +107,17 @@ const Detail = () => {
               <b>Description</b>
             </label>
             <textarea
+            id="exampleFormControlTextarea1"
               className=" red form-control"
               rows="3"
               type="text"
-              name="description"
-              value={store.post.description}
+              name="service_description"
+              value={store.service_description}
               onChange={actions.handleService}
             ></textarea>
 
             <small id="passwordHelpBlock" className="form-text text-muted">
-              Add any notes here.
+              Add your description post.
             </small>
           </div>
 
