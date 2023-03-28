@@ -21,6 +21,8 @@ const getState = ({ setStore, getActions, getStore }) => {
                 image: ""
             },
 
+            myAccount: {}
+
         },
         actions: {
             handleChange: (e) => {
@@ -113,11 +115,33 @@ const getState = ({ setStore, getActions, getStore }) => {
                         comuna: "",
                         description: "",
                         image: ""
-        
-        
+
+
                     },
                 });
             },
+
+            getAccount: (id) => {
+                
+                fetch("http://localhost:5000/users/" + id, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        
+                    },
+                    method: "GET",
+                })
+                    .then((res) => res.json)
+                    .then((data) => {
+                        setStore({myAccount: data})
+
+                    })
+                    .catch(error => console.log(error));
+
+            }
+
+
+
+
         },
     };
 };

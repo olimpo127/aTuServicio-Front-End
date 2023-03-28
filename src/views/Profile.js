@@ -1,7 +1,17 @@
 import { Button } from "bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGears } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { Context } from "../store/context"
+import { useEffect } from "react";
 
 
 const Profile = () => {
+const icon1 = <FontAwesomeIcon icon={faGears} />
+const { store, actions } = useContext(Context);
+useEffect ( () => {
+  actions.getAccount(1);
+},[])
 
   return (
 
@@ -20,7 +30,7 @@ const Profile = () => {
 
           <div class="abs-center panel  d-flex justify-content-center aling-items-center ">
             <div class="panel-title">
-              <h1 class="text-title">Raul Caxym</h1>
+              <h1 class="text-title">{store.myAccount?.name}</h1>
             </div>
 
           </div>
@@ -40,19 +50,18 @@ const Profile = () => {
                 <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Customer Reviews</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Account Settings</a>
+                <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">{icon1}Account Settings</a>
               </li>
             </ul>
 
             <div class="tab-content py-4" id="myTabContent">
               <div class="tab-pane fade show active" id="orders" role="tabpanel" aria-labelledby="orders-tab">
                 <p>Mis Compras</p>
-                <p>Messages</p>
+                
 
               </div>
               <div class="tab-pane fade show active" id="sell" role="tabpanel" aria-labelledby="sell-tab">
                 <p>Mis Publicaciones</p>
-                <p>Messages</p>
                 <p>Ventas</p>
               </div>
               <div class="tab-pane fade show active" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
