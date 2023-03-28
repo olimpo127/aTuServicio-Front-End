@@ -1,7 +1,17 @@
 import Register from "../components/Register"
 import Login from  "../components/Login"
 
-const Signup = () =>{
+function Signup() {
+    /* const [login, setLogin] = useState(true); */
+
+    // function handleLoginClick() {
+    //     setLogin(true);
+    // }
+
+    // function handleSignupClick() {
+    //     setLogin(false);
+    // }
+
     return (
         <div className="m-3">
             <ul className="nav nav-pills mt-5 d-flex justify-content-center bg-transparent" id="pills-tab" role="tablist">
@@ -28,4 +38,5 @@ const Signup = () =>{
         </div>
     )
 }
+
 export default Signup;
