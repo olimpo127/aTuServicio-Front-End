@@ -190,3 +190,20 @@ background-color:rgba(245, 240, 248, 0.699) ;
 }
 
 
+.nav-tabs, .nav-tabs * {
+    color: black;
+    text-decoration: none;
+    
+  }
+  
+  .nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .home {
+    margin-right: auto;
+  }
+  

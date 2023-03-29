@@ -1,14 +1,10 @@
 import { Modal, Alert, Button } from 'react-bootstrap';
 import { Context } from '../../store/context';
 
-export default function DeleteModal({ isOpen, close }) {
-	const { logout } = useAuth();
+export default function DeleteAccount({ isOpen, close }) {
+	const { store, actions } = useContext(Context);
 
-	const handleDelete = () => {
-		// Petición http
-		// close()
-		logout();
-	};
+	
 
 	return (
 		<Modal show={isOpen} onHide={close}>
