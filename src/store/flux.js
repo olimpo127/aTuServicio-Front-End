@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const getState = ({ setStore, getActions, getStore }) => {
 
     return {
@@ -130,13 +132,20 @@ const getState = ({ setStore, getActions, getStore }) => {
                     },
                     method: "GET",
                 })
-                    .then((res) => res.json)
+                    .then((res) => res.json())
                     .then((data) => {
                         setStore({myAccount: data})
 
                     })
                     .catch(error => console.log(error));
 
+            },
+
+            useModal: () => {
+                const [isOpen, setIsOpen] = useState();
+                const open = () => setIsOpen(true);
+                const close = () => setIsOpen(false);
+                return [isOpen, open, close];
             }
 
 

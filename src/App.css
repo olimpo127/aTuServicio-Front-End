@@ -164,13 +164,13 @@ background-color:rgba(245, 240, 248, 0.699) ;
 .image_inner_container{
     border-radius: 50%;
     padding: 5px;
- background: #6610f2; 
- background: -webkit-linear-gradient(to bottom, gray, #0d6efd, gray); 
- background: linear-gradient(to bottom, gray, #0d6efd, gray);
+ background: #e3f210; 
+ background: -webkit-linear-gradient(to bottom, gray, #fdd10d, gray); 
+ background: linear-gradient(to bottom, gray, #fdd10d, gray);
 }
 .image_inner_container img{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
     border: 5px solid white;
 }
@@ -179,10 +179,14 @@ background-color:rgba(245, 240, 248, 0.699) ;
     font-family: raleway;
     font-size: 40px;
     color: #000;
+    
+   
 }
 
-  .abs-center {
+.abs-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
