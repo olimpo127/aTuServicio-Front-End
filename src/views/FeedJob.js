@@ -9,9 +9,9 @@ const FeedJob = () => {
     <div className="container">
             <div className="row ">
                 <h1>Feed</h1>
-                <div className="col w-25"><SearchFeed/></div>
+                <div className="col-md-3 "><SearchFeed/></div>
             
-                <div className="col w-75"><Feeds /></div>
+                <div className="col-md-9 "><Feeds /></div>
             </div>
 
     </div>

@@ -3,7 +3,7 @@ import Feed from './Feed';
 const Feeds = () => {
     const [feeds, setFeeds] = useState([])
 
-    const URL = 'https://picsum.photos/v2/list'
+    const URL = 'https://jsonplaceholder.typicode.com/posts'
     const getFeed = () => {
         fetch(URL)
             .then(res => res.json())

@@ -8,6 +8,7 @@ import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
 import FeedJob from './views/FeedJob';
+import Description from './views/Description' 
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path = "/service" element = {<Service/>}/>
         <Route path = "/detail" element = {<Detail/>}/>
         <Route path = "/feed" element = {<FeedJob/>}/>
+        <Route path="/feed/:id" element={<Description/>} />
       </Routes>
       </BrowserRouter>
     </div>

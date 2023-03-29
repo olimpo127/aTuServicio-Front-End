@@ -6,7 +6,7 @@ const SearchFeed = () => {
   const [ search, setSearch ] = useState("")
 
   
-  const URL = 'https://jsonplaceholder.typicode.com/users'
+  const URL = 'https://jsonplaceholder.typicode.com/posts'
 
  
   const showData = () => {
@@ -23,7 +23,7 @@ const SearchFeed = () => {
 
 
    
-   const results = !search ? users : users.filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+   const results = !search ? users : users.filter((dato) => dato.title.toLowerCase().includes(search.toLocaleLowerCase())) 
   
    useEffect( ()=> {
     showData()
@@ -32,6 +32,12 @@ const SearchFeed = () => {
   return (
     <div>
         <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+                Default checkbox
+            </label>
+        </div>
         <select className="form-select" aria-label="Default select example">
             <option selected>Región</option>
             <option value="1">Arica</option>
@@ -47,8 +53,8 @@ const SearchFeed = () => {
             </thead>
             <tbody>
                 { results.map( (user) => (
-                    <tr key={user.id}>
-                        <td>{user.name}</td>
+                    <tr key={user.title}>
+                        <td>{user.body}</td>
                         
                     </tr>                    
                 ))}
