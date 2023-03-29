@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Feed from './Feed'
 
 const SearchFeed = () => {
   
@@ -30,21 +31,40 @@ const SearchFeed = () => {
   }, [])
  
   return (
-    <div>
-        <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-            <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
-            </label>
+    <>
+        <div>
+            <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                </label>
+            </div>
+            <select className="form-select" aria-label="Default select example">
+                <option selected>Región</option>
+                <option value="1">Arica</option>
+                <option value="2">Iquique</option>
+                <option value="3">Antofagasta</option>
+            </select>
+            
         </div>
-        <select className="form-select" aria-label="Default select example">
-            <option selected>Región</option>
-            <option value="1">Arica</option>
-            <option value="2">Iquique</option>
-            <option value="3">Antofagasta</option>
-        </select>
-        <table className='table table-striped table-hover mt-5 shadow-lg'>
+        <div>
+        { results.map( (...user) => <Feed key={user.title} {...user.body} />
+                     
+                        
+                        
+                                     
+                )}
+        </div>
+        
+    </>
+    )
+}
+export default SearchFeed;
+
+
+/*
+<table className='table table-striped table-hover mt-5 shadow-lg'>
             <thead>
                 <tr className='bg-curso text-white'>
                     <th>Resultados</th>
@@ -59,8 +79,4 @@ const SearchFeed = () => {
                     </tr>                    
                 ))}
             </tbody>
-        </table>
-    </div>
-  )
-}
-export default SearchFeed;
+        </table>*/
