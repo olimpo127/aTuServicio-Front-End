@@ -177,17 +177,13 @@ background-color:rgba(245, 240, 248, 0.699) ;
 
 .panel-title {
     font-family: raleway;
-    font-size: 40px;
+    
     color: #000;
     
    
 }
 
-.abs-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 
 .nav-tabs, .nav-tabs * {

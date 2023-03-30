@@ -23,7 +23,19 @@ const getState = ({ setStore, getActions, getStore }) => {
                 image: ""
             },
 
-            myAccount: {}
+            myAccount: {},
+
+            showEditAccount: false,
+            showChangePassword: false,
+            showDeleteAccount: false,
+
+
+            guardaUsuario: {
+                name:"",
+                username:"",
+                email:""
+            },
+    
 
         },
         actions: {
@@ -141,12 +153,37 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             },
 
-            useModal: () => {
-                const [isOpen, setIsOpen] = useState();
-                const open = () => setIsOpen(true);
-                const close = () => setIsOpen(false);
-                return [isOpen, open, close];
-            }
+
+            openEditAccount: () => {
+                setStore({showEditAccount: true});
+                console.log("editaccount")
+            },
+
+            closeEditAccount: () => {
+                setStore({showEditAccount: false})
+            },
+
+            openChangePassword: () => {
+                setStore({showChangePassword: true});
+                console.log("changePassword")
+            },
+
+            closeChangePassword: () => {
+                setStore({showChangePassword: false})
+            },
+
+            openDeleteAccount: () => {
+                setStore({showDeleteAccount: true});
+                console.log("delete")
+            },
+
+            closeDeleteAccount: () => {
+                setStore({showDeleteAccount: false})
+            },
+
+
+
+            
 
 
 
