@@ -36,7 +36,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     },
                 });
             },
-            handleUserRegister: (e) => {
+            handleUserRegister: () => {
                 const { user } = getStore();
                 fetch("http://localhost:5000/users", {
                     headers: {
@@ -59,6 +59,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 });
             },
             handleUserLogin: (e) => {
+                e.preventDefault();
                 const { user } = getStore();
                 fetch("http://localhost:5000/login", {
                     headers: {
@@ -77,11 +78,11 @@ const getState = ({ setStore, getActions, getStore }) => {
                     },
                 });
             },
-            handleService: (i) => {
+            handleService: (e) => {
                 let { service } = getStore();
                 const {
                     target: { value, name },
-                } = i;
+                } = e;
                 setStore({
                     service: {
                         ...service,
@@ -89,9 +90,10 @@ const getState = ({ setStore, getActions, getStore }) => {
                     },
                 });
             },
-            handleServiceCreation: (i) => {
-                
+            handleServiceCreation: (e) => {
+                e.preventDefault();
                 const { service } = getStore();
+                console.log(service)
                 fetch("http://localhost:5000/services", {
                     headers: {
                         "Content-Type": "application/json"
@@ -100,21 +102,27 @@ const getState = ({ setStore, getActions, getStore }) => {
                     body: JSON.stringify(service),
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data))
-                    .catch(error => console.log(error));
-                setStore({
-                    service: {
-                        title: "",
-                        price: "",
-                        category: "",
-                        availability: "",
-                        city: "",
-                        region: "",
-                        comuna: "",
-                        service_description: "",
-                        image: ""
-                    },
-                });
+                    .then(data =>  {
+                        alert("Servicio Creado Satisfactoriamente ");
+                        setStore({
+                            service: {
+                                title: "",
+                                price: "",
+                                category: "",
+                                availability: "",
+                                city: "",
+                                region: "",
+                                comuna: "",
+                                service_description: "",
+                                image: ""
+                            },
+                        });
+                        console.log(data);
+                    })
+                    .catch(error => { 
+                        alert("Ocurrio un error al registrar el servicio " + error.message);
+                        console.log(error);
+                    });
             },
         },
     };
