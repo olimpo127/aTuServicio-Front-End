@@ -30,7 +30,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             showDeleteAccount: false,
 
 
-            guardaUsuario: {
+            profile: {
                 name:"",
                 username:"",
                 email:""
@@ -180,6 +180,55 @@ const getState = ({ setStore, getActions, getStore }) => {
             closeDeleteAccount: () => {
                 setStore({showDeleteAccount: false})
             },
+
+            getProfile: () => {
+                
+                fetch("http://localhost:5000/users/", {
+                    headers: {
+                        "Content-Type": "application/json",
+                        
+                    },
+                    method: "GET",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setStore({profile: data.results});
+                        console.log("ok")
+
+                    })
+                    .catch(error => console.log(error));
+            },
+
+            handleReadProfile: (e) => {
+                let {profile}=getStore;
+                setStore({
+                    profile:{
+                        ...profile,
+                    [e.target.name]:e.target.value}
+                    }
+                )
+            },
+
+            handleEditProfile: (e) => {
+                const { profile } = getStore();
+                fetch("http://localhost:5000/login", {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    method: "POST",
+                    body: JSON.stringify(profile),
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        setStore({
+                            profile: data
+                        })
+                        console.log(data)
+                    })
+                    .catch(error => console.log(error));
+            },
+
+           
 
 
 

@@ -16,11 +16,16 @@ export default function EditAccount() {
 				<Form >
 					<Form.Group>
 						<Form.Label>Name</Form.Label>
-						<Form.Control 
-							type="text"
-							placeholder="Write a name"
-							
+						<Form.Control
+                        type="text"
+                        name="name"
+                        className="form-control"
+                        placeholder="Write a name"
+                        onChange={actions.handleEditProfile}
+                        value={store.profile.name}
 						/>
+						
+                
 						
 					</Form.Group>
 					
@@ -48,7 +53,7 @@ export default function EditAccount() {
 				<Button variant="secondary" onClick={actions.closeEditAccount}>
 					Cancel
 				</Button>
-				<Button variant="primary" 
+				<Button variant="primary" onClick={() => actions.handleEditProfile()}
 					disabled={store}
 				>
 					Update my Account
