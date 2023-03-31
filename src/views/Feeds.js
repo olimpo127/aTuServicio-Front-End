@@ -68,7 +68,7 @@ export const Feed = (props) =>{
             <Link to={"/"+props.id} className="card mb-3 text-link rounded-4 shadow-lg p-1 mb-5 bg-body rounded" >
                 <div className="row g-0">
                     <div className="col-md-3">
-                        <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg" className="img-fluid rounded-start" alt="..."/>
+                        <img src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg" className="img-fluid rounded-start" alt="..."/>
                     </div>
                     <div className="col-md-7">
                         <div className="card-body">

@@ -28,7 +28,7 @@ const DetailFeed = () => {
                         <div id="carouselExampleControls" class="carousel slide my-3" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg" class="d-block w-100" alt="..."/>
+                                    <img src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg" class="d-block w-100" alt="..."/>
                                 </div>
                                 
                             </div>
