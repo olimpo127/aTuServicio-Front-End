@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-
-
 const DescriptionFeeds = () => {
-    const [feeds, setFeeds] = useState([])
-    const { id } = useParams();
+    const [description, serDescription] = useState([])
+    let { id } = useParams();
+    console.log(id)
     const URL = `https://jsonplaceholder.typicode.com/posts${id}`
     const getFeed = () => {
         fetch(URL)
             .then(res => res.json())
-            .then(data => setFeeds(data))
+            .then(data => serDescription(data))
             .catch(err => console.error(err));
         }
-        
+        console.log(description)
         useEffect(() => {
             getFeed();
             
-        }, [])
-        let info = {...feeds}
-        console.log(feeds)
+        }, [URL])
+       
         return(
-            <div className='feeds'>
+            <div className=''>
                 
-                    <DescriptionFeed key={feeds.id} {...info}/>
+                    <DescriptionFeed key={description.id} description={description}/>
                 
             </div>
         )
@@ -32,8 +30,9 @@ const DescriptionFeeds = () => {
 
 
 
-const DescriptionFeed = (props) =>{
-    console.log(props)
+const DescriptionFeed = ({description}) =>{
+    console.log(description)
+    console.log(description.title)
     return(
         
             <div className="card mb-3" >
@@ -43,9 +42,9 @@ const DescriptionFeed = (props) =>{
                     </div>
                     <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">{props.title}</h5>
-                        <p class="card-text">{props.body}</p>
-                        <p class="card-text">{props.body}</p>
+                        <h5 className="card-title">title{description.title}</h5>
+                        <p className="card-text">body{description.body}</p>
+                        <p className="card-text">detalle{description.body}</p>
                     
                     </div>
                     </div>

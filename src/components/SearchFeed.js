@@ -1,5 +1,12 @@
+const SearchFeed = () => {
+    return (
+        <h2>hola</h2>
+    )
+}
+export default SearchFeed;
+/*
 import React, {useState, useEffect} from 'react'
-import Feed from './Feed'
+import Feeds from './Feeds'
 
 const SearchFeed = () => {
   
