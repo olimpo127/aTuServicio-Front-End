@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import Search from '../components/SearchFeed';
 const Feeds = () => {
     const [feeds, setFeeds] = useState([])
     const [search, setSearch] = useState('')
 
-    const URL = 'https://jsonplaceholder.typicode.com/posts'
+    const URL = `https://jsonplaceholder.typicode.com/posts${search}`
     const getFeed = () => {
         fetch(URL)
             .then(res => res.json())
@@ -29,11 +30,29 @@ const Feeds = () => {
    */
      
         return(
-            <div className=''>
-                {
-                    feeds &&
-                    feeds.map(({...f}) =><Feed key={f.id} {...f}/>)
-                }
+            <div className='container'>
+                <h1>Feed</h1>
+                <div className='row'>
+                    <div className='col-3'></div>
+                    <div className='col-8'>                        
+                        <div className='row'>
+                            <div className='col-12'>
+                                <Search  setSearch={setSearch}/>
+                            </div>
+                        </div>
+                        <div className="row ">
+                            
+                            <div className="col-md-12 "> 
+                            
+                                {
+                                    feeds &&
+                                    feeds.map(({...f}) =><Feed key={f.id} {...f}/>)
+                                }
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -46,7 +65,7 @@ export const Feed = (props) =>{
     console.log(props)
     return(
         
-            <Link to={"/"+props.id} className="card mb-3" >
+            <Link to={"/"+props.id} className="card mb-3 text-link" >
                 <div className="row g-0">
                     <div className="col-md-4">
                     <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg" className="img-fluid rounded-start" alt="..."/>

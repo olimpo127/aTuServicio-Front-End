@@ -7,8 +7,9 @@ import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
-import FeedJob from './views/FeedJob';
-import Description from './views/Description' 
+
+import Feeds from './views/Feeds';
+import DetailFeed from './views/DetailFeed';
 
 
 
@@ -24,8 +25,8 @@ function App() {
         <Route path = "/signup" element ={<Signup/>}/>
         <Route path = "/service" element = {<Service/>}/>
         <Route path = "/detail" element = {<Detail/>}/>
-        <Route path = "/feed" element = {<FeedJob/>}/>
-        <Route path="/:id" element={<Description/>} />
+        <Route path = "/feed" element = {<Feeds/>}/>
+        <Route path="/:id" element={<DetailFeed/>} />
       </Routes>
       </BrowserRouter>
     </div>
