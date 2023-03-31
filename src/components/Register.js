@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Context } from "../store/context"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faUpload } from "@fortawesome/free-solid-svg-icons";
+import Avatar from "../components/Avatar";
 
 
 const Register = () => {
+    const upload = <FontAwesomeIcon icon={faUpload} />
     const { store, actions } = useContext(Context);
     return (
         <div>
@@ -66,16 +70,14 @@ const Register = () => {
                     <input
                         type="password"
                         name="password"
-                        className="form-controlfdasf"
+                        className="form-control"
                         id="Password"
                         onChange={actions.handleChange}
                         value={store.user.password}
                     />
                 </div>
-                <div className="input-group m-3">
-                    <label className="input-group-text" htmlFor="inputGroupFile01">Subir Foto</label>
-                    <input type="file" className="form-control" id="inputGroupFile01" />
-                </div>
+                <Avatar/>
+
 
                 <button type="submit" className="btn btn-secondary" onClick={() => actions.handleUserRegister()}>
                     SUBMIT

@@ -5,11 +5,11 @@ import logo from "../assets/img/logo.png";
 const Home = () => {
   return (
     <div>
-      <div class="info d-flex align-items-center p-5">
-        <div class="container">
-          <div class="row justify-content-center ">
-            <div class="col-lg-8 text-center text-light">
-              <img src={logo} data-aos="fade-down" />
+      <div className="info d-flex align-items-center p-5">
+        <div className="container">
+          <div className="row justify-content-center ">
+            <div className="col-lg-8 text-center text-light">
+              <img src={logo} data-aos="fade-down" alt="logo" />
               <p data-aos="fade-up" className="fs-5 mt-5">
                 Bienvenidos a nuestra página web de servicios de reparación y
                 mantenimiento del hogar, donde nos esforzamos por ofrecerle
