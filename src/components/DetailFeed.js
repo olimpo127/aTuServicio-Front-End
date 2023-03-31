@@ -3,9 +3,14 @@ import { useParams } from 'react-router-dom';
 
 const DescriptionFeeds = () => {
     const [description, serDescription] = useState([])
+    //let { name, location, origin, gender, image, status, species } = fetchedData;
+    let {title, body} = description
+    console.log(title)
+    console.log(body)
+    console.log(description)
     let { id } = useParams();
     console.log(id)
-    const URL = `https://jsonplaceholder.typicode.com/posts${id}`
+    const URL = `https://jsonplaceholder.typicode.com/posts/${id}`
     const getFeed = () => {
         fetch(URL)
             .then(res => res.json())
@@ -19,22 +24,6 @@ const DescriptionFeeds = () => {
         }, [URL])
        
         return(
-            <div className=''>
-                
-                    <DescriptionFeed key={description.id} description={description}/>
-                
-            </div>
-        )
-    }
-
-
-
-
-const DescriptionFeed = ({description}) =>{
-    console.log(description)
-    console.log(description.title)
-    return(
-        
             <div className="card mb-3" >
                 <div className="row g-0">
                     <div className="col-md-4">
@@ -42,16 +31,20 @@ const DescriptionFeed = ({description}) =>{
                     </div>
                     <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">title{description.title}</h5>
-                        <p className="card-text">body{description.body}</p>
-                        <p className="card-text">detalle{description.body}</p>
+                        <h5 className="card-title">title{title}</h5>
+                        <p className="card-text">body{body}</p>
+                        <p className="card-text">detalle{body}</p>
                     
                     </div>
                     </div>
                 </div>
             </div>
-    
-    )
-}
+            
+        )
+    }
+
+
+
+
 
 export default DescriptionFeeds;
