@@ -42,9 +42,9 @@ const DetailFeed = () => {
                             </button>
                         </div>
                         <div className='card-body'>
-                            <h5 className="card-title  mb-2">title {title}</h5>
-                            <p className="card-text">body {body}</p>
-                            <p className="card-text">detalle {body}</p>
+                            <h5 className="card-title  mb-2">Title {title}</h5>
+                            <p className="card-text">Tervice_description {body}</p>
+                            <p className="card-text">Detalle {body}</p>
 
                         </div>
 

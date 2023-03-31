@@ -65,21 +65,29 @@ export const Feed = (props) =>{
     console.log(props)
     return(
         
-            <Link to={"/"+props.id} className="card mb-3 text-link" >
+            <Link to={"/"+props.id} className="card mb-3 text-link rounded-4 shadow-lg p-1 mb-5 bg-body rounded" >
                 <div className="row g-0">
-                    <div className="col-md-4">
-                    <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg" className="img-fluid rounded-start" alt="..."/>
+                    <div className="col-md-3">
+                        <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg" className="img-fluid rounded-start" alt="..."/>
                     </div>
-                    <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">Titulo{props.title}</h5>
-                        <p className="card-text">Descripcion{props.body}</p>
-                        <p className="card-text">description 2{props.height}</p>
+                    <div className="col-md-7">
+                        <div className="card-body">
+                            <h5 className="card-title">Titulo{props.title}</h5>
+                            <p className="card-text">Breve Descripcion{props.body}</p>                           
+                
+                            <button className="btn btn-primary"> click</button>
                         
-                        <button className="btn btn-primary"> click</button>
+                        </div>
+                    </div>
                     
-                    </div>
-                    </div>
+                     <div className='col-1 mt-3'>
+                        <p className="card-text fw-semibold">Categoria</p>
+                        <p className="card-text fw-semibold">Comuna{props.height}</p>
+                        <p className="card-text fw-semibold">User{props.height}</p>
+                    </div    >      
+
+                    
+                    
                 </div>
             </Link>
     
