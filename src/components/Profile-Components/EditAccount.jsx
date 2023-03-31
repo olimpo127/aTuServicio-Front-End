@@ -21,8 +21,8 @@ export default function EditAccount() {
                         name="name"
                         className="form-control"
                         placeholder="Write a name"
-                        onChange={actions.handleEditProfile}
-                        value={store.profile.name}
+                        onChange={actions.handleChangeRegister}
+                        value={store.user.name}
 						/>
 						
                 
@@ -53,8 +53,8 @@ export default function EditAccount() {
 				<Button variant="secondary" onClick={actions.closeEditAccount}>
 					Cancel
 				</Button>
-				<Button variant="primary" onClick={() => actions.handleEditProfile()}
-					disabled={store}
+				<Button variant="primary" type="submit"
+					
 				>
 					Update my Account
 				</Button>

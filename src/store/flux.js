@@ -30,12 +30,12 @@ const getState = ({ setStore, getActions, getStore }) => {
             showDeleteAccount: false,
 
 
-            profile: {
+            /*profile: {
                 name:"",
                 username:"",
                 email:""
-            },
-    
+            },*/
+
 
         },
         actions: {
@@ -136,17 +136,17 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             getAccount: (id) => {
-                
+
                 fetch("http://localhost:5000/users/" + id, {
                     headers: {
                         "Content-Type": "application/json",
-                        
+
                     },
                     method: "GET",
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        setStore({myAccount: data})
+                        setStore({ myAccount: data })
 
                     })
                     .catch(error => console.log(error));
@@ -155,84 +155,102 @@ const getState = ({ setStore, getActions, getStore }) => {
 
 
             openEditAccount: () => {
-                setStore({showEditAccount: true});
+                setStore({ showEditAccount: true });
                 console.log("editaccount")
             },
 
             closeEditAccount: () => {
-                setStore({showEditAccount: false})
+                setStore({ showEditAccount: false })
             },
 
             openChangePassword: () => {
-                setStore({showChangePassword: true});
+                setStore({ showChangePassword: true });
                 console.log("changePassword")
             },
 
             closeChangePassword: () => {
-                setStore({showChangePassword: false})
+                setStore({ showChangePassword: false })
             },
 
             openDeleteAccount: () => {
-                setStore({showDeleteAccount: true});
+                setStore({ showDeleteAccount: true });
                 console.log("delete")
             },
 
             closeDeleteAccount: () => {
-                setStore({showDeleteAccount: false})
+                setStore({ showDeleteAccount: false })
             },
 
-            getProfile: () => {
-                
-                fetch("http://localhost:5000/users/", {
-                    headers: {
-                        "Content-Type": "application/json",
-                        
-                    },
-                    method: "GET",
-                })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        setStore({profile: data.results});
-                        console.log("ok")
+            /* getProfile: () => {
+                 
+                 fetch("http://localhost:5000/users/", {
+                     headers: {
+                         "Content-Type": "application/json",
+                         
+                     },
+                     method: "GET",
+                 })
+                     .then((res) => res.json())
+                     .then((data) => {
+                         setStore({profile: data.results});
+                         console.log("ok")
+ 
+                     })
+                     .catch(error => console.log(error));
+             },*/
 
-                    })
-                    .catch(error => console.log(error));
+            /* handleReadProfile: (e) => {
+                 let {profile}=getStore;
+                 setStore({
+                     profile:{
+                         ...profile,
+                     [e.target.name]:e.target.value}
+                     }
+                 )
+             },*/
+
+            /* handleEditProfile: (e) => {
+                 const { profile } = getStore();
+                 fetch("http://localhost:5000/login", {
+                     headers: {
+                         "Content-Type": "application/json"
+                     },
+                     method: "POST",
+                     body: JSON.stringify(profile),
+                 })
+                     .then(res => res.json())
+                     .then(data => {
+                         setStore({
+                             profile: data
+                         })
+                         console.log(data)
+                     })
+                     .catch(error => console.log(error));
+             },*/
+
+            handleChangeRegister: (e) => {
+                const store = getStore();
+                const { user } = store;
+                user[e.target.name] = e.target.value;
+                setStore = ({ user: user });
             },
 
-            handleReadProfile: (e) => {
-                let {profile}=getStore;
+            storeRegisterInfo: () => {
                 setStore({
-                    profile:{
-                        ...profile,
-                    [e.target.name]:e.target.value}
+                    user: {
+                        name: "",
+                        lastname: "",
+                        username: "",
+                        email: "",
+                        password: ""
                     }
-                )
-            },
-
-            handleEditProfile: (e) => {
-                const { profile } = getStore();
-                fetch("http://localhost:5000/login", {
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    method: "POST",
-                    body: JSON.stringify(profile),
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        setStore({
-                            profile: data
-                        })
-                        console.log(data)
-                    })
-                    .catch(error => console.log(error));
-            },
-
-           
+            }
 
 
 
-            
+
+
 
 
 
