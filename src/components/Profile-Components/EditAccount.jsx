@@ -17,35 +17,39 @@ export default function EditAccount() {
 					<Form.Group>
 						<Form.Label>Name</Form.Label>
 						<Form.Control
-                        type="text"
-                        name="name"
-                        className="form-control"
-                        placeholder="Write a name"
-                        onChange={actions.handleChangeRegister}
-                        value={store.user.name}
-						/>
-						
-                
-						
-					</Form.Group>
-					
-					<Form.Group>
-						<Form.Label>Username</Form.Label>
-						<Form.Control 
 							type="text"
-							placeholder="Write a user"
+							name="name"
+							className="form-control"
+							placeholder="Write a name"
+							onChange={(event) => actions.handleChangeRegister(event, "name")}
+							value={store.user.name}
 							
 						/>
-						
+
+
+
+					</Form.Group>
+
+					<Form.Group>
+						<Form.Label>Username</Form.Label>
+						<Form.Control
+							type="text"
+							placeholder="Write a user"
+							onChange={(event) => actions.handleChangeRegister(event, "username")}
+							value={store.user.username}
+						/>
+
 					</Form.Group>
 					<Form.Group>
 						<Form.Label>Email</Form.Label>
-						<Form.Control 
+						<Form.Control
 							type="email"
 							placeholder="Write an email"
-							
+							onChange={(event) => actions.handleChangeRegister(event, "email")}
+							value={store.user.email}
+
 						/>
-						
+
 					</Form.Group>
 				</Form>
 			</Modal.Body>
@@ -53,8 +57,8 @@ export default function EditAccount() {
 				<Button variant="secondary" onClick={actions.closeEditAccount}>
 					Cancel
 				</Button>
-				<Button variant="primary" type="submit"
-					
+				<Button variant="primary"
+
 				>
 					Update my Account
 				</Button>

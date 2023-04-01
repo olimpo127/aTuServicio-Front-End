@@ -30,11 +30,6 @@ const getState = ({ setStore, getActions, getStore }) => {
             showDeleteAccount: false,
 
 
-            /*profile: {
-                name:"",
-                username:"",
-                email:""
-            },*/
 
 
         },
@@ -187,61 +182,39 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({ showDeleteAccount: false })
             },
 
-            /* getProfile: () => {
-                 
-                 fetch("http://localhost:5000/users/", {
-                     headers: {
-                         "Content-Type": "application/json",
-                         
-                     },
-                     method: "GET",
-                 })
-                     .then((res) => res.json())
-                     .then((data) => {
-                         setStore({profile: data.results});
-                         console.log("ok")
- 
-                     })
-                     .catch(error => console.log(error));
-             },*/
 
-            /* handleReadProfile: (e) => {
-                 let {profile}=getStore;
-                 setStore({
-                     profile:{
-                         ...profile,
-                     [e.target.name]:e.target.value}
-                     }
-                 )
-             },*/
 
-            /* handleEditProfile: (e) => {
-                 const { profile } = getStore();
+            /* handleEditAccount: (e) => {
+                 const { user } = getStore();
                  fetch("http://localhost:5000/login", {
                      headers: {
                          "Content-Type": "application/json"
                      },
-                     method: "POST",
-                     body: JSON.stringify(profile),
+                     method: "PUT",
+                     body: JSON.stringify(user),
                  })
                      .then(res => res.json())
                      .then(data => {
                          setStore({
-                             profile: data
+                             user: data
                          })
                          console.log(data)
                      })
                      .catch(error => console.log(error));
              },*/
 
-            handleChangeRegister: (e) => {
-                const store = getStore();
-                const { user } = store;
-                user[e.target.name] = e.target.value;
-                setStore = ({ user: user });
+             handleChangeRegister: (e, prop) => {
+                const { user } = getStore();
+                let newuser = {...user};
+                newuser[prop] = e.target.value;
+                setStore = ({ user: newuser });
+                console.log(getStore().user);
+                
             },
 
-            storeRegisterInfo: () => {
+
+           /* DeleteRegister: () => {
+                console.log("eliminar");
                 setStore({
                     user: {
                         name: "",
@@ -249,9 +222,18 @@ const getState = ({ setStore, getActions, getStore }) => {
                         username: "",
                         email: "",
                         password: ""
+                    }});
+                fetch("http://localhost:5000/users/", {
+                    method: "DELETE",
+                    headers: { 
+                        "Content-Type" : "application/json",
                     }
                 })
-            }
+                .then((res) => res.json())
+                .then((data) => console.log(data))
+                .catch((error) => console.log(error));
+        
+            }*/
 
 
 
