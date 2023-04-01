@@ -16,28 +16,28 @@ function Narv() {
       <ul className="nav  nav-tabs">
 
         <div>
-          <li className="ms-3 home bg-light rounded-pill px-5 mt-3">
+          <li className="ms-3 home  px-5 mt-3">
             <h3><Link to="/" >{tool} ATúservicio</Link></h3>
           </li>
         </div>
-        <li className="nav-item mt-3 bg-warning rounded-pill px-3">
-          <Link to="/signup">Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{register}</Link>
-        </li>
+        
 
-        <li className="nav-item mt-3 bg-danger rounded-pill px-3">
-          <Link to="/profile">Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{profile}</Link>
-
+        <li className="nav-item mt-3  px-3">
+        <Link to="/service" >Find your service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{search}</Link>
       </li>
-      <li className=" nav-item mt-3 ">
-        <Link to="/signup">Register {register}</Link>
+
+   
+    
+      <li className="nav-item mt-3  px-4 me-5">
+        <Link to="/feed" >Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
       </li>
 
       <li className="nav-item mt-3 px-3 ">
       <Link to="/profile">Profile {profile}</Link>
       </li>
-      <li className="nav-item mt-3 bg-success rounded-pill px-4 me-5">
-        <Link to="/feed" >Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
-      </li>
+      <li className="nav-item mt-3  px-3">
+          <Link to="/signup">Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{register}</Link>
+        </li>
     </ul>
     </div>
   );
