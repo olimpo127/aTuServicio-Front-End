@@ -116,6 +116,26 @@ const getState = ({ setStore, getActions, getStore }) => {
         
         
                     },
+                    
+
+
+                    addApi:(e) => {
+                       const {appi} =getStore();
+                    fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCo2rtCGoBUJggotk150GkgqtZ-aBz_Scs',{
+
+                    headers: {
+                        'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+                        'X-RapidAPI-Host': 'google-maps-geocoding.p.rapidapi.com'
+                         },
+                    method :"GET",
+                    body: JSON.stringify(appi),
+                })
+                    .then(response => response.json())
+                    .then(response => console.log(response))
+                    .catch(err => console.error(err));
+                       
+
+                    }
                 });
             },
         },
