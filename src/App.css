@@ -177,3 +177,28 @@ background-color:rgba(245, 240, 248, 0.699) ;
     margin-right: auto;
   }
   
+  .serchFeed {
+    width: 20%;
+  }
+
+  .input-search {
+    width: 80%;
+    border-radius: 8px;
+    border: 2px solid #0b5ed7;
+    padding: 10px 15px;
+    box-shadow: 1px 3px 9px rgb(color #000000, alpha 0,25 );
+  }
+  .btn-search{
+    box-shadow: 1px 3px 9px rgb(color #000000, alpha 0, 25);
+  }
+  
+  @media (max-width: 780px) {
+    .input-search {
+      width: 80%;
+    }
+}
+
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+  }
