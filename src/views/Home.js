@@ -4,6 +4,7 @@ import logo from "../assets/img/logo.png";
 
 const Home = () => {
   return (
+
     <>
       <section className="mb-5" id="hero">
         <div class=" hero hero-container">

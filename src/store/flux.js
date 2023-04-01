@@ -9,15 +9,15 @@ const getState = ({ setStore, getActions, getStore }) => {
                 email: "",
                 password: ""
             },
-            post: {
+            service: {
                 title: "",
                 price: "",
-                category: {},
-                availability: {},
+                category:"",
+                availability:"",
                 city: "",
-                region: {},
+                region: "",
                 comuna: "",
-                description: "",
+                service_description: "",
                 image: ""
             },
 
@@ -36,7 +36,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     },
                 });
             },
-            handleUserRegister: (e) => {
+            handleUserRegister: () => {
                 const { user } = getStore();
                 fetch("http://localhost:5000/users", {
                     headers: {
@@ -59,6 +59,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 });
             },
             handleUserLogin: (e) => {
+                e.preventDefault();
                 const { user } = getStore();
                 fetch("http://localhost:5000/login", {
                     headers: {
@@ -78,65 +79,51 @@ const getState = ({ setStore, getActions, getStore }) => {
                 });
             },
             handleService: (e) => {
-                let { post } = getStore();
-
+                let { service } = getStore();
                 const {
                     target: { value, name },
                 } = e;
                 setStore({
-                    post: {
-                        ...post,
+                    service: {
+                        ...service,
                         [name]: value
                     },
                 });
             },
             handleServiceCreation: (e) => {
-                const { post } = getStore();
+                e.preventDefault();
+                const { service } = getStore();
+                console.log(service)
                 fetch("http://localhost:5000/services", {
                     headers: {
                         "Content-Type": "application/json"
                     },
                     method: "POST",
-                    body: JSON.stringify(post),
+                    body: JSON.stringify(service),
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data))
-                    .catch(error => console.log(error));
-                setStore({
-                    post: {
-                        title: "",
-                        price: "",
-                        category: {},
-                        availability: {},
-                        city: "",
-                        region: {},
-                        comuna: "",
-                        description: "",
-                        image: ""
-        
-        
-                    },
-                    
+                    .then(data =>  {
+                        alert("Servicio Creado Satisfactoriamente ");
+                        setStore({
+                            service: {
+                                title: "",
+                                price: "",
+                                category: "",
+                                availability: "",
+                                city: "",
+                                region: "",
+                                comuna: "",
+                                service_description: "",
+                                image: ""
+                            },
+                        });
+                        console.log(data);
+                    })
+                    .catch(error => { 
+                        alert("Ocurrio un error al registrar el servicio " + error.message);
+                        console.log(error);
+                    });
 
-
-                    addApi:(e) => {
-                       const {appi} =getStore();
-                    fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCo2rtCGoBUJggotk150GkgqtZ-aBz_Scs',{
-
-                    headers: {
-                        'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-                        'X-RapidAPI-Host': 'google-maps-geocoding.p.rapidapi.com'
-                         },
-                    method :"GET",
-                    body: JSON.stringify(appi),
-                })
-                    .then(response => response.json())
-                    .then(response => console.log(response))
-                    .catch(err => console.error(err));
-                       
-
-                    }
-                });
             },
         },
     };
