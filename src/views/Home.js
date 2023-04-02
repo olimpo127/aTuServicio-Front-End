@@ -140,34 +140,16 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="https://www.nosequeestudiar.net/site/assets/files/55133/carpintero-trabajando.616x0-is.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
-                        <a
-                          href="https://www.nosequeestudiar.net/site/assets/files/55133/carpintero-trabajando.616x0-is.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="App 1"
-                        >
+                        <a>
                           App 1
                         </a>
-                      </h3>
-                      <div>
-                        <a
-                          href="https://www.nosequeestudiar.net/site/assets/files/55133/carpintero-trabajando.616x0-is.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="App 1"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                      </h3> 
                     </div>
                   </div>
                 </div>
@@ -178,34 +160,19 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="https://images.evisos.cl/2015/06/12/jardinero-particular_efadf7b2_3.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                      
                     />
                     <div class="portfolio-info">
                       <h3>
                         <a
-                          href="https://images.evisos.cl/2015/06/12/jardinero-particular_efadf7b2_3.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Web 3"
+                        
                         >
                           Web 3
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="https://images.evisos.cl/2015/06/12/jardinero-particular_efadf7b2_3.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Web 3"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -216,34 +183,16 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="https://umbraltecnologico.files.wordpress.com/2016/03/instalacion-mantenimiento-y-reparacion-de-pc-y-redes_30871784_xxl.jpg?w=1108"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
-                        <a
-                          href="https://umbraltecnologico.files.wordpress.com/2016/03/instalacion-mantenimiento-y-reparacion-de-pc-y-redes_30871784_xxl.jpg?w=1108"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="App 2"
-                        >
+                        <a>
                           App 2
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="https://umbraltecnologico.files.wordpress.com/2016/03/instalacion-mantenimiento-y-reparacion-de-pc-y-redes_30871784_xxl.jpg?w=1108"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="App 2"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -254,34 +203,19 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="src/assets/img/portfolio/portfolio-4.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
                         <a
-                          href="src/assets/img/portfolio/portfolio-4.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Card 2"
+                        
                         >
                           Card 2
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-4.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Card 2"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -292,34 +226,19 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="src/assets/img/portfolio/portfolio-5.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
                         <a
-                          href="src/assets/img/portfolio/portfolio-5.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Web 2"
+                          
                         >
                           Web 2
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-5.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Web 2"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -330,34 +249,17 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="src/assets/img/portfolio/portfolio-6.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-6.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="App 3"
-                        >
+                        <a >
                           App 3
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-6.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="App 3"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -368,34 +270,19 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="src/assets/img/portfolio/portfolio-7.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
                         <a
-                          href="src/assets/img/portfolio/portfolio-7.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Card 1"
+                          
                         >
                           Card 1
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-7.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Card 1"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -406,34 +293,19 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="src/assets/img/portfolio/portfolio-8.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
                         <a
-                          href="src/assets/img/portfolio/portfolio-8.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Card 3"
+                          
                         >
                           Card 3
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-8.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Card 3"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -444,34 +316,19 @@ const Home = () => {
                 >
                   <div class="portfolio-wrap">
                     <img
-                      src="./assets/img/portfolio/portfolio-9.jpg"
+                      src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg"
                       class="img-fluid"
                       alt=""
                     />
                     <div class="portfolio-info">
                       <h3>
                         <a
-                          href="./assets/img/portfolio/portfolio-9.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Web 1"
+                         
                         >
                           Web 1
                         </a>
                       </h3>
-                      <div>
-                        <a
-                          href="src/assets/img/portfolio/portfolio-9.jpg"
-                          data-gallery="portfolioGallery"
-                          class="portfolio-lightbox"
-                          title="Web 1"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                        <a href="portfolio-details.html" title="Details">
-                          <i class="bi bi-link"></i>
-                        </a>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
