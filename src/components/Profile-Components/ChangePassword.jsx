@@ -21,7 +21,7 @@ export default function ChangePassword () {
 						<Form.Control 
 							type="text"
 							placeholder="Write new password"
-							
+							onChange={(event) => actions.handleChangePassword(event)}
 						/>
 						
 					</Form.Group>

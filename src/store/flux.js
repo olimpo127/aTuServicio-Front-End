@@ -183,34 +183,56 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
 
-
-            /* handleEditAccount: (e) => {
-                 const { user } = getStore();
-                 fetch("http://localhost:5000/login", {
-                     headers: {
-                         "Content-Type": "application/json"
-                     },
-                     method: "PUT",
-                     body: JSON.stringify(user),
-                 })
-                     .then(res => res.json())
-                     .then(data => {
-                         setStore({
-                             user: data
-                         })
-                         console.log(data)
-                     })
-                     .catch(error => console.log(error));
-             },*/
-
-             handleChangeRegister: (e, prop) => {
+             handleChangeName: (e) => {
                 const { user } = getStore();
-                let newuser = {...user};
-                newuser[prop] = e.target.value;
-                setStore = ({ user: newuser });
-                console.log(getStore().user);
+                user.name = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
                 
             },
+
+            handleChangeUsername: (e) => {
+                const { user } = getStore();
+                user.username = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleChangeEmail: (e) => {
+                const { user } = getStore();
+                user.email = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleChangePassword: (e) => {
+                const { user } = getStore();
+                user.password = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleEditAccount: () => {
+                console.log("handleEditAccount");
+                const { user } = getStore();
+                fetch("http://localhost:5000/actualizar_user", {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    method: "PUT",
+                    body: JSON.stringify(user),
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
+                    .catch(error => console.log(error));
+            },
+
+
 
 
            /* DeleteRegister: () => {

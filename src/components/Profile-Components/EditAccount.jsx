@@ -21,8 +21,8 @@ export default function EditAccount() {
 							name="name"
 							className="form-control"
 							placeholder="Write a name"
-							onChange={(event) => actions.handleChangeRegister(event, "name")}
-							value={store.user.name}
+							onChange={(event) => actions.handleChangeName(event)}
+							/*value={store.user.name}*/
 							
 						/>
 
@@ -35,8 +35,8 @@ export default function EditAccount() {
 						<Form.Control
 							type="text"
 							placeholder="Write a user"
-							onChange={(event) => actions.handleChangeRegister(event, "username")}
-							value={store.user.username}
+							onChange={(event) => actions.handleChangeUsername(event)}
+							/*value={store.user.username}*/
 						/>
 
 					</Form.Group>
@@ -45,8 +45,8 @@ export default function EditAccount() {
 						<Form.Control
 							type="email"
 							placeholder="Write an email"
-							onChange={(event) => actions.handleChangeRegister(event, "email")}
-							value={store.user.email}
+							onChange={(event) => actions.handleChangeEmail(event)}
+							/*value={store.user.email}*/
 
 						/>
 
@@ -57,7 +57,7 @@ export default function EditAccount() {
 				<Button variant="secondary" onClick={actions.closeEditAccount}>
 					Cancel
 				</Button>
-				<Button variant="primary"
+				<Button variant="primary"  onClick={actions.handleEditAccount}
 
 				>
 					Update my Account
