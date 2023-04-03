@@ -27,14 +27,17 @@ function Narv() {
         <li className="nav-item mt-3 bg-danger rounded-pill px-3">
           <Link to="/profile">Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{profile}</Link>
 
-        </li>
-        <li className="nav-item mt-3 bg-primary rounded-pill px-3">
-          <Link to="/service" >Find your service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{search}</Link>
-        </li>
-        <li className="nav-item mt-3 bg-success rounded-pill px-4 me-5">
-          <Link to="/detail" >Post your service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
-        </li>
-      </ul >
+      </li>
+      <li className="nav-item mt-3 bg-primary rounded-pill px-3">
+        <Link to="/service" >Find your service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{search}</Link>
+      </li>
+      <li className="nav-item mt-3 bg-success rounded-pill px-4 me-5">
+        <Link to="/detail" >Post your service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
+      </li>
+      <li className="nav-item mt-3 bg-success rounded-pill px-4 me-5">
+        <Link to="/feed" >Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}</Link>
+      </li>
+    </ul>
     </div>
   );
 }
