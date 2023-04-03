@@ -7,7 +7,7 @@ const DetailFeed = () => {
     let {title, body} = post
  
     let { id } = useParams();
-    console.log(id)
+    
     const URL = `https://jsonplaceholder.typicode.com/posts/${id}`
     const getFeed = () => {
         fetch(URL)
@@ -15,7 +15,7 @@ const DetailFeed = () => {
             .then(data => setPost(data))
             .catch(err => console.error(err));
         }
-        console.log(post)
+        
         useEffect(() => {
             getFeed();
             

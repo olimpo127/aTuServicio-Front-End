@@ -6,6 +6,7 @@ const Search = ({ setSearch }) => {
       <form className='d-flex justify-content-center gap-4 my-5'>
           <input
               onChange={(e) => {
+                e.preventDefault()
                   setSearch(e.target.value)
               }}
               className='input-search' type="text" placeholder='Buscar' />
