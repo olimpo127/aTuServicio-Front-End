@@ -7,6 +7,9 @@ import { Context } from "../store/context"
 const Detail = () => {
   const { store, actions } = useContext(Context);
   const gear = <FontAwesomeIcon icon={faGear} spin style={{ height: 80 }} />;
+  const addFeed =()=>{
+    actions.handleServiceCreation();
+};
 
   return (
     <div className="container col-10 mt-5">
@@ -25,7 +28,7 @@ const Detail = () => {
                 value={store.service.title}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-3">
               <label className="form-label">
                 <b>Price</b>
               </label>
@@ -35,6 +38,19 @@ const Detail = () => {
                 name="price"
                 onChange={actions.handleService}
                 value={store.service.price}
+              />
+            </div>
+
+            <div className="col-md-3">
+              <label className="form-label">
+                <b>Mobil number</b>
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                name="mobilNumber"
+                onChange={actions.handleService}
+                value={store.service.mobileNumber}
               />
             </div>
             <div className="col-md-6">
@@ -139,8 +155,8 @@ const Detail = () => {
               </div>
             </div> */}
             <div className="col-12">
-              <button type="submit" className="btn btn-success">
-                Post Now
+              <button type="submit" className="btn btn-success" onChange={addFeed}>
+                Post Now 
               </button>
             </div>
           </form>
