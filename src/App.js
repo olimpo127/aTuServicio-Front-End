@@ -8,10 +8,6 @@ import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
 
-
-
-
-
 function App() {
   return (
     <div>

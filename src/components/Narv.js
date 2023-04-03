@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Narv() {
   const tool = <FontAwesomeIcon icon={faHammer} bounce />;
-  const profile = <FontAwesomeIcon icon={faUser} />
+  const profile = <FontAwesomeIcon icon={faUser}/>
   const register = <FontAwesomeIcon icon={faAddressCard} />
   const search = <FontAwesomeIcon icon={faMagnifyingGlass} />
   const post = <FontAwesomeIcon icon={faUpload} />
