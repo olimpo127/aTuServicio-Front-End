@@ -32,8 +32,8 @@ export default function ChangePassword () {
 				<Button variant="secondary" onClick={actions.closeChangePassword}>
 					Cancel
 				</Button>
-				<Button variant="primary" 
-					disabled={store}
+				<Button variant="primary"  onClick={actions.handleEditPassword}
+					
 				>
 					Update my Account
 				</Button>

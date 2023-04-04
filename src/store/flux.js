@@ -119,6 +119,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                             service: {
                                 title: "",
                                 price: "",
+                                mobileNumber:"",
                                 category: "",
                                 availability: "",
                                 city: "",
@@ -134,6 +135,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                         alert("Ocurrio un error al registrar el servicio " + error.message);
                         console.log(error);
                     });
+
             },
 
             getAccount: (id) => {
@@ -217,8 +219,8 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             handleEditAccount: () => {
                 console.log("handleEditAccount");
-                const { user } = getStore();
-                fetch("http://localhost:5000/actualizar_user", {
+                const { user, myAccount } = getStore();
+                fetch("http://localhost:5000/actualizar_user/"+ myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -232,20 +234,30 @@ const getState = ({ setStore, getActions, getStore }) => {
                     .catch(error => console.log(error));
             },
 
+           /* handleEditPassword: () => {
+                console.log("password actualizada");
+                const {user, myAccount } = getStore();
+                fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    method: "PUT",
+                    body: JSON.stringify(user.password),
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
+                    .catch(error => console.log(error));
+            },  */
 
 
 
-           /* DeleteRegister: () => {
-                console.log("eliminar");
-                setStore({
-                    user: {
-                        name: "",
-                        lastname: "",
-                        username: "",
-                        email: "",
-                        password: ""
-                    }});
-                fetch("http://localhost:5000/users/", {
+
+
+            DeleteRegister: () => {
+                const {  myAccount } = getStore();
+                fetch("http://localhost:5000/user/"+ myAccount.id, {
                     method: "DELETE",
                     headers: { 
                         "Content-Type" : "application/json",
@@ -255,7 +267,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 .then((data) => console.log(data))
                 .catch((error) => console.log(error));
         
-            }*/
+            }
 
 
 

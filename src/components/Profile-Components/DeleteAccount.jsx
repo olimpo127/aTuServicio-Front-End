@@ -30,8 +30,7 @@ export default function DeleteAccount() {
 				<Button variant="secondary" onClick={actions.closeDeleteAccount}>
 					Cancel
 				</Button>
-				<Button variant="primary" onClick={actions.handleDeleteLogout}
-					disabled={store}
+				<Button variant="primary" onClick={actions.DeleteRegister}
 				>
 					Delete my Account
 				</Button>

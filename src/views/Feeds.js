@@ -31,7 +31,7 @@ const Feeds = () => {
      
         return(
             <div className='container'>
-                <h1>Feed</h1>
+                <h1 >Feed</h1>
                 <div className='row'>
                     <div className='col-3'></div>
                     <div className='col-8'>                        
