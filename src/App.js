@@ -7,7 +7,6 @@ import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
-
 import Feeds from './views/Feeds';
 import DetailFeed from './views/DetailFeed';
 
