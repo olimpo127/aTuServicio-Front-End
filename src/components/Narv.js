@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-function Narv() {
+function Narv({user}) {
   const tool = <FontAwesomeIcon icon={faHammer} bounce />;
   const profile = <FontAwesomeIcon icon={faUser} />;
   const register = <FontAwesomeIcon icon={faAddressCard} />;
@@ -35,7 +35,7 @@ function Narv() {
               type="search"
               placeholder="Find your service"
               aria-label="Search"
-            />
+              />
 
           </Link>
           </li>
@@ -44,11 +44,18 @@ function Narv() {
           <Link to="/feed">
             Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}
           </Link>
-        </li>
+        </li>{
+        user ? (
 
-        <li className="nav-item mt-3 px-3 ">
-          <Link to="/profile">Profile {profile}</Link>
+          
+          <li className="nav-item mt-3 px-3 ">
+          <Link to="/profile">
+            Profile {profile}
+            </Link>
         </li>
+          )
+        :(<div></div>)}
+
         <li className="nav-item mt-3  px-3">
           <Link to="/signup">
             Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{register}

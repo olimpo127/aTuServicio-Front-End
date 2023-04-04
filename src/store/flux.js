@@ -12,14 +12,15 @@ const getState = ({ setStore, getActions, getStore }) => {
             service: {
                 title: "",
                 price: "",
-                category:"",
-                availability:"",
+                category: "",
+                availability: "",
                 city: "",
                 region: "",
                 comuna: "",
                 service_description: "",
                 image: ""
             },
+            token: ""
 
         },
         actions: {
@@ -46,22 +47,27 @@ const getState = ({ setStore, getActions, getStore }) => {
                     body: JSON.stringify(user),
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data))
-                    .catch(error => console.log(error));
-                setStore({
-                    user: {
-                        name: "",
-                        lastname: "",
-                        username: "",
-                        email: "",
-                        password: ""
-                    },
-                });
+                    .then(data => {
+                        alert("Usuario Creado Satisfactoriamente");
+                        setStore({
+                            user: {
+                                name: "",
+                                lastname: "",
+                                username: "",
+                                email: "",
+                                password: ""
+                            },
+                        });
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        alert("Ocurrio un error al registrar al Usuario" + error.message);
+                        console.log(error)
+                    });
             },
             handleUserLogin: (e) => {
-                e.preventDefault();
-                const { user } = getStore();
-                fetch("http://localhost:5000/login", {
+                const { user, token } = getStore();
+                fetch("http://localhost:5000/users/login", {
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -69,7 +75,11 @@ const getState = ({ setStore, getActions, getStore }) => {
                     body: JSON.stringify(user),
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data))
+                    .then((data) => {
+                        setStore({ token: data.token })
+                        console.log(data)
+                        console.log(token)
+                    })
                     .catch(error => console.log(error));
                 setStore({
                     user: {
@@ -102,13 +112,13 @@ const getState = ({ setStore, getActions, getStore }) => {
                     body: JSON.stringify(service),
                 })
                     .then(res => res.json())
-                    .then(data =>  {
+                    .then(data => {
                         alert("Servicio Creado Satisfactoriamente ");
                         setStore({
                             service: {
                                 title: "",
                                 price: "",
-                                mobileNumber:"",
+                                mobileNumber: "",
                                 category: "",
                                 availability: "",
                                 city: "",
@@ -120,7 +130,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                         });
                         console.log(data);
                     })
-                    .catch(error => { 
+                    .catch(error => {
                         alert("Ocurrio un error al registrar el servicio " + error.message);
                         console.log(error);
                     });
@@ -128,9 +138,9 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
 
-             
 
-                
+
+
         },
     };
 };
