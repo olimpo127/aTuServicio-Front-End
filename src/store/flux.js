@@ -108,6 +108,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                             service: {
                                 title: "",
                                 price: "",
+                                mobileNumber:"",
                                 category: "",
                                 availability: "",
                                 city: "",
@@ -123,7 +124,13 @@ const getState = ({ setStore, getActions, getStore }) => {
                         alert("Ocurrio un error al registrar el servicio " + error.message);
                         console.log(error);
                     });
+
             },
+
+
+             
+
+                
         },
     };
 };
