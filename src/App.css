@@ -510,6 +510,31 @@ background-color: #d9faf8;
     color: #070707;
   }
 
+<<<<<<< HEAD
   #signup{
     background: #d9faf8;
   }
+=======
+  
+.image_inner_container{
+    border-radius: 50%;
+    padding: 5px;
+ background: #e3f210; 
+ background: -webkit-linear-gradient(to bottom, gray, #fdd10d, gray); 
+ background: linear-gradient(to bottom, gray, #fdd10d, gray);
+}
+.image_inner_container img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.panel-title {
+    font-family: raleway;
+    
+    color: #000;
+    
+   
+}
+>>>>>>> 05ba2df8bb951ed425752f118a30fca8ccf9798b
