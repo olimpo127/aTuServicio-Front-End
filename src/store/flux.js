@@ -234,7 +234,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     .catch(error => console.log(error));
             },
 
-           /* handleEditPassword: () => {
+            handleEditPassword: () => {
                 console.log("password actualizada");
                 const {user, myAccount } = getStore();
                 fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
@@ -249,7 +249,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                         console.log(data)
                     })
                     .catch(error => console.log(error));
-            },  */
+            },  
 
 
 
