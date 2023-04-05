@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import ChangePassword from "../components/Profile-Components/ChangePassword.jsx";
 import EditAccount from "../components/Profile-Components/EditAccount.jsx";
 import DeleteAccount from "../components/Profile-Components/DeleteAccount.jsx";
+import Shopping from "../components/Profile-Components/Shopping";
+import Reviews from "../components/Profile-Components/Reviews";
 import { Rating } from '@mui/material';
 
 
@@ -31,7 +33,7 @@ const Profile = () => {
           <div class="abs-center panel d-flex justify-content-end  my-5">
             <div class="image_inner_container panel-body pn">
               <div class="image_inner_container img img-about">
-                <img src="	https://avatars.githubusercontent.com/u/116116678?v=4" name="avatar" border="0" class="img-circle" />
+                <img src="https://avatars.githubusercontent.com/u/116116678?v=4" name="avatar" border="0" class="img-circle" />
               </div>
             </div>
           </div>
@@ -41,7 +43,7 @@ const Profile = () => {
               <h3 class="text-title">{store.myAccount?.name} {store.myAccount?.lastname}</h3>
               <h5 class="text-title">Username: {store.myAccount?.username}</h5>
               <h5 class="text-title">Email: {store.myAccount?.email}</h5>
-              <Rating name="size-large" defaultValue={2} size="large" />
+              <Rating name="size-large" defaultValue={0} size="large" />
             
             </div>
 
@@ -72,13 +74,9 @@ const Profile = () => {
                   <Row className="my-2">
 
                     <Col className="mt-4">
-                      <Card style={{ maxWidth: '360px' }} className="mx-auto p-4">
+                      <Card className="mx-auto p-4">
 
-                      <Button variant="warning"
-                        /*onClick={openEditAccount}*/
-                        >
-                          My Shopping
-                        </Button>
+                      <Shopping/>
 
                       </Card>
                     </Col>
@@ -118,13 +116,7 @@ const Profile = () => {
 
                         <Col className="mt-4">
                           <Card style={{ maxWidth: '360px' }} className="mx-auto p-4">
-
-                            <Button variant="warning"
-                            /*onClick={openEditAccount}*/
-                            >
-                              My Reviews
-                            </Button>
-
+                              <Reviews/>
                           </Card>
                         </Col>
                       </Row>
@@ -181,6 +173,7 @@ const Profile = () => {
 
       </div>
 
+      
       <EditAccount />
       <ChangePassword />
       <DeleteAccount />
