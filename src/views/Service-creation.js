@@ -9,6 +9,9 @@ const Detail = () => {
   const gear = <FontAwesomeIcon icon={faGear} spin style={{ height: 80 }} />;
   const addFeed =()=>{
     actions.handleServiceCreation();
+
+
+   
 };
 
   return (
@@ -79,9 +82,11 @@ const Detail = () => {
               </select>
             </div>
             <div className="col-md-6">
+              
               <label htmlFor="inputCity" className="form-label">
                 <b>City</b>
               </label>
+              
               <input
                 type="text"
                 className="form-control"
@@ -89,7 +94,9 @@ const Detail = () => {
                 name="city"
                 onChange={actions.handleService}
                 value={store.service.city}
+                ref={actions.originRef}
               />
+              
             </div>
             <div className="col-md-4">
               <label htmlFor="inputState" className="form-label" >
@@ -161,7 +168,11 @@ const Detail = () => {
             </div>
           </form>
         </div>
+
+      
+      
     </div>
+
   );
 };
 export default Detail;

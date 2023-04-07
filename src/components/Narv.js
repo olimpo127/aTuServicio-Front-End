@@ -17,6 +17,7 @@ function Narv() {
   const register = <FontAwesomeIcon icon={faAddressCard} />;
   const search = <FontAwesomeIcon icon={faMagnifyingGlass} />;
   const post = <FontAwesomeIcon icon={faUpload} />;
+  
   return (
     <div>
       <ul className="nav  nav-tabs">
@@ -51,7 +52,7 @@ function Narv() {
         </li>
         <li className="nav-item mt-3  px-3">
           <Link to="/signup">
-            Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{register}
+            Register{register} 
           </Link>
         </li>
       </ul>

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState } from "react";
 import logo from "../assets/img/logo.png";
+import Map from "../components/Maps";
 
 const Home = () => {
   return (
@@ -337,6 +338,12 @@ const Home = () => {
           </section>
         </div>
       </section>
+      <div className="mb-5">
+        <h1 className="d-flex justify-content-center mt-5">Puntos de servicios realizados</h1>
+
+      <Map/>
+      </div>
+     
       <footer id="footer">
     <div class="container">
       <div class="copyright">

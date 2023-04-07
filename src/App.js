@@ -7,6 +7,7 @@ import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
+import Maps from './components/Maps';
 
 import Feeds from './views/Feeds';
 import DetailFeed from './views/DetailFeed';
@@ -27,6 +28,7 @@ function App() {
         <Route path = "/detail" element = {<Detail/>}/>
         <Route path = "/feed" element = {<Feeds/>}/>
         <Route path="/:id" element={<DetailFeed/>} />
+        <Route path="/map" element={<Maps/>} />
       </Routes>
       </BrowserRouter>
     </div>

@@ -1,3 +1,12 @@
+import {
+    useJsApiLoader,
+    GoogleMap,
+    Marker,
+    Autocomplete,
+    DirectionsRenderer,
+  } from '@react-google-maps/api'
+  import { useRef, useState } from 'react'  
+
 const getState = ({ setStore, getActions, getStore }) => {
 
     return {
@@ -125,10 +134,60 @@ const getState = ({ setStore, getActions, getStore }) => {
                         console.log(error);
                     });
 
-            },
+            },  
+
+        AddMaps:()=>{
+                const center = { lat:-33.430901, lng: -70.636805 }
+                const { isLoaded } = useJsApiLoader({
+                    MapsApiKey: "AIzaSyCo2rtCGoBUJggotk150GkgqtZ-aBz_Scs&libraries=places"
+                  
+                  })
+
+                  const [map, setMap] = useState(/** @type google.maps.Map */ (null))
+                  const [directionsResponse, setDirectionsResponse] = useState(null)
+                  const [distance, setDistance] = useState('')
+                  const [duration, setDuration] = useState('')   
+                  
+                  /** @type React.MutableRefObject<HTMLInputElement> */
+                  const originRef = useRef()
+                  /** @type React.MutableRefObject<HTMLInputElement> */
+                  const destiantionRef = useRef()
+  
+                  if (!isLoaded) {
+                    return 
+                      }
+                      async function calculateRoute() {
+                        if (originRef.current.value === '' || destiantionRef.current.value === '') {
+                          return
+                        }
+                        // eslint-disable-next-line no-undef
+                        const directionsService = new window.google.maps.DirectionsService()
+                        const results = await directionsService.route({
+                          origin: originRef.current.value,
+                          destination: destiantionRef.current.value,
+                          // eslint-disable-next-line no-undef
+                          travelMode: window.google.maps.TravelMode.DRIVING,
+                        })
+                        setDirectionsResponse(results)
+                        setDistance(results.routes[0].legs[0].distance.text)
+                        setDuration(results.routes[0].legs[0].duration.text)
+                      }
+                      function clearRoute() {
+                        setDirectionsResponse(null)
+                        setDistance('')
+                        setDuration('')
+                        originRef.current.value = ''
+                        destiantionRef.current.value = ''
+                      }
 
 
-             
+
+
+
+
+            }
+
+            
 
                 
         },
