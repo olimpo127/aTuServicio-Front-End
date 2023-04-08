@@ -341,7 +341,7 @@ const Home = () => {
       <div className="mb-5">
         <h1 className="d-flex justify-content-center mt-5">Puntos de servicios realizados</h1>
 
-      <Map/>
+     
       </div>
      
       <footer id="footer">

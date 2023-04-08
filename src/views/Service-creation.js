@@ -3,17 +3,25 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { Context } from "../store/context"
 
+import {
+  useJsApiLoader,Autocomplete
+} from '@react-google-maps/api'
+
+
 
 const Detail = () => {
   const { store, actions } = useContext(Context);
   const gear = <FontAwesomeIcon icon={faGear} spin style={{ height: 80 }} />;
   const addFeed =()=>{
     actions.handleServiceCreation();
-
-
    
 };
-
+  
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: "AIzaSyCo2rtCGoBUJggotk150GkgqtZ-aBz_Scs&libraries=places"
+    
+  })
+  
   return (
     <div className="container col-10 mt-5">
       <h1 className="post d-flex justify-content-center ms-5"><b className="m-3">New Post</b>{gear}</h1>
@@ -84,9 +92,9 @@ const Detail = () => {
             <div className="col-md-6">
               
               <label htmlFor="inputCity" className="form-label">
-                <b>City</b>
+                <b>Adress</b>
               </label>
-              
+              <Autocomplete>
               <input
                 type="text"
                 className="form-control"
@@ -96,35 +104,10 @@ const Detail = () => {
                 value={store.service.city}
                 ref={actions.originRef}
               />
+              </Autocomplete>
               
             </div>
-            <div className="col-md-4">
-              <label htmlFor="inputState" className="form-label" >
-                <b>Region</b>
-              </label>
-              <select id="inputState" className="form-select forn-control" onChange={actions.handleService} value={store.service.region} name="region">
-                <option>Select Region...</option>
-                <option name="antofagasta" value="antofagasta" >Antofagasta.</option>
-                <option name="atacama" value="atacama" >Atacama</option>
-                <option name="metropolitana" value="metropolitana" >Metropolitana</option>
-                <option name="o'higgins" value="o'higgins" >O'Higgins</option>
-                <option name="ñuble" value="ñuble" >Ñuble</option>
-                <option name="magallanes" value="magallanes" >Magallanes </option>
-              </select>
-            </div>
-            <div className="col-md-2">
-              <label htmlFor="inputZip" className="form-label">
-                <b>Comuna</b>
-              </label>
-              <input
-                id="inputZip"
-                type="text"
-                className="form-control"
-                name="comuna"
-                onChange={actions.handleService}
-                value={store.service.comuna}
-              />
-            </div>
+            
             <div className="col-md-10">
               <label htmlFor="Textarea">
                 <b>Description</b>
