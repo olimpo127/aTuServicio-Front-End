@@ -6,15 +6,15 @@ body {
 #hero {
     width: 100%;
     height: 75vh;
-    background: url("./assets/img/logo.png") top center ;
-    background-size: cover;
+    background: url("./assets/img/form3.jpg") top center;
+    background-size: 100%;
+    background-color: #64b3b3;
     position: relative;
     margin-bottom: -80px;
   }
   
   #hero:before {
     content: "";
-    background: rgba(112, 185, 176, 0.85);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -41,11 +41,11 @@ body {
     font-size: 48px;
     font-weight: 300;
     line-height: 56px;
-    color: #fff;
+    color: #f6fafc;
   }
   
-  #hero h2 {
-    color: #eee;
+  #hero h2 {  
+    color: #fffcfc;
     margin-bottom: 50px;
     font-size: 20px;
     font-weight: 300;
@@ -61,7 +61,7 @@ body {
     padding: 8px 28px 10px 28px;
     border-radius: 50px;
     transition: 0.5s;
-    border: 1px solid #fff;
+    border: 1px solid #030303;
     color: #fff;
 
   }
@@ -254,10 +254,7 @@ background-color: #d9faf8;
     background-color: #70b9b0;
   }
   
-  .portfolio-details .portfolio-info {
-    padding: 30px;
-    box-shadow: 0px 0 30px rgba(7, 56, 57, 0.08);
-  }
+  
   
   .portfolio-details .portfolio-info h3 {
     font-size: 22px;
@@ -267,29 +264,10 @@ background-color: #d9faf8;
     border-bottom: 1px solid #eee;
   }
   
-  .portfolio-details .portfolio-info ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-  }
+
   
-  .portfolio-details .portfolio-info ul li+li {
-    margin-top: 10px;
-  }
   
-  .portfolio-details .portfolio-description {
-    padding-top: 30px;
-  }
   
-  .portfolio-details .portfolio-description h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .portfolio-details .portfolio-description p {
-    padding: 0;
-  }
   
 
 

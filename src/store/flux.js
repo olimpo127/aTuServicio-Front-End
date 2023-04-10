@@ -18,14 +18,14 @@ const getState = ({ setStore, getActions, getStore }) => {
                 service_description: "",
                 image: ""
             },
-            token: ""
+            /*token: ""
 
-           /* myAccount: {},
+            myAccount:{},
 
             showEditAccount: false,
             showChangePassword: false,
-        showDeleteAccount: false,*/
-
+            showDeleteAccount: false,
+*/
 
 
 
@@ -125,14 +125,12 @@ const getState = ({ setStore, getActions, getStore }) => {
                             service: {
                                 title: "",
                                 price: "",
-                                mobileNumber: "",
+                                mobile_number: "",
                                 category: "",
                                 availability: "",
-                                city: "",
-                                region: "",
-                                comuna: "",
+                                adress: "",
                                 service_description: "",
-                                image: ""
+                               
                             },
                         });
                         console.log(data);

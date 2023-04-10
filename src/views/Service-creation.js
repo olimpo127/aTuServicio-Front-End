@@ -18,7 +18,7 @@ const Detail = () => {
 };
   
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyCo2rtCGoBUJggotk150GkgqtZ-aBz_Scs&libraries=places"
+   googleMapsApiKey: "AIzaSyCo2rtCGoBUJggotk150GkgqtZ-aBz_Scs&libraries=places"
     
   })
   
@@ -99,9 +99,9 @@ const Detail = () => {
                 type="text"
                 className="form-control"
                 id="inputCity"
-                name="city"
+                name="adress"
                 onChange={actions.handleService}
-                value={store.service.city}
+                value={store.service.adress}
                 ref={actions.originRef}
               />
               </Autocomplete>
