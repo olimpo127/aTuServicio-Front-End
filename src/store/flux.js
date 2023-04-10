@@ -14,18 +14,26 @@ const getState = ({ setStore, getActions, getStore }) => {
                 price: "",
                 category: "",
                 availability: "",
+
                 adress: "",
                 service_description: "",
                 image: ""
             },
-            /*token: ""
+
+                city: "",
+                region: "",
+                comuna: "",
+                service_description: "",
+                image: ""
+            },
+            token: "",
+
 
             myAccount:{},
 
             showEditAccount: false,
             showChangePassword: false,
             showDeleteAccount: false,
-*/
 
 
 
@@ -125,7 +133,11 @@ const getState = ({ setStore, getActions, getStore }) => {
                             service: {
                                 title: "",
                                 price: "",
+
                                 mobile_number: "",
+
+                                mobileNumber: "",
+
                                 category: "",
                                 availability: "",
                                 adress: "",
@@ -144,6 +156,7 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             getAccount: (id) => {
 
+
                 fetch("http://localhost:5000/users/" + id, {
                     headers: {
                         "Content-Type": "application/json",
@@ -159,6 +172,124 @@ const getState = ({ setStore, getActions, getStore }) => {
                     .catch(error => console.log(error));
 
             },
+
+
+
+            openEditAccount: () => {
+                setStore({ showEditAccount: true });
+                console.log("editaccount")
+            },
+
+            closeEditAccount: () => {
+                setStore({ showEditAccount: false })
+            },
+
+            openChangePassword: () => {
+                setStore({ showChangePassword: true });
+                console.log("changePassword")
+            },
+
+            closeChangePassword: () => {
+                setStore({ showChangePassword: false })
+            },
+
+            openDeleteAccount: () => {
+                setStore({ showDeleteAccount: true });
+                console.log("delete")
+            },
+
+            closeDeleteAccount: () => {
+                setStore({ showDeleteAccount: false })
+            },
+
+
+             handleChangeName: (e) => {
+                const { user } = getStore();
+                user.name = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleChangeUsername: (e) => {
+                const { user } = getStore();
+                user.username = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleChangeEmail: (e) => {
+                const { user } = getStore();
+                user.email = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleChangePassword: (e) => {
+                const { user } = getStore();
+                user.password = e.target.value;
+                console.log(user);
+                setStore = ({ user: user });
+                
+            },
+
+            handleEditAccount: () => {
+                console.log("handleEditAccount");
+                const { user, myAccount } = getStore();
+                fetch("http://localhost:5000/actualizar_user/"+ myAccount.id, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    method: "PUT",
+                    body: JSON.stringify(user),
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
+                    .catch(error => console.log(error));
+            },
+
+            handleEditPassword: () => {
+                console.log("password actualizada");
+                const {user, myAccount } = getStore();
+                fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    method: "PUT",
+                    body: JSON.stringify(user.password),
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
+                    .catch(error => console.log(error));
+            },  
+
+
+
+
+
+            DeleteRegister: () => {
+                const {  myAccount } = getStore();
+                fetch("http://localhost:5000/user/"+ myAccount.id, {
+                    method: "DELETE",
+                    headers: { 
+                        "Content-Type" : "application/json",
+                    }
+                })
+                .then((res) => res.json())
+                .then((data) => console.log(data))
+                .catch((error) => console.log(error));
+        
+            }
+
+
+
+
 
 
 
