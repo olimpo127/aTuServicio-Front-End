@@ -19,7 +19,7 @@ const Profile = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.getAccount(4);
+    actions.getAccount();
   }, [])
 
 

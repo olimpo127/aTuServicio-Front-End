@@ -22,7 +22,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 service_description: "",
                 image: ""
             },
-            token: ""
+            token: "",
 
             myAccount: {},
 
@@ -165,7 +165,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     })
                     .catch(error => console.log(error));
 
-            },
+            }, 
 
 
             openEditAccount: () => {
@@ -278,7 +278,10 @@ const getState = ({ setStore, getActions, getStore }) => {
                 .then((data) => console.log(data))
                 .catch((error) => console.log(error));
         
-            }
+            },
+
+
+           
 
 
 
