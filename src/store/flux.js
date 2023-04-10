@@ -235,14 +235,14 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             handleEditPassword: () => {
-                console.log("password actualizada");
                 const {user, myAccount } = getStore();
+                let contraseña=user.password
                 fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },
                     method: "PUT",
-                    body: JSON.stringify(user.password),
+                    body: JSON.stringify({contraseña:contraseña}),
                 })
                     .then(res => res.json())
                     .then(data => {
