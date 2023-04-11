@@ -26,19 +26,17 @@ function Narv({user}) {
               <Link to="/">{tool} ATúservicio</Link>
             </h3>
           </li>
-        </div>
+        </div>{
+        user ? (
 
-        <li className="nav-item mt-3  px-3">
-        <Link to="/service">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Find your service"
-              aria-label="Search"
-              />
-
-          </Link>
-          </li>
+          
+          <li className="nav-item mt-3 px-3 ">
+          <Link to="/detail">
+            Crear Post {profile}
+            </Link>
+        </li>
+          )
+        :(<div></div>)}
       
         <li className="nav-item mt-3  px-4 me-5">
           <Link to="/feed">

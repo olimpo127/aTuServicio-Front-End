@@ -54,7 +54,7 @@ const Register = () => {
                 </div>
                 <div className="input-group m-3">
                     <span className="input-group-text" id="basic-addon4">E-mail</span>
-                    <input
+                    <input nn 
                         type="text"
                         name="email"
                         className="form-control"
