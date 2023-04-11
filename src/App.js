@@ -7,6 +7,8 @@ import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
+import Footer from './components/Footer';
+
 import Feeds from './views/Feeds';
 import DetailFeed from './views/DetailFeed';
 import { useContext } from "react";
@@ -31,7 +33,9 @@ function App() {
         <Route path = "/detail" element = {<Detail/>}/>
         <Route path = "/feed" element = {<Feeds/>}/>
         <Route path="/:id" element={<DetailFeed/>} />
+       
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
     );
