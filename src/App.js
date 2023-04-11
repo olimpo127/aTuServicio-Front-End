@@ -1,7 +1,7 @@
 import './App.css';
 import injectContext from './store/context';
 import Narv from './components/Narv';
-import { BrowserRouter,Routes,Route, Navigate} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from "./views/Home";
 import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
@@ -24,20 +24,20 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Narv user ={user}/>
-      <Routes>
-        <Route path = "/" element ={<Home />}/>
-        <Route path = "/profile" element ={user ? <Navigate to = "/"/> : <Profile/>}
-        />
-        <Route path = "/signup" element ={<Signup/>}/>
-        <Route path = "/service" element = {<Service/>}/>
-        <Route path = "/detail" element = {<Detail/>}/>
-        <Route path = "/feed" element = {<Feeds/>}/>
-        <Route path="/:id" element={<DetailFeed/>} />
-      </Routes>
+        <Narv user={user} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/*         <Route path = "/profile" element ={user ? <Navigate to = "/profile"/> : <Profile/>} /> */}
+          <Route path="/profile" element={user ? (<Profile/>) : (<Navigate to = "/"/>)} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/feed" element={<Feeds />} />
+          <Route path="/:id" element={<DetailFeed />} />
+        </Routes>
       </BrowserRouter>
     </div>
-    );
+  );
 }
 
-export default injectContext (App);
+export default injectContext(App);
