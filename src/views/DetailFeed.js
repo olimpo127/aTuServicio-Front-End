@@ -15,9 +15,9 @@ const DetailFeed = () => {
             .then(data => setPost(data))
             .catch(err => console.error(err));
         }
-        console.log(post)
-    useEffect(() => {
-        getFeed();
+        
+        useEffect(() => {
+            getFeed();
             
     }, [url])
        

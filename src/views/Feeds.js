@@ -34,9 +34,11 @@ const Feeds = () => {
      
         return(
             <div className='container'>
-                <h1 >Feed</h1>
-                <div className='row'>
-                    <div className='col-3'></div>
+                
+                <div className='row mt-5'>
+                    <div className='col-3 mt-5'>
+                        <SearchByRegion setSearchRegion={setSearchRegion} setSearchArea={setSearchArea} searchRegion={searchRegion}/>
+                    </div>
                     <div className='col-8'>                        
                         <div className='row'>
                             <div className='col-12'>
@@ -65,7 +67,7 @@ export default Feeds;
 
 
 export const Feed = (props) =>{
-    console.log(props.title)
+   
     return(
         
             <Link to={"/"+props.id} className="card mb-3 text-link rounded-4 shadow-lg p-1 mb-5 bg-body rounded" >
