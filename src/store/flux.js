@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const getState = ({ setStore, getActions, getStore }) => {
 
     return {
@@ -16,12 +14,19 @@ const getState = ({ setStore, getActions, getStore }) => {
                 price: "",
                 category: "",
                 availability: "",
+
+                adress: "",
+                service_description: "",
+                image: ""
+            },
+
                 city: "",
                 region: "",
                 comuna: "",
                 service_description: "",
                 image: ""
             },
+
             token: "",
 
             myAccount: {
@@ -31,7 +36,6 @@ const getState = ({ setStore, getActions, getStore }) => {
             showEditAccount: false,
             showChangePassword: false,
             showDeleteAccount: false,
-
 
 
 
@@ -137,14 +141,16 @@ const getState = ({ setStore, getActions, getStore }) => {
                             service: {
                                 title: "",
                                 price: "",
+
+                                mobile_number: "",
+
                                 mobileNumber: "",
+
                                 category: "",
                                 availability: "",
-                                city: "",
-                                region: "",
-                                comuna: "",
+                                adress: "",
                                 service_description: "",
-                                image: ""
+                               
                             },
                         });
                         console.log(data);
@@ -154,7 +160,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                         console.log(error);
                     });
 
-            },
+            },  
 
             getAccount: (id) => {
 
@@ -174,6 +180,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     .catch(error => console.log(error));
 
             }, 
+
 
 
             openEditAccount: () => {
@@ -312,7 +319,10 @@ const getState = ({ setStore, getActions, getStore }) => {
 
 
 
-        },
-    };
-};
+
+
+
+        }
+    }
+}
 export default getState;
