@@ -4,22 +4,22 @@ import { useParams } from 'react-router-dom';
 const DetailFeed = () => {
     const [post, setPost] = useState([])
   
-    let {title, body} = post
+    const { title, service_description, region } = post
  
-    let { id } = useParams();
+    const { id } = useParams();
     console.log(id)
-    const URL = `https://jsonplaceholder.typicode.com/posts/${id}`
+    const url = `http://localhost:5000/feed/${id}`
     const getFeed = () => {
-        fetch(URL)
+        fetch(url)
             .then(res => res.json())
             .then(data => setPost(data))
             .catch(err => console.error(err));
         }
         console.log(post)
-        useEffect(() => {
-            getFeed();
+    useEffect(() => {
+        getFeed();
             
-        }, [URL])
+    }, [url])
        
         return(
             <div className='container'>
@@ -43,8 +43,8 @@ const DetailFeed = () => {
                         </div>
                         <div className='card-body'>
                             <h5 className="card-title  mb-2">Title {title}</h5>
-                            <p className="card-text">Tervice_description {body}</p>
-                            <p className="card-text">Detalle {body}</p>
+                            <p className="card-text">Tervice_description {service_description}</p>
+                            <p className="card-text">Detalle {region}</p>
 
                         </div>
 
