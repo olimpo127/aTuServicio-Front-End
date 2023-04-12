@@ -1,4 +1,4 @@
-/*
+
 const SearchInput = () => {
 
     const [search, setSearch] = useState('');
@@ -19,4 +19,3 @@ return < input type="text" value={search} onChange={handleChange} />
 
 
 }
-*/
