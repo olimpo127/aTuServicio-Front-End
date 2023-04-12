@@ -26,23 +26,23 @@ function Narv({user}) {
               <Link to="/">{tool} ATúservicio</Link>
             </h3>
           </li>
-        </div>{
-        user ? (
-
-          
-          <li className="nav-item mt-3 px-3 ">
-          <Link to="/detail">
-            Crear Post {profile}
-            </Link>
-        </li>
-          )
-        :(<div></div>)}
-      
+        </div>
         <li className="nav-item mt-3  px-4 me-5">
           <Link to="/feed">
             Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}
           </Link>
         </li>{
+          
+          user ? (
+  
+            
+            <li className="nav-item mt-3 px-3 ">
+            <Link to="/detail">
+              Crear Post {profile}
+              </Link>
+          </li>
+            )
+          :(<div></div>)}{
         user ? (
 
           

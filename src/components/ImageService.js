@@ -3,7 +3,7 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 
-const Avatar = () => {
+const ImageService = () => {
     const [ImagePreview, setImagePreview] = useState(null);
     const changeImage = (e) => {
         const reader = new FileReader();
@@ -21,7 +21,7 @@ const Avatar = () => {
         formData.append("file", inputFiles[0]);
 
         fetch(
-            "http://localhost:5000/users/avatar/1",
+            "http://localhost:5000/services/image/1",
             {
                 method: "POST",
                 body: formData,
@@ -29,7 +29,7 @@ const Avatar = () => {
         )
             .then((res) => res.json())
             .then((data) => {
-                alert ("profile picture successfully uploaded");
+                alert ("image service upload success");
                 setImagePreview()
                 console.log(data)
             })
@@ -43,7 +43,7 @@ const Avatar = () => {
         <div className="input-group m-3 m-auto"  style={{ maxWidth: "700px" }}>
             <form onSubmit={handleSubmit}>
                 <div class="input-group">
-      <input type="file" class="form-control" id="avatar" name="avatar" onChange ={e=>{handleChange(e); changeImage(e);}} accept = "image/png, image/jpeg"/>
+      <input type="file" class="form-control" id="imageservice" name="imageservice" onChange ={e=>{handleChange(e); changeImage(e);}} accept = "image/png, image/jpeg"/>
       <button class="btn btn-secondary" type="submit" id="inputGroupFileAddon04">Upload {upload} </button>
       </div>
       <div className="text-center">
@@ -55,5 +55,4 @@ const Avatar = () => {
 }
 
 
-export default Avatar
-
+export default ImageService

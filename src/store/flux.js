@@ -150,7 +150,6 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             getAccount: (id) => {
 
-
                 fetch("http://localhost:5000/users/" + id, {
                     headers: {
                         "Content-Type": "application/json",

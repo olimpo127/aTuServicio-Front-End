@@ -136,24 +136,6 @@ const Detail = () => {
                 Add your description post.
               </small>
             </div>
-{/*             <div className="input-group">
-              <input type="file" className="form-control" id="inputGroupFile01" name="image" />
-              <button
-                type="btn"
-                className="btn btn-warning"
-                htmlFor="inputGroupFile01"
-              >
-                Add Image
-              </button>
-            </div>
-            <div className="col-12">
-              <div className="form-check">
-                <input className="form-check-input" type="checkbox" id="gridCheck" />
-                <label className="form-check-label" htmlFor="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div> */}
             <div className="col-12">
               <button type="submit" className="btn btn-success" onChange={addFeed}>
                 Post Now 
