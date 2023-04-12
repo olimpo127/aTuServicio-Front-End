@@ -28,25 +28,6 @@ function Narv({user}) {
     <div>
       <ul className="nav  nav-tabs">
         <div>
-<<<<<<< HEAD
-          <li className="ms-3 home  px-5 mt-3">
-            <h3>
-              <Link to="/">{tool} ATúservicio</Link>
-            </h3>
-          </li>
-        </div>{
-        user ? (
-
-          
-          <li className="nav-item mt-3 px-3 ">
-          <Link to="/detail">
-            Crear Post {profile}
-            </Link>
-        </li>
-          )
-        :(<div></div>)}
-      
-=======
           <Link to="/">
             <img
               className="img-fluid "  
@@ -58,7 +39,7 @@ function Narv({user}) {
 
         <li className="nav-item mt-3  px-3">
 
-          <Link to="/detail">
+          <Link to="/detail"/>
             New Post {tool}
 
         <Link to="/service">
@@ -73,7 +54,6 @@ function Narv({user}) {
           </Link>
         </li>
 
->>>>>>> d9fbad2bd8afe8ec6039d588ea33b18304c2fdfd
         <li className="nav-item mt-3  px-4 me-5">
           <Link to="/feed">
             Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}

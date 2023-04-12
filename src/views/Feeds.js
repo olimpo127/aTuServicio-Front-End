@@ -19,8 +19,7 @@ const Feeds = () => {
             getFeeds();
             
         }, [url])
-        console.log(feeds)
-        console.log(search)
+
         /*
           const searcher = (e) => {
       e.preventDefault();
@@ -28,7 +27,7 @@ const Feeds = () => {
   }
 
 */
-    console.log(search)
+    
    const results = search === ''  ? feeds : feeds.filter((feed) => feed.title.toLowerCase().includes(search.toLocaleLowerCase())) 
    console.log(results)
      
