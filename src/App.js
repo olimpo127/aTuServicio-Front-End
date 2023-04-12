@@ -7,6 +7,7 @@ import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
+import Footer from './components/Footer';
 
 import Feeds from './views/Feeds';
 import DetailFeed from './views/DetailFeed';
@@ -24,6 +25,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+<<<<<<< HEAD
         <Narv user={user} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,6 +37,21 @@ function App() {
           <Route path="/feed" element={<Feeds />} />
           <Route path="/:id" element={<DetailFeed />} />
         </Routes>
+=======
+      <Narv user ={user}/>
+      <Routes>
+        <Route path = "/" element ={<Home />}/>
+        <Route path = "/profile" element ={user ? <Navigate to = "/"/> : <Profile/>}
+        />
+        <Route path = "/signup" element ={<Signup/>}/>
+        <Route path = "/service" element = {<Service/>}/>
+        <Route path = "/detail" element = {<Detail/>}/>
+        <Route path = "/feed" element = {<Feeds/>}/>
+        <Route path="/:id" element={<DetailFeed/>} />
+       
+      </Routes>
+      <Footer/>
+>>>>>>> d9fbad2bd8afe8ec6039d588ea33b18304c2fdfd
       </BrowserRouter>
     </div>
   );
