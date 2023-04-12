@@ -39,7 +39,7 @@ function Narv({user}) {
 
         <li className="nav-item mt-3  px-3">
 
-          <Link to="/detail">
+          <Link to="/detail"/>
             New Post {tool}
 
         <Link to="/service">

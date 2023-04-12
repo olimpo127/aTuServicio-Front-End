@@ -26,7 +26,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 service_description: "",
                 image: ""
             },
-            token: "",
+            token: "",,
 
 
             myAccount:{},
@@ -294,7 +294,9 @@ const getState = ({ setStore, getActions, getStore }) => {
 
 
 
-        },
-    };
-};
+
+
+        }
+    }
+}
 export default getState;

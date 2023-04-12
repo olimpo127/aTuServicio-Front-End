@@ -1,7 +1,7 @@
 import './App.css';
 import injectContext from './store/context';
 import Narv from './components/Narv';
-import { BrowserRouter,Routes,Route, Navigate} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from "./views/Home";
 import Profile from "./views/Profile";
 import Signup from "./views/Register-login";
@@ -40,7 +40,7 @@ function App() {
       <Footer/>
       </BrowserRouter>
     </div>
-    );
+  );
 }
 
-export default injectContext (App);
+export default injectContext(App);
