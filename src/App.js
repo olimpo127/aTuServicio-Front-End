@@ -25,19 +25,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-<<<<<<< HEAD
-        <Narv user={user} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/*         <Route path = "/profile" element ={user ? <Navigate to = "/profile"/> : <Profile/>} /> */}
-          <Route path="/profile" element={user ? (<Profile/>) : (<Navigate to = "/"/>)} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/detail" element={<Detail />} />
-          <Route path="/feed" element={<Feeds />} />
-          <Route path="/:id" element={<DetailFeed />} />
-        </Routes>
-=======
       <Narv user ={user}/>
       <Routes>
         <Route path = "/" element ={<Home />}/>
@@ -51,7 +38,6 @@ function App() {
        
       </Routes>
       <Footer/>
->>>>>>> d9fbad2bd8afe8ec6039d588ea33b18304c2fdfd
       </BrowserRouter>
     </div>
   );

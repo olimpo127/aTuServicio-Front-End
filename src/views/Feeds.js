@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link} from "react-router-dom";
 import Search from '../components/SearchFeed';
 
+
 const Feeds = () => {
     const [feeds, setFeeds] = useState([])
     const [search, setSearch] = useState('')
@@ -36,7 +37,7 @@ const Feeds = () => {
                 
                 <div className='row mt-5'>
                     <div className='col-3 mt-5'>
-                        <SearchByRegion setSearchRegion={setSearchRegion} setSearchArea={setSearchArea} searchRegion={searchRegion}/>
+                       
                     </div>
                     <div className='col-8'>                        
                         <div className='row'>
