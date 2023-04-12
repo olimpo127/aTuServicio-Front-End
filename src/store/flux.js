@@ -26,10 +26,12 @@ const getState = ({ setStore, getActions, getStore }) => {
                 service_description: "",
                 image: ""
             },
-            token: "",,
 
+            token: "",
 
-            myAccount:{},
+            myAccount: {
+                id:""
+            },
 
             showEditAccount: false,
             showChangePassword: false,
@@ -81,7 +83,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     });
             },
             handleUserLogin: (e) => {
-                const { user, token } = getStore();
+                const { user, token, myAccount } = getStore();
                 fetch("http://localhost:5000/users/login", {
                     headers: {
                         "Content-Type": "application/json"
@@ -91,9 +93,15 @@ const getState = ({ setStore, getActions, getStore }) => {
                 })
                     .then(res => res.json())
                     .then((data) => {
-                        setStore({ token: data.token })
+                        setStore({
+                             token: data.token,
+                             myAccount: {
+                                ...myAccount, 
+                                id: data.id 
+                             }
+                         })
                         console.log(data)
-                        console.log(token)
+                        console.log(getStore());
                     })
                     .catch(error => console.log(error));
                 setStore({
@@ -171,7 +179,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     })
                     .catch(error => console.log(error));
 
-            },
+            }, 
 
 
 
@@ -253,14 +261,14 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             handleEditPassword: () => {
-                console.log("password actualizada");
                 const {user, myAccount } = getStore();
+                let contraseña=user.password
                 fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },
                     method: "PUT",
-                    body: JSON.stringify(user.password),
+                    body: JSON.stringify({contraseña:contraseña}),
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -268,10 +276,6 @@ const getState = ({ setStore, getActions, getStore }) => {
                     })
                     .catch(error => console.log(error));
             },  
-
-
-
-
 
             DeleteRegister: () => {
                 const {  myAccount } = getStore();
@@ -285,7 +289,29 @@ const getState = ({ setStore, getActions, getStore }) => {
                 .then((data) => console.log(data))
                 .catch((error) => console.log(error));
         
-            }
+            },
+
+           /* userLogeado: (user.id, token) => {
+                fetch("http://localhost:5000/user/${user.id}",{
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer ${token}"
+
+                    },
+                    method: "GET",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setStore({ : data })
+
+                    })
+                    .catch(error => console.log(error));
+
+                }
+            }*/
+
+
+           
 
 
 

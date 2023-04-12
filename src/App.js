@@ -28,7 +28,9 @@ function App() {
       <Narv user ={user}/>
       <Routes>
         <Route path = "/" element ={<Home />}/>
-        <Route path = "/profile" element ={user ? <Navigate to = "/"/> : <Profile/>}
+        {/*<Route path = "/profile" element ={<Profile/>}
+        />*/}
+        <Route path = "/profile" element ={!!store.token ?  <Profile/> : <Navigate to = "/"/>  }
         />
         <Route path = "/signup" element ={<Signup/>}/>
         <Route path = "/service" element = {<Service/>}/>
