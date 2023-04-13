@@ -32,18 +32,14 @@ const [feeds, setFeeds]=useState([]);
             Aqui encontraras gran variedad de oferta de servicios y no solo eso!
             Tambien podras publicarte!
           </h2>
-          <Link to="/signup" class="btn-get-started scrollto">
-            <h3> Sing Up</h3>
-          </Link>
+         
         </div>
       </section>
       <Services/>
-      {feeds.map((feed) => (
-            <Portafolio
-              title={feed.title}
-             />
+     
+            <Portafolio/>
             
-          ))}
+      
       
     </>
   );

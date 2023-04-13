@@ -8,7 +8,7 @@ body {
     height: 75vh;
     background: url("./assets/img/form3.jpg") top center;
     background-size: 100%;
-    background-color: #64b3b3;
+    background-color: #396bd6;
     position: relative;
     margin-bottom: -80px;
   }
@@ -68,8 +68,8 @@ body {
   
   #hero .btn-get-started:hover {
     background: #fff;
-    color: #70b9b0;
-    border: 1px solid #70b9b0;
+    color: #396bd6;
+    border: 1px solid #396bd6;
   }
   
   @media (min-width: 1024px) {
@@ -108,7 +108,7 @@ background-color: #d9faf8;
   }
   
   .services .icon i {
-    color: #70b9b0;
+    color: #396bd6;
     font-size: 42px;
   }
   
@@ -125,7 +125,7 @@ background-color: #d9faf8;
   }
   
   .services .icon-box:hover .title a {
-    color: #70b9b0;
+    color: #396bd6;
   }
   
   .services .description {
@@ -167,7 +167,7 @@ background-color: #d9faf8;
   
   .portfolio #portfolio-flters li:hover,
   .portfolio #portfolio-flters li.filter-active {
-    background: #70b9b0;
+    background: #396bd6;
     color: #fff;
   }
   
@@ -233,6 +233,9 @@ background-color: #d9faf8;
     padding-top: 40px;
   }
   
+  .portfolio-info {
+    color:#bbf0f0;
+  }
   .portfolio-details .portfolio-details-slider img {
     width: 100%;
   }
@@ -398,3 +401,6 @@ background-color: #d9faf8;
   #signup{
     background: #d9faf8;
   }
+.fail{
+  color: red;
+}
