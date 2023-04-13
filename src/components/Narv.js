@@ -13,9 +13,6 @@ import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png"
 
 
-function Narv({ user }) {
-  const tool = <FontAwesomeIcon icon={faHammer}  />;
-
 function Narv({user}) {
   const tool = <FontAwesomeIcon icon={faHammer} bounce />;
 
@@ -68,7 +65,7 @@ function Narv({user}) {
           <div></div>
         )}
 
-        </li>{
+        {
         user ? (
 
           
@@ -76,7 +73,7 @@ function Narv({user}) {
           <Link to="/profile">
             Profile {profile}
             </Link>
-        </li>
+          </li>
           )
         :(<div></div>)}
 

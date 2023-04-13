@@ -17,8 +17,7 @@ const getState = ({ setStore, getActions, getStore }) => {
 
                 adress: "",
                 service_description: "",
-                image: ""
-            },
+                image: "",
 
                 city: "",
                 region: "",
