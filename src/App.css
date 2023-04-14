@@ -401,6 +401,29 @@ background-color: #d9faf8;
   #signup{
     background: #d9faf8;
   }
-.fail{
-  color: red;
+
+  .fail{
+    color: red;
+  }  
+
+.image_inner_container{
+    border-radius: 50%;
+    padding: 5px;
+ background: #e3f210; 
+ background: -webkit-linear-gradient(to bottom, gray, #fdd10d, gray); 
+ background: linear-gradient(to bottom, gray, #fdd10d, gray);
+}
+.image_inner_container img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.panel-title {
+    font-family: raleway;
+    
+    color: #000;
+    
+   
 }

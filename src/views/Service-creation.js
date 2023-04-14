@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { Context } from "../store/context"
+import Avatar from "../components/Avatar";
 
 
 import {
@@ -146,6 +147,7 @@ const Detail = () => {
               </small>
               
             </div>
+            <Avatar/>
 {/*             <div className="input-group">
               <input type="file" className="form-control" id="inputGroupFile01" name="image" />
               <button
