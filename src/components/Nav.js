@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png"
 
 
-function Narv({ user }) {
+
+function Nav({ user }) {
   const tool = <FontAwesomeIcon icon={faHammer}  />;
 
-function Narv({user}) {
-  const tool = <FontAwesomeIcon icon={faHammer} bounce />;
+
 
   const profile = <FontAwesomeIcon icon={faUser} />;
   const register = <FontAwesomeIcon icon={faAddressCard} />;
@@ -31,7 +31,7 @@ function Narv({user}) {
           <Link to="/">
             <img
               className="img-fluid "  
-              style={{ width: 200, height: 60 }}
+              style={{ width: 150, height: 60 }}
               src={logo}
             />
           </Link>
@@ -39,36 +39,29 @@ function Narv({user}) {
 
         <li className="nav-item mt-3  px-3">
 
-          <Link to="/detail"/>
-            New Post {tool}
+          <Link to="/detail">
+            Nueva ublicación {tool}
+            </Link>
 
-        <Link to="/service">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Find your service"
-              aria-label="Search"
-              />
-
-
-          </Link>
+    
         </li>
 
         <li className="nav-item mt-3  px-4 me-5">
           <Link to="/feed">
-            Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}
+            Feed service{post}
           </Link>
 
         </li>
         {user ? (
           <li className="nav-item mt-3 px-3 ">
-            <Link to="/profile">Profile {profile}</Link>
+            <Link to="/profile">Perfil {profile}</Link>
           </li>
+         
         ) : (
           <div></div>
         )}
-
-        </li>{
+       
+       {
         user ? (
 
           
@@ -82,11 +75,11 @@ function Narv({user}) {
 
 
         <li className="nav-item mt-3  px-3">
-          <Link to="/signup">Register{register}</Link>
+          <Link to="/signup">Regístrate{register}</Link>
         </li>
       </ul>
     </div>
   );
 }
 
-export default Narv;
+export default Nav

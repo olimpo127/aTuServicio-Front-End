@@ -143,9 +143,6 @@ const getState = ({ setStore, getActions, getStore }) => {
                                 price: "",
 
                                 mobile_number: "",
-
-                                mobileNumber: "",
-
                                 category: "",
                                 availability: "",
                                 adress: "",
@@ -214,7 +211,7 @@ const getState = ({ setStore, getActions, getStore }) => {
              handleChangeName: (e) => {
                 const { user } = getStore();
                 user.name = e.target.value;
-                console.log(user);
+                console.log(user); 
                 setStore = ({ user: user });
                 
             },
