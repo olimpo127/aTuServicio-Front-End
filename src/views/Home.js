@@ -27,12 +27,12 @@ const [feeds, setFeeds]=useState([]);
     <>
       <section className="mb-5" id="hero">
         <div class=" hero hero-container">
-          <h1 className="display-1">Bienvenido a ATuServicio</h1>
-          <h2>
+          <h1 className="display-1 bg-secondary bg-opacity-50 rounded-4">Bienvenido a ATuServicio</h1>
+          <h2 className=" bg-secondary bg-opacity-50 rounded-3">
             Aqui encontraras gran variedad de oferta de servicios y no solo eso!
             Tambien podras publicarte!
           </h2>
-          <Link to="/signup" class="btn-get-started scrollto">
+          <Link to="/signup" className="btn-get-started scrollto bg-secondary bg-opacity-50">
             <h3> Sing Up</h3>
           </Link>
         </div>

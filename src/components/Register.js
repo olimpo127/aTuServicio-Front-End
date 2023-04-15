@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Context } from "../store/context"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
-import ImageService from "./ImageService";
+
 
 
 const Register = () => {
@@ -14,12 +14,12 @@ const Register = () => {
         <div>
             <div className="container text-center col-3 mt-5 was-validated">
                 <div className="input-group mb-3">
-                    <span className="input-group-text has-validation" id="basic-addon1">Name</span>
+                    <span className="input-group-text has-validation" id="basic-addon1">Nombre</span>
                     <input
                         type="text"
                         name="name"
                         className="form-control"
-                        placeholder="Name"
+                        placeholder="Nombre"
                         aria-label="Name"
                         aria-describedby="basic-addon1"
                         onChange={actions.handleChange}
@@ -28,12 +28,12 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon2">Lastname</span>
+                    <span className="input-group-text" id="basic-addon2">Apellido</span>
                     <input
                         type="text"
                         name="lastname"
                         className="form-control"
-                        placeholder="Lastname"
+                        placeholder="Apellido"
                         aria-label="Lastname"
                         aria-describedby="basic-addon2"
                         onChange={actions.handleChange}
@@ -42,12 +42,12 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon3">Username</span>
+                    <span className="input-group-text" id="basic-addon3">Nombre de Usuario</span>
                     <input
                         type="text"
                         name="username"
                         className="form-control"
-                        placeholder="Username"
+                        placeholder="Nombre de Usuario"
                         aria-label="Username"
                         aria-describedby="basic-addon3"
                         onChange={actions.handleChange}
@@ -72,7 +72,7 @@ const Register = () => {
                 <div>
                     <div className="mb-5">
                         <div className=" input-group">
-                            <label htmlFor="Password" className="input-group-text">Password</label>
+                            <label htmlFor="Password" className="input-group-text">Contraseña</label>
                             <input
                                 type="password"
                                 name="password"
@@ -84,13 +84,12 @@ const Register = () => {
                                 required
                             />
                         </div>
-                        <div className="form-text">Max 8 characters</div>
+                        <div className="form-text">Max 8 caracteres</div>
                     </div>
                 </div>
                 <button type="submit" className="btn btn-secondary" onClick={() => actions.handleUserRegister()}>
-                    SUBMIT {upload}
+                    ENVIO {upload}
                 </button>
-                <ImageService/>
             </div>
         </div>
     )

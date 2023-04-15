@@ -2,15 +2,18 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Context } from "../store/context"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 
 const Login = () => {
+    const upload = <FontAwesomeIcon icon={faUpload} />
     const { store, actions } = useContext(Context);
     return (
         <div>
             <div className="container text-center col-3 mt-5 was-validated">
                 <div className="input-group m-3">
-                    <span className="input-group-text" id="basic-addon3">Username</span>
+                    <span className="input-group-text" id="basic-addon3">Nombre de Usuario</span>
                     <input
                         type="text"
                         name="username"
@@ -24,7 +27,7 @@ const Login = () => {
                     />
                 </div>
                 <div className=" input-group m-3">
-                    <label htmlFor="Password" className="input-group-text">Password</label>
+                    <label htmlFor="Password" className="input-group-text">Contraseña</label>
                     <input
                         type="password"
                         name="password"
@@ -36,7 +39,7 @@ const Login = () => {
                     />
                 </div>
                 <button type="submit" className="btn btn-secondary" onClick={() => actions.handleUserLogin()}>
-                    SUBMIT
+                    ENVIO {upload}
                 </button>
             </div>
         </div>

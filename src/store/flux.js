@@ -14,18 +14,13 @@ const getState = ({ setStore, getActions, getStore }) => {
                 price: "",
                 category: "",
                 availability: "",
-
                 adress: "",
                 service_description: "",
                 image: ""
             },
 
-                city: "",
-                region: "",
-                comuna: "",
-                service_description: "",
-                image: ""
-            },
+               
+            
 
             token: "",
 
