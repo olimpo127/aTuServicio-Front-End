@@ -13,73 +13,80 @@ import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png"
 
 
+function Narv({ user }) {
+  const tool = <FontAwesomeIcon icon={faHammer} />;
 
-function Nav({ user }) {
-  const tool = <FontAwesomeIcon icon={faHammer}  />;
+  function Narv({ user }) {
+    const tool = <FontAwesomeIcon icon={faHammer} bounce />;
 
-
-
-  const profile = <FontAwesomeIcon icon={faUser} />;
-  const register = <FontAwesomeIcon icon={faAddressCard} />;
-  const search = <FontAwesomeIcon icon={faMagnifyingGlass} />;
-  const post = <FontAwesomeIcon icon={faUpload} />;
+    const profile = <FontAwesomeIcon icon={faUser} />;
+    const register = <FontAwesomeIcon icon={faAddressCard} />;
+    const search = <FontAwesomeIcon icon={faMagnifyingGlass} />;
+    const post = <FontAwesomeIcon icon={faUpload} />;
   
-  return (
-    <div>
-      <ul className="nav  nav-tabs">
-        <div>
-          <Link to="/">
-            <img
-              className="img-fluid "  
-              style={{ width: 150, height: 60 }}
-              src={logo}
-            />
-          </Link>
-        </div>
+    return (
+      <div>
+        <ul className="nav  nav-tabs">
+          <div>
+            <Link to="/">
+              <img
+                className="img-fluid "
+                style={{ width: 200, height: 60 }}
+                src={logo}
+              />
+            </Link>
+          </div>
 
-        <li className="nav-item mt-3  px-3">
+          <li className="nav-item mt-3  px-3">
 
-          <Link to="/detail">
-            Nueva ublicación {tool}
+            <Link to="/detail" />
+            New Post {tool}
+
+            <Link to="/service">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Find your service"
+                aria-label="Search"
+              />
+
+
+            </Link>
+          </li>
+
+          <li className="nav-item mt-3  px-4 me-5">
+            <Link to="/feed">
+              Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}
             </Link>
 
-    
-        </li>
-
-        <li className="nav-item mt-3  px-4 me-5">
-          <Link to="/feed">
-            Feed service{post}
-          </Link>
-
-        </li>
-        {user ? (
-          <li className="nav-item mt-3 px-3 ">
-            <Link to="/profile">Perfil {profile}</Link>
           </li>
-         
-        ) : (
-          <div></div>
-        )}
-       
-       {
-        user ? (
+          {user ? (
+            <li className="nav-item mt-3 px-3 ">
+              <Link to="/profile">Profile {profile}</Link>
+            </li>
+          ) : (
+            <div></div>
+          )}
+
+          <li>{
+            user ? (
 
           
-          <li className="nav-item mt-3 px-3 ">
-          <Link to="/profile">
-            Profile {profile}
-            </Link>
-        </li>
-          )
-        :(<div></div>)}
+              <li className="nav-item mt-3 px-3 ">
+                <Link to="/profile">
+                  Profile {profile}
+                </Link>
+              </li>
+            )
+              : (<div></div>)}
+          </li>
 
-
-        <li className="nav-item mt-3  px-3">
-          <Link to="/signup">Regístrate{register}</Link>
-        </li>
-      </ul>
-    </div>
-  );
+          <li className="nav-item mt-3  px-3">
+            <Link to="/signup">Register{register}</Link>
+          </li>
+        </ul>
+      </div>
+    )
+  }
 }
-
-export default Nav
+export default Narv;

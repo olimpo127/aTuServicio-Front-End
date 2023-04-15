@@ -7,8 +7,8 @@ const DetailFeed = () => {
     const { title, service_description, region } = post
  
     const { id } = useParams();
-    console.log(id)
-    const url = `http://localhost:5000/feed/${id}`
+    
+    const url = `http://localhost:5000/${id}`
     const getFeed = () => {
         fetch(url)
             .then(res => res.json())
@@ -42,9 +42,9 @@ const DetailFeed = () => {
                             </button>
                         </div>
                         <div className='card-body'>
-                            <h5 className="card-title  mb-2">Title {title}</h5>
-                            <p className="card-text">Tervice_description {service_description}</p>
-                            <p className="card-text">Detalle {region}</p>
+                            <h5 className="card-title  mb-2">{title}</h5>
+                            <p className="card-text">{service_description}</p>
+                            <p className="card-text">{region}</p>
 
                         </div>
 
