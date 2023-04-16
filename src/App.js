@@ -1,6 +1,6 @@
 import './App.css';
 import injectContext from './store/context';
-import Narv from './components/Narv';
+import Nav from './components/Nav';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from "./views/Home";
 import Profile from "./views/Profile";
@@ -25,7 +25,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Narv user ={user}/>
+      <Nav user ={user}/>
       <Routes>
         <Route path = "/" element ={<Home />}/>
         {/*<Route path = "/profile" element ={<Profile/>}

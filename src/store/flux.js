@@ -16,25 +16,19 @@ const getState = ({ setStore, getActions, getStore }) => {
                 availability: "",
                 adress: "",
                 service_description: "",
-                image: ""
+                image: "",
             },
-
-               
-            
-
             token: "",
-
             myAccount: {
-                id:""
+                id: ""
             },
-
             showEditAccount: false,
             showChangePassword: false,
             showDeleteAccount: false,
-
-
-
         },
+
+
+
         actions: {
             handleChange: (e) => {
                 let { user } = getStore();
@@ -89,12 +83,12 @@ const getState = ({ setStore, getActions, getStore }) => {
                     .then(res => res.json())
                     .then((data) => {
                         setStore({
-                             token: data.token,
-                             myAccount: {
-                                ...myAccount, 
-                                id: data.id 
-                             }
-                         })
+                            token: data.token,
+                            myAccount: {
+                                ...myAccount,
+                                id: data.id
+                            }
+                        })
                         console.log(data)
                         console.log(getStore());
                     })
@@ -138,14 +132,11 @@ const getState = ({ setStore, getActions, getStore }) => {
                                 price: "",
 
                                 mobile_number: "",
-
-                                mobileNumber: "",
-
                                 category: "",
                                 availability: "",
                                 adress: "",
                                 service_description: "",
-                               
+
                             },
                         });
                         console.log(data);
@@ -155,7 +146,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                         console.log(error);
                     });
 
-            },  
+            },
 
             getAccount: (id) => {
 
@@ -173,7 +164,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     })
                     .catch(error => console.log(error));
 
-            }, 
+            },
 
 
 
@@ -205,12 +196,12 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
 
-             handleChangeName: (e) => {
+            handleChangeName: (e) => {
                 const { user } = getStore();
                 user.name = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleChangeUsername: (e) => {
@@ -218,7 +209,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 user.username = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleChangeEmail: (e) => {
@@ -226,7 +217,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 user.email = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleChangePassword: (e) => {
@@ -234,13 +225,13 @@ const getState = ({ setStore, getActions, getStore }) => {
                 user.password = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleEditAccount: () => {
                 console.log("handleEditAccount");
                 const { user, myAccount } = getStore();
-                fetch("http://localhost:5000/actualizar_user/"+ myAccount.id, {
+                fetch("http://localhost:5000/actualizar_user/" + myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -255,68 +246,57 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             handleEditPassword: () => {
-                const {user, myAccount } = getStore();
-                let contraseña=user.password
-                fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
+                const { user, myAccount } = getStore();
+                let contraseña = user.password
+                fetch("http://localhost:5000/actualizar_password/" + myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },
                     method: "PUT",
-                    body: JSON.stringify({contraseña:contraseña}),
+                    body: JSON.stringify({ contraseña: contraseña }),
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
                     })
                     .catch(error => console.log(error));
-            },  
-
-            DeleteRegister: () => {
-                const {  myAccount } = getStore();
-                fetch("http://localhost:5000/user/"+ myAccount.id, {
-                    method: "DELETE",
-                    headers: { 
-                        "Content-Type" : "application/json",
-                    }
-                })
-                .then((res) => res.json())
-                .then((data) => console.log(data))
-                .catch((error) => console.log(error));
-        
             },
 
-           /* userLogeado: (user.id, token) => {
-                fetch("http://localhost:5000/user/${user.id}",{
+            DeleteRegister: () => {
+                const { myAccount } = getStore();
+                fetch("http://localhost:5000/user/" + myAccount.id, {
+                    method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "Bearer ${token}"
-
-                    },
-                    method: "GET",
+                    }
                 })
                     .then((res) => res.json())
-                    .then((data) => {
-                        setStore({ : data })
+                    .then((data) => console.log(data))
+                    .catch((error) => console.log(error));
 
-                    })
-                    .catch(error => console.log(error));
+            },
 
-                }
-            }*/
+            /* userLogeado: (user.id, token) => {
+                 fetch("http://localhost:5000/user/${user.id}",{
+                     headers: {
+                         "Content-Type": "application/json",
+                         "Authorization": "Bearer ${token}"
+ 
+                     },
+                     method: "GET",
+                 })
+                     .then((res) => res.json())
+                     .then((data) => {
+                         setStore({ : data })
+ 
+                     })
+                     .catch(error => console.log(error));
+ 
+                 }
+             }*/
 
-
-           
-
-
-
-
-
-
-
-
-
-
-        }
+        },
     }
 }
+
 export default getState;

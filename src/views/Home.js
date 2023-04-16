@@ -2,11 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import React, { useState, useEffect} from "react";
 import Portafolio from "../components/Portafolio";
 import Services from "../components/Services";
-
-
+import Promocion from "../components/Promocion";
 
 const Home = () => {
 const [feeds, setFeeds]=useState([]);
+
 
 
   const getFeedHome = () => {
@@ -32,18 +32,18 @@ const [feeds, setFeeds]=useState([]);
             Aqui encontraras gran variedad de oferta de servicios y no solo eso!
             Tambien podras publicarte!
           </h2>
-          <Link to="/signup" className="btn-get-started scrollto bg-secondary bg-opacity-50">
-            <h3> Sing Up</h3>
-          </Link>
+         
         </div>
       </section>
       <Services/>
-      {feeds.map((feed) => (
-            <Portafolio
-              title={feed.title}
-             />
+      <Portafolio/>
+      <Promocion/>  
+   
+
+
+    
             
-          ))}
+      
       
     </>
   );

@@ -18,7 +18,7 @@ const Login = () => {
                         type="text"
                         name="username"
                         className="form-control"
-                        placeholder="Username"
+                        placeholder="Nombre de Usuario"
                         aria-label="Username"
                         aria-describedby="basic-addon3"
                         onChange={actions.handleChange}
