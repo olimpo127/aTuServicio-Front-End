@@ -12,15 +12,15 @@ export default function ChangePassword () {
     return (
         <Modal show={store.showChangePassword} onHide={actions.closeChangePassword}>
 			<Modal.Header closeButton>
-				<Modal.Title>Change Password</Modal.Title>
+				<Modal.Title>Cambiar Contraseña</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
 				<Form >
 					<Form.Group>
-						<Form.Label>New Password</Form.Label>
+						<Form.Label>Nueva Contraseña</Form.Label>
 						<Form.Control 
 							type="text"
-							placeholder="Write new password"
+							placeholder="Escriba nueva contraseña de seis caracteres"
 							onChange={(event) => actions.handleChangePassword(event)}
 						/>
 						
@@ -30,12 +30,12 @@ export default function ChangePassword () {
 			</Modal.Body>
 			<Modal.Footer>
 				<Button variant="secondary" onClick={actions.closeChangePassword}>
-					Cancel
+					Cancelar
 				</Button>
 				<Button variant="primary"  onClick={actions.handleEditPassword}
 					
 				>
-					Update my Account
+					Actualizar mi cuenta
 				</Button>
 			</Modal.Footer>
 		</Modal>
