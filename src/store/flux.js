@@ -7,7 +7,8 @@ const getState = ({ setStore, getActions, getStore }) => {
                 lastname: "",
                 username: "",
                 email: "",
-                password: ""
+                password: "",
+                picture:""
             },
             service: {
                 title: "",
@@ -37,7 +38,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             showDeleteAccount: false,
 
 
-
+        },
         
         actions: {
             handleChange: (e) => {
@@ -124,7 +125,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
             handleServiceCreation: (e) => {
                 e.preventDefault();
-                const { service } = getStore();
+                const { service, myAccount } = getStore();
                 console.log(service)
                 fetch("http://localhost:5000/services", {
                     headers: {
@@ -148,6 +149,10 @@ const getState = ({ setStore, getActions, getStore }) => {
                                 service_description: "",
                                
                             },
+                            myAccount: {
+                                ...myAccount, 
+                                id: data.id 
+                             }
                         });
                         console.log(data);
                     })
@@ -177,6 +182,25 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             }, 
 
+            getServicios: (id) => {
+
+
+                fetch("http://localhost:5000/services/" + id, {
+                    headers: {
+                        "Content-Type": "application/json",
+
+                    },
+                    method: "GET",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setStore({ myAccount: data })
+
+                    })
+                    .catch(error => console.log(error));
+
+            },
+
 
 
             openEditAccount: () => {
@@ -204,6 +228,20 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             closeDeleteAccount: () => {
                 setStore({ showDeleteAccount: false })
+            },
+
+            cerrarSesion: (navigate) => {
+                setStore({user: {
+                    name: "",
+                    lastname: "",
+                    username: "",
+                    email: "",
+                    password: ""
+                }, 
+                token: "",
+            
+            })
+            navigate("/")
             },
 
 
@@ -288,24 +326,6 @@ const getState = ({ setStore, getActions, getStore }) => {
         
             },
 
-           /* userLogeado: (user.id, token) => {
-                fetch("http://localhost:5000/user/${user.id}",{
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": "Bearer ${token}"
-
-                    },
-                    method: "GET",
-                })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        setStore({ : data })
-
-                    })
-                    .catch(error => console.log(error));
-
-                }
-            }*/
 
 
            
@@ -321,7 +341,7 @@ const getState = ({ setStore, getActions, getStore }) => {
 
           }
         }
-    }
+    
 };
 
 export default getState;

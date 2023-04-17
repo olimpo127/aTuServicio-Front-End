@@ -18,7 +18,7 @@ const Login = () => {
                         placeholder="Username"
                         aria-label="Username"
                         aria-describedby="basic-addon3"
-                        /*onChange={actions.handleChange}*/
+                        onChange={actions.handleChange}
                         value={store.user.username}
                     />
                 </div>

@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import Feeds from './views/Feeds';
 import DetailFeed from './views/DetailFeed';
 import { useContext } from "react";
-import { Context } from "./store/context"
+import { Context } from "./store/context";
 
 
 

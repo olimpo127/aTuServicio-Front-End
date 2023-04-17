@@ -14,7 +14,6 @@ export default function EditAccount() {
 			</Modal.Header>
 			<Modal.Body>
 				<Form >
-					
 					<Form.Group>
 						<Form.Label>Usuario</Form.Label>
 						<Form.Control
