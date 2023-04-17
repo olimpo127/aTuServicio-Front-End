@@ -20,6 +20,7 @@
     "bootstrap-icons": "^1.10.3",
     "bootstrapp": "^0.0.0",
     "framer-motion": "^10.11.2",
+    "google-map-react": "^2.2.0",
     "google-maps-react": "^2.0.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",

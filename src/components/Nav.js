@@ -9,18 +9,16 @@ import {
   faMagnifyingGlass,
   faUpload,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import logo from "../assets/img/logo.png"
 
 
   function Narv({ user }) {
     const tool = <FontAwesomeIcon icon={faHammer} bounce />;
-
     const profile = <FontAwesomeIcon icon={faUser} />;
     const register = <FontAwesomeIcon icon={faAddressCard} />;
     const search = <FontAwesomeIcon icon={faMagnifyingGlass} />;
     const post = <FontAwesomeIcon icon={faUpload} />;
-  
     return (
       <div>
         <ul className="nav  nav-tabs p-1">

@@ -7,7 +7,8 @@ const getState = ({ setStore, getActions, getStore }) => {
                 lastname: "",
                 username: "",
                 email: "",
-                password: ""
+                password: "",
+                picture:""
             },
             service: {
                 title: "",
@@ -27,7 +28,6 @@ const getState = ({ setStore, getActions, getStore }) => {
             showChangePassword: false,
             showDeleteAccount: false,
         },
-
 
 
         actions: {
@@ -115,7 +115,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
             handleServiceCreation: (e) => {
                 e.preventDefault();
-                const { service } = getStore();
+                const { service, myAccount } = getStore();
                 console.log(service)
                 fetch("http://localhost:5000/services", {
                     headers: {
@@ -139,6 +139,10 @@ const getState = ({ setStore, getActions, getStore }) => {
                                 service_description: "",
 
                             },
+                            myAccount: {
+                                ...myAccount, 
+                                id: data.id 
+                             }
                         });
                         console.log(data);
                     })
@@ -152,6 +156,25 @@ const getState = ({ setStore, getActions, getStore }) => {
             getAccount: (id) => {
 
                 fetch("http://localhost:5000/users/" + id, {
+                    headers: {
+                        "Content-Type": "application/json",
+
+                    },
+                    method: "GET",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setStore({ myAccount: data })
+
+                    })
+                    .catch(error => console.log(error));
+
+            },
+
+            getServicios: (id) => {
+
+
+                fetch("http://localhost:5000/services/" + id, {
                     headers: {
                         "Content-Type": "application/json",
 
@@ -196,6 +219,20 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({ showDeleteAccount: false })
             },
 
+            cerrarSesion: (navigate) => {
+                setStore({user: {
+                    name: "",
+                    lastname: "",
+                    username: "",
+                    email: "",
+                    password: ""
+                }, 
+                token: "",
+            
+            })
+            navigate("/")
+            },
+
 
             handleChangeName: (e) => {
                 const { user } = getStore();
@@ -232,7 +269,8 @@ const getState = ({ setStore, getActions, getStore }) => {
             handleEditAccount: () => {
                 console.log("handleEditAccount");
                 const { user, myAccount } = getStore();
-                fetch("http://localhost:5000/actualizar_user/" + myAccount.id, {
+                console.log(myAccount);
+                fetch("http://localhost:5000/actualizar_user/"+ myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },

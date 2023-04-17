@@ -3,6 +3,7 @@ import React, { useState, useEffect} from "react";
 import Portafolio from "../components/Portafolio";
 import Services from "../components/Services";
 import Promocion from "../components/Promocion";
+import { Context } from "../store/context";
 
 const Home = () => {
 const [feeds, setFeeds]=useState([]);

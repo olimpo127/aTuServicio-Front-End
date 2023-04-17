@@ -8,8 +8,12 @@ import ChangePassword from "../components/Profile-Components/ChangePassword.jsx"
 import EditAccount from "../components/Profile-Components/EditAccount.jsx";
 import DeleteAccount from "../components/Profile-Components/DeleteAccount.jsx";
 import Shopping from "../components/Profile-Components/Shopping";
+import { Feed } from "./Feeds";
 import Reviews from "../components/Profile-Components/Reviews";
 import { Rating } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import Avatar from "../components/Avatar";
+
 
 
 
@@ -17,23 +21,31 @@ const Profile = () => {
 
   const icon1 = <FontAwesomeIcon icon={faGears} />
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
 
   useEffect(() => {
     actions.getAccount(store.myAccount.id);
+    /*actions.getServicios(store.myAccount.id);*/
   }, [])
 
 
   return (
 
     <div className="container-xl px-3 px-md-4 px-lg-5">
-      <h4 className="text-decoration-underline  my-3">Your Account</h4>
+      <h2 className="text-decoration-underline  my-3">Mi Perfil</h2>
+      <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button className="btn btn-outline-danger me-md-2" onClick={e => actions.cerrarSesion(navigate)}>cerrar sesión</button>
+      </div>
       <div class="row">
         <div class=" col-md-2">
 
           <div class="abs-center panel d-flex justify-content-end  my-5">
             <div class="image_inner_container panel-body pn">
               <div class="image_inner_container img img-about">
+                {/*deshabilitar cuando se tenga disponible componente avatar*/}
                 <img src="https://avatars.githubusercontent.com/u/116116678?v=4" name="avatar" border="0" class="img-circle" />
+                {/*habilitar cuando se tenga disponible componente avatar*/}
+                {/*<img src={store.myAccount?.picture} name="avatar" border="0" class="img-circle" />*/}
               </div>
             </div>
           </div>
@@ -41,10 +53,10 @@ const Profile = () => {
           <div class="abs-center panel  d-flex  justify-content-end ">
             <div class="panel-title">
               <h3 class="text-title">{store.myAccount?.name} {store.myAccount?.lastname}</h3>
-              <h5 class="text-title">Username: {store.myAccount?.username}</h5>
+              <h5 class="text-title">Usuario: {store.myAccount?.username}</h5>
               <h5 class="text-title">Email: {store.myAccount?.email}</h5>
-              <Rating name="size-large" defaultValue={0} size="large" />
-            
+              <Rating name="size-large" defaultValue={4} size="large" />
+
             </div>
 
           </div>
@@ -55,16 +67,16 @@ const Profile = () => {
           <div class="my-3">
             <ul class="nav nav-tabs " id="myTab" role="tablist">
               <li class="nav-item " role="presentation">
-                <a class="nav-link active activeme" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Orders</a>
+                <a class="nav-link active activeme" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Mis Servicios</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="sell-tab" data-bs-toggle="tab" href="#sell" role="tab" aria-controls="sell" aria-selected="false">Sell</a>
+                <a class="nav-link" id="sell-tab" data-bs-toggle="tab" href="#sell" role="tab" aria-controls="sell" aria-selected="false">Mis Publicaciones</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Customer Reviews</a>
+                <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Calificaciones</a>
               </li>
               <li class="nav-item " role="presentation">
-                <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">{icon1}Account Settings</a>
+                <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">{icon1}Configuración de la Cuenta</a>
               </li>
             </ul>
 
@@ -76,7 +88,7 @@ const Profile = () => {
                     <Col className="mt-4">
                       <Card className="mx-auto p-4">
 
-                      <Shopping/>
+                        <Shopping />
 
                       </Card>
                     </Col>
@@ -90,19 +102,8 @@ const Profile = () => {
                   <Row className="my-2">
 
                     <Col className="mt-4">
-                      <Card style={{ maxWidth: '360px' }} className="mx-auto p-4">
-
-                        <Button variant="warning"
-                        /*onClick={openEditAccount}*/
-                        >
-                          My Servicies
-                        </Button>
-                        <Button variant="warning" className="mt-1"
-                        /*onClick={openChangePassword}*/
-                        >
-                          My Sales
-                        </Button>
-
+                      <Card  className="mx-auto p-4">
+                        {Feed}
                       </Card>
                     </Col>
                   </Row>
@@ -116,7 +117,7 @@ const Profile = () => {
 
                         <Col className="mt-4">
                           <Card style={{ maxWidth: '360px' }} className="mx-auto p-4">
-                              <Reviews/>
+                            <Reviews />
                           </Card>
                         </Col>
                       </Row>
@@ -137,17 +138,17 @@ const Profile = () => {
                             <Button variant="warning"
                               onClick={actions.openEditAccount}
                             >
-                              Edit Account
+                              Editar Perfil
                             </Button>
                             <Button variant="warning" className="mt-1"
                               onClick={actions.openChangePassword}
                             >
-                              Change Password
+                              Cambiar Contraseña
                             </Button>
                             <Button variant="warning" className="mt-4 text-danger"
                               onClick={actions.openDeleteAccount}
                             >
-                              Delete Account
+                              Eliminar Perfil
                             </Button>
                           </Card>
                         </Col>
@@ -173,7 +174,7 @@ const Profile = () => {
 
       </div>
 
-      
+
       <EditAccount />
       <ChangePassword />
       <DeleteAccount />

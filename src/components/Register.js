@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import { Context } from "../store/context"
+import { Context } from "../store/context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,6 +10,7 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 const Register = () => {
     const upload = <FontAwesomeIcon icon={faUpload} />
     const { store, actions } = useContext(Context);
+    console.log(store,"accion");
     return (
         <div>
             <div className="container text-center col-3 mt-5 was-validated">
@@ -64,7 +65,7 @@ const Register = () => {
                         placeholder="Email"
                         aria-label="Email"
                         aria-describedby="basic-addon4"
-                        onChange={actions.handleChange}
+                       onChange={actions.handleChange}
                         value={store.user.email}
                         required
                     />
