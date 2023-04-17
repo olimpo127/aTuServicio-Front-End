@@ -38,7 +38,7 @@ const getState = ({ setStore, getActions, getStore }) => {
 
 
 
-        },
+        
         actions: {
             handleChange: (e) => {
                 let { user } = getStore();
@@ -142,9 +142,6 @@ const getState = ({ setStore, getActions, getStore }) => {
                                 price: "",
 
                                 mobile_number: "",
-
-                                mobileNumber: "",
-
                                 category: "",
                                 availability: "",
                                 adress: "",
@@ -213,7 +210,7 @@ const getState = ({ setStore, getActions, getStore }) => {
              handleChangeName: (e) => {
                 const { user } = getStore();
                 user.name = e.target.value;
-                console.log(user);
+                console.log(user); 
                 setStore = ({ user: user });
                 
             },
@@ -245,6 +242,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             handleEditAccount: () => {
                 console.log("handleEditAccount");
                 const { user, myAccount } = getStore();
+                console.log(myAccount);
                 fetch("http://localhost:5000/actualizar_user/"+ myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
@@ -321,7 +319,9 @@ const getState = ({ setStore, getActions, getStore }) => {
 
 
 
+          }
         }
     }
-}
+};
+
 export default getState;

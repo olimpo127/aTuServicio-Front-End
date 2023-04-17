@@ -26,7 +26,8 @@ const Profile = () => {
   return (
 
     <div className="container-xl px-3 px-md-4 px-lg-5">
-      <h4 className="text-decoration-underline  my-3">Your Account</h4>
+      <h4 className="text-decoration-underline  my-3">Mi Perfil</h4>
+      <button className="btn btn-primary">cerrar sesión</button>
       <div class="row">
         <div class=" col-md-2">
 
@@ -41,7 +42,7 @@ const Profile = () => {
           <div class="abs-center panel  d-flex  justify-content-end ">
             <div class="panel-title">
               <h3 class="text-title">{store.myAccount?.name} {store.myAccount?.lastname}</h3>
-              <h5 class="text-title">Username: {store.myAccount?.username}</h5>
+              <h5 class="text-title">Usuario: {store.myAccount?.username}</h5>
               <h5 class="text-title">Email: {store.myAccount?.email}</h5>
               <Rating name="size-large" defaultValue={0} size="large" />
             
@@ -55,16 +56,16 @@ const Profile = () => {
           <div class="my-3">
             <ul class="nav nav-tabs " id="myTab" role="tablist">
               <li class="nav-item " role="presentation">
-                <a class="nav-link active activeme" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Orders</a>
+                <a class="nav-link active activeme" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Mis Servicios</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="sell-tab" data-bs-toggle="tab" href="#sell" role="tab" aria-controls="sell" aria-selected="false">Sell</a>
+                <a class="nav-link" id="sell-tab" data-bs-toggle="tab" href="#sell" role="tab" aria-controls="sell" aria-selected="false">Mis Publicaciones</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Customer Reviews</a>
+                <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Calificaciones</a>
               </li>
               <li class="nav-item " role="presentation">
-                <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">{icon1}Account Settings</a>
+                <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">{icon1}Configuración de la Cuenta</a>
               </li>
             </ul>
 
@@ -137,17 +138,17 @@ const Profile = () => {
                             <Button variant="warning"
                               onClick={actions.openEditAccount}
                             >
-                              Edit Account
+                              Editar Perfil
                             </Button>
                             <Button variant="warning" className="mt-1"
                               onClick={actions.openChangePassword}
                             >
-                              Change Password
+                              Cambiar Contraseña
                             </Button>
                             <Button variant="warning" className="mt-4 text-danger"
                               onClick={actions.openDeleteAccount}
                             >
-                              Delete Account
+                              Eliminar Perfil
                             </Button>
                           </Card>
                         </Col>

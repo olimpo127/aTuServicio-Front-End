@@ -10,31 +10,16 @@ export default function EditAccount() {
 	return (
 		<Modal show={store.showEditAccount} onHide={actions.closeEditAccount}>
 			<Modal.Header closeButton>
-				<Modal.Title>Edit my Account</Modal.Title>
+				<Modal.Title>Editar my Cuenta</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
 				<Form >
+					
 					<Form.Group>
-						<Form.Label>Name</Form.Label>
+						<Form.Label>Usuario</Form.Label>
 						<Form.Control
 							type="text"
-							name="name"
-							className="form-control"
-							placeholder="Write a name"
-							onChange={(event) => actions.handleChangeName(event)}
-							/*value={store.user.name}*/
-							
-						/>
-
-
-
-					</Form.Group>
-
-					<Form.Group>
-						<Form.Label>Username</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Write a user"
+							placeholder="Escriba nuevo usuario"
 							onChange={(event) => actions.handleChangeUsername(event)}
 							/*value={store.user.username}*/
 						/>
@@ -44,7 +29,7 @@ export default function EditAccount() {
 						<Form.Label>Email</Form.Label>
 						<Form.Control
 							type="email"
-							placeholder="Write an email"
+							placeholder="Escriba nuevo email"
 							onChange={(event) => actions.handleChangeEmail(event)}
 							/*value={store.user.email}*/
 
@@ -55,12 +40,12 @@ export default function EditAccount() {
 			</Modal.Body>
 			<Modal.Footer>
 				<Button variant="secondary" onClick={actions.closeEditAccount}>
-					Cancel
+					Cancelar
 				</Button>
 				<Button variant="primary"  onClick={actions.handleEditAccount}
 
 				>
-					Update my Account
+					Actualizar mi cuenta
 				</Button>
 			</Modal.Footer>
 		</Modal>
