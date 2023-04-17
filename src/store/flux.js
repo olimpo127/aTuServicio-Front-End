@@ -12,6 +12,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             service: {
                 title: "",
                 price: "",
+                mobile_number:"",
                 category: "",
                 availability: "",
                 adress: "",

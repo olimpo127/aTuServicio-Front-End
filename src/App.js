@@ -28,15 +28,14 @@ function App() {
       <Nav user ={user}/>
       <Routes>
         <Route path = "/" element ={<Home />}/>
-        {/*<Route path = "/profile" element ={<Profile/>}
-        />*/}
+
         <Route path = "/profile" element ={!!store.token ?  <Profile/> : <Navigate to = "/"/>  }
         />
         <Route path = "/signup" element ={<Signup/>}/>
         <Route path = "/service" element = {<Service/>}/>
         <Route path = "/detail" element = {<Detail/>}/>
         <Route path = "/feed" element = {<Feeds/>}/>
-        <Route path="/:id" element={<DetailFeed/>} />
+        <Route path="/detailfeed/:id" element={<DetailFeed/>} />
        
       </Routes>
       <Footer/>

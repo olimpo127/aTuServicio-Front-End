@@ -20,7 +20,7 @@ const Services = () => {
               <i class="bi bi-cpu"></i>
             </div>
             <h4 class="title">
-              <Link to="">Carpintería</Link>
+              <Link to="/feed">Carpintería</Link>
          </h4>
             <p class="description">
               Servicios referidos a construccion y reparaciones.
@@ -31,7 +31,7 @@ const Services = () => {
               <i class="bi bi-clipboard-data"></i>
             </div>
             <h4 class="title">
-              <Link to="">Mecánica</Link>
+              <Link to="/feed">Mecánica</Link>
          </h4>
             <p class="description">
               Servicios de mecánica de cualquier maquinaria.
@@ -42,7 +42,7 @@ const Services = () => {
               <i class="bi bi-globe"></i>
             </div>
             <h4 class="title">
-              <Link to="">Educación</Link>
+              <Link to="/feed">Educación</Link>
             </h4>
             <p class="description">
               Encuentra a profesores que te pueden dar una ayuda en esa materia que te cuesta.
@@ -53,7 +53,7 @@ const Services = () => {
               <i class="bi bi-images"></i>
             </div>
             <h4 class="title">
-              <Link to="">Tecnología</Link>
+              <Link to="/feed">Tecnología</Link>
             </h4>
             <p class="description">
               Podrás encontrar, programadores, técnicos PC, smartphone, etc.
@@ -64,7 +64,7 @@ const Services = () => {
               <i class="bi bi-sliders"></i>
             </div>
             <h4 class="title">
-              <Link to="">Jardinería</Link>
+              <Link to="/feed">Jardinería</Link>
             </h4>
             <p class="description">
               Grandes jardineros esperan hermosear tu jardín.
@@ -75,7 +75,7 @@ const Services = () => {
               <i class="bi bi-building"></i>
             </div>
             <h4 class="title">
-              <Link to="">Veterinaria</Link>
+              <Link to="/feed">Veterinaria</Link>
             </h4>
             <p class="description">
               Acá encuentras opciones de los mejores veterinarios.

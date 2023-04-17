@@ -69,7 +69,7 @@ const Detail = () => {
             <input
               type="number"
               className="form-control"
-              name="mobilNumber"
+              name="mobile_number"
               onChange={actions.handleService}
               value={store.service.mobile_number}
               required
@@ -88,22 +88,22 @@ const Detail = () => {
               required
             >
               <option>Selecciona categoría...</option>
-              <option name="carpentry" value="carpentry">
+              <option name="Carpinteria" value="Carpinteria">
                 Carpintería
               </option>
-              <option name="mechanics" value="mechanics">
+              <option name="Mecanica" value="Mecanica">
                 Mecánica
               </option>
-              <option name="educational" value="educational">
+              <option name="Educacional" value="educacional">
                 Educacional
               </option>
-              <option name="technology" value="technology">
+              <option name="Tecnologia" value="Tecnologia">
                 Tecnológica
               </option>
-              <option name="gardening" value="gardening">
+              <option name="Jardineria" value="Jardineria">
                 Jardinería{" "}
               </option>
-              <option name="other" value="other">
+              <option name="Otros" value="Otros">
                 Otros
               </option>
             </select>
@@ -172,9 +172,6 @@ const Detail = () => {
             <small id="passwordHelpBlock" className="form-text text-muted">
               Agrega una descripcion.
             </small>
-          </div>
-          <div className="imagencration">
-            <ImageService />
           </div>
 
           <div className="boton-new col-12  ">

@@ -1,69 +1,64 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 
-const DetailFeed = () => {
-    const [post, setPost] = useState([])
-  
-    const { title, service_description, region } = post
- 
-    const { id } = useParams();
-    
-    const url = `http://localhost:5000/${id}`
-    const getFeed = () => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setPost(data))
-            .catch(err => console.error(err));
-        }
-        
-        useEffect(() => {
-            getFeed();
-            
-    }, [url])
-       
-        return(
-            <div className='container'>
-                <div className='row justify-content-center my-2'>
-                    <div className='col-9 '>
-                        <div id="carouselExampleControls" class="carousel slide my-3" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://previews.123rf.com/images/john79/john791803/john79180300118/97790125-reparaci%C3%B3n-y-mantenimiento-del-hogar-con-dise%C3%B1o-de-herramientas-ilustraci%C3%B3n-vectorial.jpg" class="d-block w-100" alt="..."/>
-                                </div>
-                                
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+const Read = (props) => {
+
+    return (
+        <div className="container-fluid">
+        <div className="d-flex justify-content-center card mb-3 text-link rounded-4 shadow-lg p-1 mb-5" >
+            <h1>{props.id}</h1>
+            <div className="card mb-3  w-75 rounded-4 shadow-lg p-1 mb-5 d-flex align-self-center">
+                <div className="row g-4">
+                    <div className="col-md-4">
+                        <img src={props.image} className="img-fluid rounded-start" alt="..." />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h5 className="card-title">Título: {props.title}</h5>
+                            <p className="card-text">Precio: {props.price}</p>
+                            <p className="card-text">Numero de Movil: {props.mobile_number}</p>
+                            <p className="card-text">Categoría: {props.category}</p>
+                            <p className="card-text">Disponibilidad: {props.availability}</p>
+                            <p className="card-text">Dirección: {props.adres}</p>
+                            <p className="card-text">Descripción del Servicio: {props.service_description}</p>
                         </div>
-                        <div className='card-body'>
-                            <h5 className="card-title  mb-2">{title}</h5>
-                            <p className="card-text">{service_description}</p>
-                            <p className="card-text">{region}</p>
-
-                        </div>
-
                     </div>
                 </div>
-                
-                <div className="row">
-
-
-                       
-                </div>
-                
             </div>
-            
-        )
+
+        </div>
+
+        </div>
+    )
+}
+
+const Details = () => {
+    const [detalle, setDetalle] = useState([]);
+    const params = useParams();
+    const urlImage = `http://localhost:5000/services/image/${params.id}`;
+    const getDetalle = () => {
+        const Url = `http://localhost:5000/feed/${params.id}`;
+      
+        fetch(Url)
+            .then((response) => response.json())
+            .then((data) => setDetalle(data))
+            .catch((error) => console.log(error));
     }
+   
+        getDetalle();
+   
 
+    return  <Read 
+        image= {urlImage}
+        title={detalle.title}
+        price={detalle.price}
+        mobile_number={detalle.mobile_number}
+        category={detalle.category}
+        availability={detalle.availability}
+        adres={detalle.adress}
+        service_description={detalle.service_description}
+        />
+    
+}
 
-
-
-
-export default DetailFeed;
+export default Details;
