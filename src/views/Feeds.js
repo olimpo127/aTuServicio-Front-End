@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link} from "react-router-dom";
 import Search from '../components/SearchFeed';
+import SearchByRegion from '../components/SearchByRegion';
 
 
 const Feeds = () => {
     const [feeds, setFeeds] = useState([])
-    console.log(feeds)
+    const [searchRegion, setSearchRegion] = useState('')
+
+   
     const url = `http://localhost:5000/feed`
     const getFeeds = () => {
         fetch(url)
@@ -26,21 +29,21 @@ const Feeds = () => {
       setSearch(e.target.value)   
   }
 
-
+*/
     
-   const results = search === ''  ? feeds : feeds.filter((feed) => feed.title.toLowerCase().includes(search.toLocaleLowerCase())) 
-   console.log(results)*/
+   const results = searchRegion === ''  ? feeds : feeds.filter((feed) => feed.title.toLowerCase().includes(searchRegion.toLocaleLowerCase())) 
+   console.log(results)
     console.log(feeds)
         return(
             <div className='container'>
                 
                 <div className='row mt-5'>
-                    <div className='col-3 mt-5'>
-                       
+                    <div className='col-8 col-md-3 mt-5'>
+                        <SearchByRegion setSearchRegion={setSearchRegion} />
                     </div>
                     <div className='col-8'>                        
                         <div className='row'>
-                            <div className='col-12'>
+                            <div className='col-md-12'>
                                 <Search setFeeds={setFeeds } />
                             </div>
                         </div>
@@ -50,7 +53,7 @@ const Feeds = () => {
                             
                                 {
                                     
-                                    feeds.map(({...f}) =><Feed key={f.id} {...f}/>)
+                                    results.map(({...f}) =><Feed key={f.id} {...f}/>)
                                 }
                             
                             </div>
@@ -84,7 +87,7 @@ export const Feed = (props) =>{
                         </div>
                     </div>
                     
-                     <div className='col-1 mt-3'>
+                     <div className='col-2 mt-3'>
                     <p className="card-text fw-semibold">{props.category}</p>
                     <p className="card-text fw-semibold">{props.region}</p>
                         <p className="card-text fw-semibold">{props.comuna}</p>

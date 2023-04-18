@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const DetailFeed = () => {
-    const [post, setPost] = useState([])
-  
-    const { title, service_description, region } = post
- 
+    const [post, setPost] = useState([])  
+    const { title, service_description, region } = post 
     const { id } = useParams();
     
     const url = `http://localhost:5000/${id}`
