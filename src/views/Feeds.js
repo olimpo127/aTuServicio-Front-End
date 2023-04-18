@@ -5,8 +5,7 @@ import Search from '../components/SearchFeed';
 
 const Feeds = () => {
     const [feeds, setFeeds] = useState([])
-    const [search, setSearch] = useState('')
-    
+    console.log(feeds)
     const url = `http://localhost:5000/feed`
     const getFeeds = () => {
         fetch(url)
@@ -19,7 +18,7 @@ const Feeds = () => {
         useEffect(() => {
             getFeeds();
             
-        }, [url])
+        }, [])
 
         /*
           const searcher = (e) => {
@@ -27,11 +26,11 @@ const Feeds = () => {
       setSearch(e.target.value)   
   }
 
-*/
+
     
    const results = search === ''  ? feeds : feeds.filter((feed) => feed.title.toLowerCase().includes(search.toLocaleLowerCase())) 
-   console.log(results)
-     
+   console.log(results)*/
+    console.log(feeds)
         return(
             <div className='container'>
                 
@@ -42,7 +41,7 @@ const Feeds = () => {
                     <div className='col-8'>                        
                         <div className='row'>
                             <div className='col-12'>
-                                <Search setSearch={setSearch } />
+                                <Search setFeeds={setFeeds } />
                             </div>
                         </div>
                         <div className="row ">
@@ -51,7 +50,7 @@ const Feeds = () => {
                             
                                 {
                                     
-                                    results.map(({...f}) =><Feed key={f.id} {...f}/>)
+                                    feeds.map(({...f}) =><Feed key={f.id} {...f}/>)
                                 }
                             
                             </div>
