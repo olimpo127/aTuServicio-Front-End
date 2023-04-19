@@ -5,79 +5,79 @@ import { Link, } from "react-router-dom";
 const Services = () => {
 
   return (
-    <section id="services" class="services section-bg">
-      <div class="container mt-5">
-        <div class="section-title ">
+    <section id="services" className="services section-bg">
+      <div className="container mt-5">
+        <div className="section-title ">
           <h2 className="d-flex justify-content-center">SERVICIOS</h2>
           <p>
             Puedes encontrar una gran variedad de servicios publicados en diferentes especialidades, podrás resolver tus dudas contactándote con la persona que publique. No solo eso, también podrás publicar cualquier tipo de servicio que tú ofrezcas o busques.
           </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon">
-              <i class="bi bi-cpu"></i>
+        <div className="row">
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon">
+              <i className="bi bi-cpu"></i>
             </div>
-            <h4 class="title">
+            <h4 className="title">
               <Link to="/feed">Carpintería</Link>
          </h4>
-            <p class="description">
+            <p className="description">
               Servicios referidos a construccion y reparaciones.
             </p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon">
-              <i class="bi bi-clipboard-data"></i>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon">
+              <i className="bi bi-clipboard-data"></i>
             </div>
-            <h4 class="title">
+            <h4 className="title">
               <Link to="/feed">Mecánica</Link>
          </h4>
-            <p class="description">
+            <p className="description">
               Servicios de mecánica de cualquier maquinaria.
             </p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon">
-              <i class="bi bi-globe"></i>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon">
+              <i className="bi bi-globe"></i>
             </div>
-            <h4 class="title">
+            <h4 className="title">
               <Link to="/feed">Educación</Link>
             </h4>
-            <p class="description">
+            <p className="description">
               Encuentra a profesores que te pueden dar una ayuda en esa materia que te cuesta.
             </p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon">
-              <i class="bi bi-images"></i>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon">
+              <i className="bi bi-images"></i>
             </div>
-            <h4 class="title">
+            <h4 className="title">
               <Link to="/feed">Tecnología</Link>
             </h4>
-            <p class="description">
+            <p className="description">
               Podrás encontrar, programadores, técnicos PC, smartphone, etc.
             </p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon">
-              <i class="bi bi-sliders"></i>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon">
+              <i className="bi bi-sliders"></i>
             </div>
-            <h4 class="title">
+            <h4 className="title">
               <Link to="/feed">Jardinería</Link>
             </h4>
-            <p class="description">
+            <p className="description">
               Grandes jardineros esperan hermosear tu jardín.
             </p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon">
-              <i class="bi bi-building"></i>
+          <div className="col-lg-4 col-md-6 icon-box">
+            <div className="icon">
+              <i className="bi bi-building"></i>
             </div>
-            <h4 class="title">
+            <h4 className="title">
               <Link to="/feed">Veterinaria</Link>
             </h4>
-            <p class="description">
+            <p className="description">
               Acá encuentras opciones de los mejores veterinarios.
             </p>
           </div>

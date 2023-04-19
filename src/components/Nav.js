@@ -6,7 +6,7 @@ import {
   faHammer,
   faUser,
   faAddressCard,
-  faMagnifyingGlass,
+/*   faMagnifyingGlass, */
   faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, } from "react-router-dom";
@@ -17,7 +17,7 @@ import logo from "../assets/img/logo.png"
     const tool = <FontAwesomeIcon icon={faHammer} bounce />;
     const profile = <FontAwesomeIcon icon={faUser} />;
     const register = <FontAwesomeIcon icon={faAddressCard} />;
-    const search = <FontAwesomeIcon icon={faMagnifyingGlass} />;
+  /*   const search = <FontAwesomeIcon icon={faMagnifyingGlass} />; */
     const post = <FontAwesomeIcon icon={faUpload} />;
     return (
       <div>
@@ -28,6 +28,7 @@ import logo from "../assets/img/logo.png"
                 className="img-fluid "
                 style={{ maxWidth: 150}}
                 src={logo}
+                alt=""
               />
             </Link>
           </div>{
@@ -35,7 +36,7 @@ import logo from "../assets/img/logo.png"
           <li className="nav-item  p-3 ">
 
             <Link to="/detail">
-            Crear Nuevo Servicio {tool}
+            Crear Nuevo Servicio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{tool}
             </Link>
 
           </li>
@@ -52,7 +53,7 @@ import logo from "../assets/img/logo.png"
           </li>
           {user ? (
             <li className="nav-item  p-3 ">
-              <Link to="/profile">Perfil {profile}</Link>
+              <Link to="/profile">Perfil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{profile}</Link>
             </li>
           ) : (
             <div></div>

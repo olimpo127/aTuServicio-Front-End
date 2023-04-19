@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { Context } from "../store/context";
-import ImageService from "../components/ImageService";
 import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 
 
 const Detail = () => {
   const { store, actions } = useContext(Context);
+  const userid = store.myAccount.id
   const gear = <FontAwesomeIcon icon={faGear} spin style={{ height: 80 }} />;
 
   const addFeed = () => {
@@ -29,12 +29,12 @@ const Detail = () => {
         <form
           onSubmit={actions.handleServiceCreation}
           className="row g-3 m-3 was-validated"
-          novalidate
+          noValidate
         >
           <div className="col-md-6 ">
             <label
-              className="form-label has-validatio"
-              for="validationCustom01"
+              className="form-label has-validation"
+              htmlFor="validationCustom01"
             >
               <b>Título</b>
             </label>
@@ -121,16 +121,16 @@ const Detail = () => {
               required
             >
               <option>Selecciona disponibilidad...</option>
-              <option name="inmediate" value="inmediate">
+              <option name="Inmediata" value="Inmediata">
                 Immediata
               </option>
-              <option name="full_time" value="full_time">
-                Full time
+              <option name="Todo el tiempo" value="Todo el tiempo">
+                Todo el tiempo
               </option>
-              <option name="part_time" value="part_time">
-                Part time
+              <option name="Medio tiempo" value="Medio tiempo">
+                 Medio tiempo
               </option>
-              <option name="weekend" value="weekend">
+              <option name="Fin de semana" value="Fin de semana">
                 Fin de semana
               </option>
             </select>
@@ -172,6 +172,24 @@ const Detail = () => {
             <small id="passwordHelpBlock" className="form-text text-muted">
               Agrega una descripcion.
             </small>
+          </div>
+          
+          <div className="col-md-2 ">
+            <label
+              className="form-label has-validation"
+              htmlFor="validationCustom01"
+            >
+              <b>Codigo de Usuario</b>
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="user_id"
+              onChange={actions.handleService}
+              value={userid}
+              id="validationCustom01"
+              disabled
+            />
           </div>
 
           <div className="boton-new col-12  ">

@@ -8,9 +8,9 @@ import Signup from "./views/Register-login";
 import Service from "./views/Search-service";
 import Detail from "./views/Service-creation";
 import Footer from './components/Footer';
-
 import Feeds from './views/Feeds';
 import DetailFeed from './views/DetailFeed';
+import EditDetailFeed from './views/EditDetailFeed';
 import { useContext } from "react";
 import { Context } from "./store/context";
 
@@ -36,6 +36,7 @@ function App() {
         <Route path = "/detail" element = {<Detail/>}/>
         <Route path = "/feed" element = {<Feeds/>}/>
         <Route path="/detailfeed/:id" element={<DetailFeed/>} />
+        <Route path="/editdetailfeed/:id" element={<EditDetailFeed/>} />
        
       </Routes>
       <Footer/>

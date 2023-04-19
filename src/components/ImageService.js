@@ -3,7 +3,10 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 
-const ImageService = () => {
+const ImageService = (props) => {
+    console.log(props.id)
+    console.log(props)
+    console.log(props.props)
     const [ImagePreview, setImagePreview] = useState(null);
     const changeImage = (e) => {
         const reader = new FileReader();
@@ -21,7 +24,7 @@ const ImageService = () => {
         formData.append("file", inputFiles[0]);
 
         fetch(
-            "http://localhost:5000/services/image/1",
+            `http://localhost:5000/services/image/`+props.props,
             {
                 method: "POST",
                 body: formData,

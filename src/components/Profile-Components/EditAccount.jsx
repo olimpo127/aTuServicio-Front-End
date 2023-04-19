@@ -10,7 +10,7 @@ export default function EditAccount() {
 	return (
 		<Modal show={store.showEditAccount} onHide={actions.closeEditAccount}>
 			<Modal.Header closeButton>
-				<Modal.Title>Editar my Cuenta</Modal.Title>
+				<Modal.Title>Editar mi Cuenta</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
 				<Form >
@@ -38,7 +38,7 @@ export default function EditAccount() {
 				</Form>
 			</Modal.Body>
 			<Modal.Footer>
-				<Button variant="secondary" onClick={actions.closeEditAccount}>
+				<Button variant="secondary" onClick={actions.closeEditAccount} >
 					Cancelar
 				</Button>
 				<Button variant="primary"  onClick={actions.handleEditAccount}

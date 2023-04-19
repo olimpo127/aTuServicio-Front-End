@@ -11,6 +11,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 picture:""
             },
             service: {
+                user_id:"",
                 title: "",
                 price: "",
                 mobile_number:"",
@@ -18,7 +19,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 availability: "",
                 adress: "",
                 service_description: "",
-                image: "",
+
             },
             token: "",
             myAccount: {
@@ -27,6 +28,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             showEditAccount: false,
             showChangePassword: false,
             showDeleteAccount: false,
+            showChangeImageProfile: false,
         },
 
 
@@ -40,7 +42,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({
                     user: {
                         ...user,
-                        [name]: value
+                        [name]: value,
                     },
                 });
             },
@@ -102,14 +104,15 @@ const getState = ({ setStore, getActions, getStore }) => {
                 });
             },
             handleService: (e) => {
-                let { service } = getStore();
+                let { service, myAccount } = getStore();
                 const {
                     target: { value, name },
                 } = e;
                 setStore({
                     service: {
                         ...service,
-                        [name]: value
+                        [name]: value,
+                        user_id:myAccount.id,
                     },
                 });
             },
@@ -129,14 +132,15 @@ const getState = ({ setStore, getActions, getStore }) => {
                         alert("Servicio Creado Satisfactoriamente ");
                         setStore({
                             service: {
+                                user_id:"",
                                 title: "",
                                 price: "",
-
                                 mobile_number: "",
                                 category: "",
                                 availability: "",
                                 adress: "",
                                 service_description: "",
+
 
                             },
                             myAccount: {
@@ -197,7 +201,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 console.log("editaccount")
             },
 
-            closeEditAccount: () => {
+            closeEditAccount: () => {  
                 setStore({ showEditAccount: false })
             },
 
@@ -205,9 +209,18 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({ showChangePassword: true });
                 console.log("changePassword")
             },
-
+            
             closeChangePassword: () => {
                 setStore({ showChangePassword: false })
+            },
+
+            openChangeImageProfile: () => {
+                setStore({ showChangeImageProfile: true });
+                console.log("changeImageProfile")
+            },
+
+            closeChangeImageProfile: () => {
+                setStore({ showChangeImageProfile: false });
             },
 
             openDeleteAccount: () => {
@@ -243,6 +256,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             handleChangeUsername: (e) => {
+                e.preventDefault();
                 const { user } = getStore();
                 user.username = e.target.value;
                 console.log(user);
@@ -251,6 +265,7 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             handleChangeEmail: (e) => {
+                e.preventDefault();
                 const { user } = getStore();
                 user.email = e.target.value;
                 console.log(user);
@@ -266,7 +281,8 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             },
 
-            handleEditAccount: () => {
+            handleEditAccount: (e) => {
+                e.preventDefault();
                 console.log("handleEditAccount");
                 const { user, myAccount } = getStore();
                 console.log(myAccount);
@@ -314,25 +330,6 @@ const getState = ({ setStore, getActions, getStore }) => {
                     .catch((error) => console.log(error));
 
             },
-
-            /* userLogeado: (user.id, token) => {
-                 fetch("http://localhost:5000/user/${user.id}",{
-                     headers: {
-                         "Content-Type": "application/json",
-                         "Authorization": "Bearer ${token}"
- 
-                     },
-                     method: "GET",
-                 })
-                     .then((res) => res.json())
-                     .then((data) => {
-                         setStore({ : data })
- 
-                     })
-                     .catch(error => console.log(error));
- 
-                 }
-             }*/
 
         },
     }

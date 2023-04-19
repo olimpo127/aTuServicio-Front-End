@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+/* import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react"; */
 import { useContext } from "react";
 import { Context } from "../store/context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,6 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 const Register = () => {
     const upload = <FontAwesomeIcon icon={faUpload} />
     const { store, actions } = useContext(Context);
-    console.log(store,"accion");
     return (
         <div>
             <div className="container text-center col-3 mt-5 was-validated">
@@ -58,7 +57,7 @@ const Register = () => {
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon4">E-mail</span>
-                    <input nn
+                    <input
                         type="text"
                         name="email"
                         className="form-control"

@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+/* import React, { useEffect, useState } from 'react'; */
 import { Link } from "react-router-dom";
 
 const Portafolios = (props) => {
   return (
 
 
-    <div class="portfolio-wrap">
+    <div className="portfolio-wrap">
       <Link to="/signup">
         <img
           src={props.img}
-          class="img-fluid"
+          className="img-fluid"
           alt=""
         />
 
       </Link>
 
-      <div class="portfolio-info">
+      <div className="portfolio-info">
         <h3>
           {props.title}
         </h3>
@@ -35,9 +35,9 @@ const Portafolio = () => {
 
 
   return (
-    <section id="portfolio" class="container portfolio mt-5">
-      <div class="container">
-        <div class="section-title d-flex justify-content-center mb-3">
+    <section id="portfolio" className="container portfolio mt-5">
+      <div className="container">
+        <div className="section-title d-flex justify-content-center mb-3">
           <h2>Publica como ellos</h2>
         </div>
         <div className="row  portfolio-container">
