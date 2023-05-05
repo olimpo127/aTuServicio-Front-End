@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Context } from "../store/context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
-
+import ImageService from "./ImageService";
 
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
         <div>
             <div className="container text-center col-3 mt-5 was-validated">
                 <div className="input-group mb-3">
-                    <span className="input-group-text has-validation" id="basic-addon1">Nombre</span>
+                    <span className="input-group-text has-validation" id="basic-addon1">Name</span>
                     <input
                         type="text"
                         name="name"
@@ -28,7 +28,7 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon2">Apellido</span>
+                    <span className="input-group-text" id="basic-addon2">Lastname</span>
                     <input
                         type="text"
                         name="lastname"
@@ -42,7 +42,7 @@ const Register = () => {
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon3">Nombre de Usuario</span>
+                    <span className="input-group-text" id="basic-addon3">Username</span>
                     <input
                         type="text"
                         name="username"
@@ -57,7 +57,7 @@ const Register = () => {
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon4">E-mail</span>
-                    <input
+                    <input nn
                         type="text"
                         name="email"
                         className="form-control"
@@ -72,7 +72,7 @@ const Register = () => {
                 <div>
                     <div className="mb-5">
                         <div className=" input-group">
-                            <label htmlFor="Password" className="input-group-text">Contraseña</label>
+                            <label htmlFor="Password" className="input-group-text">Password</label>
                             <input
                                 type="password"
                                 name="password"
@@ -84,12 +84,13 @@ const Register = () => {
                                 required
                             />
                         </div>
-                        <div className="form-text">Max 8 caracteres</div>
+                        <div className="form-text">Max 8 characters</div>
                     </div>
                 </div>
                 <button type="submit" className="btn btn-secondary" onClick={() => actions.handleUserRegister()}>
-                    ENVIO {upload}
+                    SUBMIT {upload}
                 </button>
+                <ImageService/>
             </div>
         </div>
     )

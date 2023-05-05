@@ -52,31 +52,29 @@ import logo from "../assets/img/logo.png"
             </Link>
           </li>
 
-          <li className="nav-item mt-3  px-4 me-5">
-            <Link to="/feed">
-              Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}
+        </div>
+        <li className="nav-item mt-3  px-4 me-5">
+          <Link to="/feed">
+            Feed service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{post}
+          </Link>
+        </li>{
+          
+          user ? (
+  
+            
+            <li className="nav-item mt-3 px-3 ">
+            <Link to="/detail">
+              Crear Post {profile}
+              </Link>
+          </li>
+            )
+          :(<div></div>)}{
+        user ? (
+          <li className="nav-item mt-3 px-3 ">
+          <Link to="/profile">
+            Profile {profile}
             </Link>
-
-          </li>{
-
-          user ? (
-
-
-            <li className="nav-item mt-3 px-3 ">
-              <Link to="/detail">
-                Crear Post {profile}
-              </Link>
-            </li>
-          )
-            : (<div></div>)}{
-          user ? (
-
-
-            <li className="nav-item mt-3 px-3 ">
-              <Link to="/profile">
-                Profile {profile}
-              </Link>
-            </li>
+        </li>
           )
             : (<div></div>)}
 

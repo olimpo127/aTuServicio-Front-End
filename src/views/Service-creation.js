@@ -191,18 +191,17 @@ const Detail = () => {
               disabled
             />
           </div>
-
-          <div className="boton-new col-12  ">
-            <button
-              type="submit"
-              className="btn btn-success"
-              onChange={addFeed}
-            >
-              Nuevo Post
-            </button>
-          </div>
-        </form>
-      </div>
+              <small id="passwordHelpBlock" className="form-text text-muted">
+                Add your description post.
+              </small>
+            </div>
+            <div className="col-12">
+              <button type="submit" className="btn btn-success" onChange={addFeed}>
+                Post Now 
+              </button>
+            </div>
+          </form>
+        </div>
     </div>
   );
 };
