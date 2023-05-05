@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const getState = ({ setStore, getActions, getStore }) => {
 
     return {
@@ -9,31 +7,31 @@ const getState = ({ setStore, getActions, getStore }) => {
                 lastname: "",
                 username: "",
                 email: "",
-                password: ""
+                password: "",
+                picture:""
             },
             service: {
+                user_id:"",
                 title: "",
                 price: "",
+                mobile_number:"",
                 category: "",
                 availability: "",
-                city: "",
-                region: "",
-                comuna: "",
+                adress: "",
                 service_description: "",
-                image: ""
+
             },
             token: "",
-
-            myAccount: {},
-
+            myAccount: {
+                id: ""
+            },
             showEditAccount: false,
             showChangePassword: false,
             showDeleteAccount: false,
-
-
-
-
+            showChangeImageProfile: false,
         },
+
+
         actions: {
             handleChange: (e) => {
                 let { user } = getStore();
@@ -44,7 +42,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({
                     user: {
                         ...user,
-                        [name]: value
+                        [name]: value,
                     },
                 });
             },
@@ -77,7 +75,7 @@ const getState = ({ setStore, getActions, getStore }) => {
                     });
             },
             handleUserLogin: (e) => {
-                const { user, token } = getStore();
+                const { user, token, myAccount } = getStore();
                 fetch("http://localhost:5000/users/login", {
                     headers: {
                         "Content-Type": "application/json"
@@ -87,9 +85,15 @@ const getState = ({ setStore, getActions, getStore }) => {
                 })
                     .then(res => res.json())
                     .then((data) => {
-                        setStore({ token: data.token })
+                        setStore({
+                            token: data.token,
+                            myAccount: {
+                                ...myAccount,
+                                id: data.id
+                            }
+                        })
                         console.log(data)
-                        console.log(token)
+                        console.log(getStore());
                     })
                     .catch(error => console.log(error));
                 setStore({
@@ -100,20 +104,21 @@ const getState = ({ setStore, getActions, getStore }) => {
                 });
             },
             handleService: (e) => {
-                let { service } = getStore();
+                let { service, myAccount } = getStore();
                 const {
                     target: { value, name },
                 } = e;
                 setStore({
                     service: {
                         ...service,
-                        [name]: value
+                        [name]: value,
+                        user_id:myAccount.id,
                     },
                 });
             },
             handleServiceCreation: (e) => {
                 e.preventDefault();
-                const { service } = getStore();
+                const { service, myAccount } = getStore();
                 console.log(service)
                 fetch("http://localhost:5000/services", {
                     headers: {
@@ -127,17 +132,21 @@ const getState = ({ setStore, getActions, getStore }) => {
                         alert("Servicio Creado Satisfactoriamente ");
                         setStore({
                             service: {
+                                user_id:"",
                                 title: "",
                                 price: "",
-                                mobileNumber: "",
+                                mobile_number: "",
                                 category: "",
                                 availability: "",
-                                city: "",
-                                region: "",
-                                comuna: "",
+                                adress: "",
                                 service_description: "",
-                                image: ""
+
+
                             },
+                            myAccount: {
+                                ...myAccount, 
+                                id: data.id 
+                             }
                         });
                         console.log(data);
                     })
@@ -166,13 +175,33 @@ const getState = ({ setStore, getActions, getStore }) => {
 
             },
 
+            getServicios: (id) => {
+
+
+                fetch("http://localhost:5000/services/" + id, {
+                    headers: {
+                        "Content-Type": "application/json",
+
+                    },
+                    method: "GET",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setStore({ myAccount: data })
+
+                    })
+                    .catch(error => console.log(error));
+
+            },
+
+
 
             openEditAccount: () => {
                 setStore({ showEditAccount: true });
                 console.log("editaccount")
             },
 
-            closeEditAccount: () => {
+            closeEditAccount: () => {  
                 setStore({ showEditAccount: false })
             },
 
@@ -180,9 +209,18 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({ showChangePassword: true });
                 console.log("changePassword")
             },
-
+            
             closeChangePassword: () => {
                 setStore({ showChangePassword: false })
+            },
+
+            openChangeImageProfile: () => {
+                setStore({ showChangeImageProfile: true });
+                console.log("changeImageProfile")
+            },
+
+            closeChangeImageProfile: () => {
+                setStore({ showChangeImageProfile: false });
             },
 
             openDeleteAccount: () => {
@@ -194,29 +232,45 @@ const getState = ({ setStore, getActions, getStore }) => {
                 setStore({ showDeleteAccount: false })
             },
 
+            cerrarSesion: (navigate) => {
+                setStore({user: {
+                    name: "",
+                    lastname: "",
+                    username: "",
+                    email: "",
+                    password: ""
+                }, 
+                token: "",
+            
+            })
+            navigate("/")
+            },
 
-             handleChangeName: (e) => {
+
+            handleChangeName: (e) => {
                 const { user } = getStore();
                 user.name = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleChangeUsername: (e) => {
+                e.preventDefault();
                 const { user } = getStore();
                 user.username = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleChangeEmail: (e) => {
+                e.preventDefault();
                 const { user } = getStore();
                 user.email = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
             handleChangePassword: (e) => {
@@ -224,12 +278,14 @@ const getState = ({ setStore, getActions, getStore }) => {
                 user.password = e.target.value;
                 console.log(user);
                 setStore = ({ user: user });
-                
+
             },
 
-            handleEditAccount: () => {
+            handleEditAccount: (e) => {
+                e.preventDefault();
                 console.log("handleEditAccount");
                 const { user, myAccount } = getStore();
+                console.log(myAccount);
                 fetch("http://localhost:5000/actualizar_user/"+ myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
@@ -245,49 +301,38 @@ const getState = ({ setStore, getActions, getStore }) => {
             },
 
             handleEditPassword: () => {
-                console.log("password actualizada");
-                const {user, myAccount } = getStore();
-                fetch("http://localhost:5000/actualizar_password/"+ myAccount.id, {
+                const { user, myAccount } = getStore();
+                let contraseña = user.password
+                fetch("http://localhost:5000/actualizar_password/" + myAccount.id, {
                     headers: {
                         "Content-Type": "application/json"
                     },
                     method: "PUT",
-                    body: JSON.stringify(user.password),
+                    body: JSON.stringify({ contraseña: contraseña }),
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
                     })
                     .catch(error => console.log(error));
-            },  
-
-
-
-
+            },
 
             DeleteRegister: () => {
-                const {  myAccount } = getStore();
-                fetch("http://localhost:5000/user/"+ myAccount.id, {
+                const { myAccount } = getStore();
+                fetch("http://localhost:5000/user/" + myAccount.id, {
                     method: "DELETE",
-                    headers: { 
-                        "Content-Type" : "application/json",
+                    headers: {
+                        "Content-Type": "application/json",
                     }
                 })
-                .then((res) => res.json())
-                .then((data) => console.log(data))
-                .catch((error) => console.log(error));
-        
-            }
+                    .then((res) => res.json())
+                    .then((data) => console.log(data))
+                    .catch((error) => console.log(error));
 
-
-
-
-
-
-
-
+            },
 
         },
-    };
-};
+    }
+}
+
 export default getState;

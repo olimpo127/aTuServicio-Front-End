@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+/* import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react"; */
 import { useContext } from "react";
-import { Context } from "../store/context"
+import { Context } from "../store/context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import ImageService from "./ImageService";
@@ -19,7 +19,7 @@ const Register = () => {
                         type="text"
                         name="name"
                         className="form-control"
-                        placeholder="Name"
+                        placeholder="Nombre"
                         aria-label="Name"
                         aria-describedby="basic-addon1"
                         onChange={actions.handleChange}
@@ -33,7 +33,7 @@ const Register = () => {
                         type="text"
                         name="lastname"
                         className="form-control"
-                        placeholder="Lastname"
+                        placeholder="Apellido"
                         aria-label="Lastname"
                         aria-describedby="basic-addon2"
                         onChange={actions.handleChange}
@@ -47,7 +47,7 @@ const Register = () => {
                         type="text"
                         name="username"
                         className="form-control"
-                        placeholder="Username"
+                        placeholder="Nombre de Usuario"
                         aria-label="Username"
                         aria-describedby="basic-addon3"
                         onChange={actions.handleChange}
@@ -64,7 +64,7 @@ const Register = () => {
                         placeholder="Email"
                         aria-label="Email"
                         aria-describedby="basic-addon4"
-                        onChange={actions.handleChange}
+                       onChange={actions.handleChange}
                         value={store.user.email}
                         required
                     />

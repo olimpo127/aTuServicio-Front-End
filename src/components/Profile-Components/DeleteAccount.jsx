@@ -10,16 +10,16 @@ export default function DeleteAccount() {
 	return (
 		<Modal show={store.showDeleteAccount} onHide={actions.closeDeleteAccount}>
 			<Modal.Header closeButton>
-				<Modal.Title>Delete Account</Modal.Title>
+				<Modal.Title>Eliminar Cuenta</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
 				<Form >
 					<Form.Group>
 						<Form.Label className="text-danger">
 							<b>
-								Are you sure you want to permanently delete your account?
+							 ¿Está seguro de que desea eliminar su cuenta de forma permanente?
 
-								your data will be lost
+							 tus datos se perderán
 							</b>
 
 						</Form.Label>
@@ -28,11 +28,11 @@ export default function DeleteAccount() {
 			</Modal.Body>
 			<Modal.Footer>
 				<Button variant="secondary" onClick={actions.closeDeleteAccount}>
-					Cancel
+					Cancelar
 				</Button>
 				<Button variant="primary" onClick={actions.DeleteRegister}
 				>
-					Delete my Account
+					Eliminar mi Cuenta
 				</Button>
 			</Modal.Footer>
 		</Modal>

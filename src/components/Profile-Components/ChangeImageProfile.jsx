@@ -1,32 +1,21 @@
 import { Modal, Form, Button } from 'react-bootstrap';
 import { Context } from '../../store/context';
 import { useContext } from 'react';
+import Avatar from '../Avatar';
 
 
-
-export default function ChangePassword () {
+export default function ChangeImageProfile () {
    
     const { store, actions } = useContext(Context);
 
 
     return (
-        <Modal show={store.showChangePassword} onHide={actions.closeChangePassword}>
+        <Modal show={store.showChangeImageProfile} onHide={actions.closeChangeImageProfile}>
 			<Modal.Header closeButton>
-				<Modal.Title>Cambiar Contraseña</Modal.Title>
+				<Modal.Title>Cambiar Imagen de Perfil</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
-				<Form >
-					<Form.Group>
-						<Form.Label>Nueva Contraseña</Form.Label>
-						<Form.Control 
-							type="text"
-							placeholder="Escriba nueva contraseña de seis caracteres"
-							onChange={(event) => actions.handleChangePassword(event)}
-						/>
-						
-					</Form.Group>
-					
-				</Form>
+				<Avatar/>
 			</Modal.Body>
 			<Modal.Footer>
 				<Button variant="secondary" onClick={actions.closeChangePassword}>

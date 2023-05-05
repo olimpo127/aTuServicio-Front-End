@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ImageService from "../components/ImageService";
 
 const Read = (props) => {
-
+console.log(props.id)
     return (
         <div className="container-fluid">
         <div className="d-flex justify-content-center card mb-3 text-link rounded-4 shadow-lg p-1 mb-5" >
-            <h1>{props.id}</h1>
+            <h1></h1>
             <div className="card mb-3  w-75 rounded-4 shadow-lg p-1 mb-5 d-flex align-self-center">
                 <div className="row g-4">
                     <div className="col-md-4">
                         <img src={props.image} className="img-fluid rounded-start" alt="..." />
+                        <div className="m-3">
+                        <ImageService props={props.id}/>              
+                        </div>
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
@@ -44,11 +48,13 @@ const Details = () => {
             .then((data) => setDetalle(data))
             .catch((error) => console.log(error));
     }
-   
+    useEffect(()=>{
         getDetalle();
-   
+    }, [])
+console.log(getDetalle)
 
-    return  <Read 
+    return  <Read
+        id={detalle.id}
         image= {urlImage}
         title={detalle.title}
         price={detalle.price}

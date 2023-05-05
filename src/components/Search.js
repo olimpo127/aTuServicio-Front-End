@@ -1,3 +1,4 @@
+
 const SearchInput = () => {
 
     const [search, setSearch] = useState('');
